@@ -3,69 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guimacar | Qualidade Automóvel</title>
+    <title>Guimacar | Qualidade Automóvel em Guimarães</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .zoom-effect { animation: zoom 20s infinite alternate; }
+        @keyframes zoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
+    <div id="sidebar" class="fixed inset-y-0 right-0 w-80 bg-slate-900 shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-8 flex flex-col h-full text-white">
+            <button id="close-menu" class="self-end text-2xl mb-12 hover:text-blue-500 transition">
+                <i class="fas fa-times"></i>
+            </button>
 
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-black tracking-tighter text-slate-900">GUIMA<span class="text-blue-600">CAR</span></h1>
-            <div class="space-x-6 font-medium">
-                <a href="index.html" class="text-blue-600">Início</a>
-                <a href="stock.html" class="hover:text-blue-600 transition">Stock</a>
-                <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            <nav class="flex flex-col space-y-8 text-xl font-bold">
+                <a href="index.html" class="hover:text-blue-500 transition">Início</a>
+                <a href="stock.html" class="hover:text-blue-500 transition">Stock Completo</a>
+                <a href="contacto.html" class="hover:text-blue-500 transition">Contactos</a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="hover:text-blue-400 text-blue-500 transition">Facebook</a>
+            </nav>
+
+            <div class="mt-auto pt-8 border-t border-slate-800 text-gray-500 text-sm">
+                <p class="font-bold text-white uppercase tracking-widest mb-2">Guimacar</p>
+                <p>Avenida de Santa Comba, 1524</p>
+                <p>Fornelos, Fafe</p>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <header class="relative h-[400px] flex items-center justify-center bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=80" class="absolute inset-0 w-full h-full object-cover opacity-40">
-        <div class="relative text-center text-white px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">O seu próximo carro está aqui.</h2>
-            <p class="text-xl text-gray-300 mb-8">Visite-nos em Guimarães e faça um test-drive.</p>
-            <a href="stock.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-bold transition">Ver Stock Completo</a>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- Navbar -->
+    <section class="relative h-screen w-full overflow-hidden bg-slate-950">
+        <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover opacity-50 zoom-effect">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70"></div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4">
+                GUIMA<span class="text-blue-500">CAR</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl font-light">
+                Transparência e confiança na compra do seu próximo automóvel.
+            </p>
+            <a href="#stock" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105">
+                Ver Stock Disponível <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
-    </header>
-
-    <section class="container mx-auto py-16 px-4">
-        <div class="flex justify-between items-end mb-8">
-            <h3 class="text-3xl font-bold">Destaques da Semana</h3>
-            <a href="stock.html" class="text-blue-600 hover:underline">Ver todos →</a>
+        <!-- Botão de menu móvel -->
+        <div class="absolute top-6 right-6 z-20">
+            <button id="open-menu" class="bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-md border border-white/20 transition">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Botões de contacto flutuantes -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-4 bg-white/10 backdrop-blur-md p-3 rounded-full border border-white/20 shadow-2xl">
+            <a href="contacto.html" class="bg-white/10 hover:bg-white/20 text-white w-14 h-14 flex items-center justify-center rounded-full text-2xl border border-white/30 transition transform hover:-translate-y-1">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://www.facebook.com/guimacar" target="_blank" class="bg-white/10 hover:bg-white/20 text-blue-400 w-14 h-14 flex items-center justify-center rounded-full text-2xl border border-white/30 transition transform hover:-translate-y-1">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </section>
+    <!--Carros-->
+    <section id="stock" class="container mx-auto py-20 px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-slate-900 tracking-tight italic uppercase">Destaques</h2>
+            <div class="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" class="w-full h-52 object-cover">
-                <div class="p-5">
-                    <h4 class="font-bold text-lg">BMW Série 1 116d</h4>
-                    <p class="text-sm text-gray-500 mb-4">2019 • 120.000 km • Diesel</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-slate-900">19.500€</span>
-                        <a href="https://wa.me/351910000000" class="text-green-600 font-bold border border-green-600 px-4 py-1 rounded hover:bg-green-50">WhatsApp</a>
+        <div class="flex justify-center">
+            <div class="relative group w-full max-w-6xl">
+                <button onclick="document.getElementById('carousel').scrollBy({left: -300, behavior: 'smooth'})" 
+                        class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div id="carousel" class="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-center" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
+                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
+                            <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
+                                    <span><i class="fas fa-calendar-alt mr-1"></i> Jan. 2018</span>
+                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
+                                    <span><i class="fas fa-road mr-1"></i> 176 307</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-2xl font-black text-gray-900 mb-1">BMW</h3>
+                            <p class="text-gray-600 text-sm mb-4">116 d Aut. Advantage</p>
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through">Antes 16 900 €</p>
+                                    <p class="text-3xl font-black text-gray-900">15 900 €</p>
+                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-gray-500">DESDE</p>
+                                    <p class="text-lg font-bold text-gray-900">211,09 €/MÊS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
+                    </div>
+
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
+                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
+                            <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
+                                    <span><i class="fas fa-calendar-alt mr-1"></i> 2018</span>
+                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
+                                    <span><i class="fas fa-road mr-1"></i> 89 000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-2xl font-black text-gray-900 mb-1">BMW X3</h3>
+                            <p class="text-gray-600 text-sm mb-4">2.0d xDrive</p>
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through">Antes 24 900 €</p>
+                                    <p class="text-3xl font-black text-gray-900">22 500 €</p>
+                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-gray-500">DESDE</p>
+                                    <p class="text-lg font-bold text-gray-900">298,45 €/MÊS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
+                    </div>
+
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
+                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
+                            <img src="img/carro3/1.jpg" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
+                                    <span><i class="fas fa-calendar-alt mr-1"></i> 2015</span>
+                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
+                                    <span><i class="fas fa-road mr-1"></i> 110 000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-2xl font-black text-gray-900 mb-1">Mercedes-Benz</h3>
+                            <p class="text-gray-600 text-sm mb-4">C220 CDI Avantgarde</p>
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through">Antes 20 900 €</p>
+                                    <p class="text-3xl font-black text-gray-900">18 900 €</p>
+                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-gray-500">DESDE</p>
+                                    <p class="text-lg font-bold text-gray-900">250,67 €/MÊS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
+                    </div>
+
+                </div>
+
+                <button onclick="document.getElementById('carousel').scrollBy({left: 300, behavior: 'smooth'})" 
+                        class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="stock.html" class="inline-block bg-slate-900 text-white px-12 py-4 rounded-full font-black hover:bg-blue-600 transition shadow-xl">
+                VER STOCK COMPLETO
+            </a>
+        </div>
+    </section>
+
+    <!-- Contactos -->
+    <section id="contacto" class="container mx-auto py-20 px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 tracking-tight">Contactos</h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 space-y-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black text-blue-600">Guimacar</h3>
+                    <p class="text-gray-500 font-bold text-sm uppercase mb-4 tracking-widest">Comércio de Automóveis</p>
+                    <div class="space-y-1 text-gray-700">
+                        <p class="font-bold text-slate-800 uppercase italic">Morada</p>
+                        <p>Avenida de Santa Comba, 1524</p>
+                        <p>4820-428 Fornelos</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-6 border-t border-gray-100">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-green-50 p-3 rounded-lg text-green-600"><i class="fas fa-mobile-alt"></i></div>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold text-green-700">Telemóvel</p>
+                            <p class="font-bold text-lg text-slate-900 font-black">965 083 452</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold text-blue-700">E-mail</p>
+                            <a href="mailto:guimacar96@gmail.com" class="font-bold text-lg text-slate-900 hover:text-blue-600 transition-colors">
+                                guimacar96@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 pt-4 border-t border-gray-100">
+                        <div class="bg-slate-100 p-3 rounded-lg text-slate-600"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold text-slate-700">Horário de Funcionamento</p>
+                            <div class="text-sm text-slate-800 mt-1 space-y-1">
+                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:30</p>
+                                <p><span class="font-bold">Domingo:</span> Encerrado</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-    </section>
 
-    <section id="contacto" class="bg-white py-16">
-        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h3 class="text-3xl font-bold mb-6">Onde estamos</h3>
-                <p class="text-gray-600 mb-4">Rua do Stand, nº 123<br>4800-000 Guimarães</p>
-                <p class="font-bold text-lg mb-2">Horário:</p>
-                <p class="text-gray-600 italic">Segunda a Sábado: 09h - 19h</p>
+            <div class="h-[450px] md:h-full min-h-[400px] rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white ring-1 ring-gray-200 transform hover:scale-[1.01] transition-transform duration-500">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.599326746814!2d-8.180954024576584!3d41.4696047908923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24e8801cb092ff%3A0x9608adc63cdbf440!2sGuimacar!5e0!3m2!1spt-PT!2spt!4v1773931842665!5m2!1spt-PT!2spt"
+                    class="w-full h-full border-0" 
+                    style="pointer-events: all;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-            <div class="h-64 bg-gray-200 rounded-lg overflow-hidden border border-gray-300">
-                <div class="flex items-center justify-center h-full text-gray-400 text-sm italic">Mapa de Guimarães (Google Maps)</div>
-            </div>
+
         </div>
     </section>
-
-    <footer class="bg-slate-900 text-gray-400 py-8 text-center border-t border-slate-800 text-sm">
-        <p>© 2026 GUIMACAR - Todos os direitos reservados.</p>
+    <footer class="bg-white border-t border-gray-200 py-10">
+        <div class="text-center text-gray-500 text-sm">
+            <p> 2026 GUIMACAR - Fafe</p>
+        </div>
     </footer>
-
+    
+    <script src="script.js"></script>
 </body>
 </html>
