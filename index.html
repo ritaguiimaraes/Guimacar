@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guimacar | Qualidade Automóvel em Guimarães</title>
+    <title>Guimacar | Qualidade Automóvel em Fafe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -36,17 +36,38 @@
 
     <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
 
+    <!-- Header Fixo (aparece após scroll) -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 bg-white shadow-sm z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black tracking-tighter">
+                    GUIMA<span class="text-blue-500">CAR</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#stock" class="text-gray-700 hover:text-blue-600 font-semibold transition">Stock</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 font-semibold transition">Contactos</a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </nav>
+                <button id="open-menu-header" class="md:hidden bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-lg transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <!-- Navbar -->
     <section class="relative h-screen w-full overflow-hidden bg-slate-950">
         <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover opacity-50 zoom-effect">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10"></div>
 
         <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
             <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4">
                 GUIMA<span class="text-blue-500">CAR</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl font-light">
-                Transparência e confiança na compra do seu próximo automóvel.
+                Comércio de automóveis semi-novos e usados.
             </p>
             <a href="#stock" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105">
                 Ver Stock Disponível <i class="fas fa-arrow-right ml-2"></i>
@@ -82,96 +103,103 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <div id="carousel" class="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-center" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <div id="carousel" class="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-start px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-gray-100">
+                        <div class="p-3">
+                            <!--carro1-->
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i> Jan. 2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">BMW</h3>
+                            <p class="text-gray-500 text-sm mb-4 font-medium">116 d Aut. Advantage</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 16 900 €</p>
+                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
+                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--carro2-->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-gray-100">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i> 2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 89 000 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">BMW X3</h3>
+                            <p class="text-gray-500 text-sm mb-4 font-medium">2.0d xDrive</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 24 900 €</p>
+                                    <p class="text-3xl font-black text-blue-600">22 500 €</p>
+                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">298,45€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--carro3-->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-gray-100">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro3/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i> 2015</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 110 000 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Mercedes-Benz</h3>
+                            <p class="text-gray-500 text-sm mb-4 font-medium">C220 CDI Avantgarde</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 20 900 €</p>
+                                    <p class="text-3xl font-black text-blue-600">18 900 €</p>
+                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">250,67€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
-                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
-                            <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
-                                    <span><i class="fas fa-calendar-alt mr-1"></i> Jan. 2018</span>
-                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
-                                    <span><i class="fas fa-road mr-1"></i> 176 307</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-2xl font-black text-gray-900 mb-1">BMW</h3>
-                            <p class="text-gray-600 text-sm mb-4">116 d Aut. Advantage</p>
-                            <div class="flex items-center justify-between mb-2">
-                                <div>
-                                    <p class="text-gray-400 text-xs line-through">Antes 16 900 €</p>
-                                    <p class="text-3xl font-black text-gray-900">15 900 €</p>
-                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-xs text-gray-500">DESDE</p>
-                                    <p class="text-lg font-bold text-gray-900">211,09 €/MÊS</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
-                    </div>
 
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
-                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
-                            <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
-                                    <span><i class="fas fa-calendar-alt mr-1"></i> 2018</span>
-                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
-                                    <span><i class="fas fa-road mr-1"></i> 89 000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-2xl font-black text-gray-900 mb-1">BMW X3</h3>
-                            <p class="text-gray-600 text-sm mb-4">2.0d xDrive</p>
-                            <div class="flex items-center justify-between mb-2">
-                                <div>
-                                    <p class="text-gray-400 text-xs line-through">Antes 24 900 €</p>
-                                    <p class="text-3xl font-black text-gray-900">22 500 €</p>
-                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-xs text-gray-500">DESDE</p>
-                                    <p class="text-lg font-bold text-gray-900">298,45 €/MÊS</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
                     </div>
-
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-white rounded-3xl overflow-hidden shadow-lg relative transition-all duration-300 pb-6">
-                        <div class="relative h-56 overflow-hidden rounded-t-3xl">
-                            <img src="img/carro3/1.jpg" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                                <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-around text-white text-xs font-bold">
-                                    <span><i class="fas fa-calendar-alt mr-1"></i> 2015</span>
-                                    <span><i class="fas fa-gas-pump mr-1"></i> Gasóleo</span>
-                                    <span><i class="fas fa-road mr-1"></i> 110 000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-2xl font-black text-gray-900 mb-1">Mercedes-Benz</h3>
-                            <p class="text-gray-600 text-sm mb-4">C220 CDI Avantgarde</p>
-                            <div class="flex items-center justify-between mb-2">
-                                <div>
-                                    <p class="text-gray-400 text-xs line-through">Antes 20 900 €</p>
-                                    <p class="text-3xl font-black text-gray-900">18 900 €</p>
-                                    <p class="text-orange-500 text-sm font-bold">PROMOÇÃO</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-xs text-gray-500">DESDE</p>
-                                    <p class="text-lg font-bold text-gray-900">250,67 €/MÊS</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute top-0 left-0 bg-gray-700 text-white text-xs px-4 py-1 rounded-br-lg rotate-[-45deg] origin-top-left -translate-x-1/4 -translate-y-1/4">CAIXA AUT.</div>
-                    </div>
-
-                </div>
 
                 <button onclick="document.getElementById('carousel').scrollBy({left: 300, behavior: 'smooth'})" 
                         class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
