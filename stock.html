@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Completo | Guimacar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+    
+    <nav class="bg-white shadow-sm p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html" class="text-2xl font-black tracking-tighter">GUIMA<span class="text-blue-900">CAR</span></a>
+            <a href="index.html" class="text-gray-500 hover:text-blue-900 font-bold transition text-sm uppercase tracking-widest">
+                <i class="fas fa-arrow-left mr-2"></i> Voltar
+            </a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-6">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-black text-slate-900 tracking-tight">Stock Completo</h1>
+            <div class="h-1 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Os cards serão gerados por JavaScript -->
+        </div>
+    </main>
+
+    <script src="carros.js"></script>
+    <script>
+        const gridCarros = document.getElementById('grid-carros');
+
+        stockGuimacar.forEach(carro => {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105';
+            
+            card.innerHTML = `
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${carro.fotos[0]}" class="w-full h-full object-cover" alt="${carro.marca}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase">Stock</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-gray-900 mb-1">${carro.marca}</h3>
+                    <p class="text-gray-600 text-sm mb-4">${carro.modelo}</p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p><i class="fas fa-calendar-alt mr-2"></i>${carro.mes}</p>
+                            <p><i class="fas fa-road mr-2"></i>${carro.kms} km</p>
+                            <p><i class="fas fa-gas-pump mr-2"></i>${carro.combustivel}</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-black text-blue-900">${carro.preco}</p>
+                    </div>
+                </div>
+            `;
+
+            card.onclick = function() {
+                window.location.href = `detalhes.html?id=${carro.id}`;
+            };
+
+            gridCarros.appendChild(card);
+        });
+    </script>
+
+    <footer class="bg-white py-10 mt-20 border-t border-gray-100 text-center text-gray-400 text-xs">
+        <p>© 2026 GUIMACAR - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
