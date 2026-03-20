@@ -18,10 +18,10 @@ const stockGuimacar = [
     },
     {
         id: 2,
-        marca: "Audi",
-        modelo: "A3 Cabrio",
-        preco: "15.000 €",
-        mes: "Jun. 2012",
+        marca: "Citroen Berlingo",
+        modelo: "1.6 HDI Longa",
+        preco: "10.250 €",
+        mes: "2018",
         kms: "134.000",
         combustivel: "Gasóleo",
         fotos: [
@@ -33,11 +33,11 @@ const stockGuimacar = [
     },
     {
         id: 3,
-        marca: "Audi",
-        modelo: "A3 Cabrio",
-        preco: "15.000 €",
-        mes: "Jun. 2012",
-        kms: "134.000",
+        marca: "Citroen C3",
+        modelo: "1.2",
+        preco: "10.999 €",
+        mes: "2015",
+        kms: "110.000",
         combustivel: "Gasóleo",
         fotos: [
             "img/carro3/1.jpg",

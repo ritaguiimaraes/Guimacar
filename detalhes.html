@@ -9,6 +9,23 @@
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
 
+    <!-- Loader/Splash Screen -->
+    <div id="loader" class="fixed inset-0 bg-slate-950 z-[9999] flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="mb-8">
+                <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-blue-900 font-black">CAR</span>
+                </h1>
+            </div>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+            <p class="text-gray-400 mt-6 text-sm uppercase tracking-wider">A carregar...</p>
+        </div>
+    </div>
+
     <nav class="bg-white shadow-sm p-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <a href="index.html" class="text-2xl font-black tracking-tighter">GUIMA<span class="text-blue-900">CAR</span></a>
@@ -93,6 +110,9 @@
             document.getElementById('sub-nome').innerText = carro.modelo;
             document.getElementById('preco-carro').innerText = carro.preco;
 
+            // Atualiza o título da página com o nome do carro
+            document.title = `${carro.marca} ${carro.modelo} | Guimacar`;
+
             // Preenche a Foto Principal
             const fotoPrincipal = document.getElementById('foto-principal');
             fotoPrincipal.src = carro.fotos[0];
@@ -118,6 +138,21 @@
             console.log('IDs disponíveis:', stockGuimacar.map(c => c.id));
         }
     </script>
+
+    <script>
+        // Controlo do Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+
     <footer class="bg-white py-10 mt-20 border-t border-gray-100 text-center text-gray-400 text-xs">
         <p> 2026 GUIMACAR - Todos os direitos reservados</p>
     </footer>

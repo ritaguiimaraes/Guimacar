@@ -7,12 +7,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-slate-900 font-sans text-gray-100">
     
-    <nav class="bg-white shadow-sm p-4 sticky top-0 z-50">
+    <!-- Loader/Splash Screen -->
+    <div id="loader" class="fixed inset-0 bg-slate-950 z-[9999] flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="mb-8">
+                <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-blue-900 font-black">CAR</span>
+                </h1>
+            </div>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+            <p class="text-gray-400 mt-6 text-sm uppercase tracking-wider">A carregar...</p>
+        </div>
+    </div>
+    
+    <nav class="bg-gray-100 shadow-sm p-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
-            <a href="index.html" class="text-2xl font-black tracking-tighter">GUIMA<span class="text-blue-900">CAR</span></a>
-            <a href="index.html" class="text-gray-500 hover:text-blue-900 font-bold transition text-sm uppercase tracking-widest">
+            <a href="index.html" class="text-2xl font-black tracking-tighter">
+                <span class="text-gray-900">GUIMA</span><span class="text-blue-900">CAR</span>
+            </a>
+            <a href="index.html" class="text-gray-700 hover:text-blue-600 font-bold transition text-sm uppercase tracking-widest">
                 <i class="fas fa-arrow-left mr-2"></i> Voltar
             </a>
         </div>
@@ -20,8 +39,8 @@
 
     <main class="container mx-auto py-12 px-6">
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-black text-slate-900 tracking-tight">Stock Completo</h1>
-            <div class="h-1 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <h1 class="text-4xl font-black text-white tracking-tight italic uppercase">Stock Completo</h1>
+            <div class="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -35,7 +54,7 @@
 
         stockGuimacar.forEach(carro => {
             const card = document.createElement('div');
-            card.className = 'bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105';
+            card.className = 'bg-slate-800 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 border border-slate-700';
             
             card.innerHTML = `
                 <div class="relative h-48 overflow-hidden">
@@ -46,17 +65,17 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-black text-gray-900 mb-1">${carro.marca}</h3>
-                    <p class="text-gray-600 text-sm mb-4">${carro.modelo}</p>
+                    <h3 class="text-2xl font-black text-white mb-1">${carro.marca}</h3>
+                    <p class="text-gray-300 text-sm mb-4">${carro.modelo}</p>
                     <div class="flex items-center justify-between mb-4">
-                        <div class="text-sm text-gray-500 space-y-1">
-                            <p><i class="fas fa-calendar-alt mr-2"></i>${carro.mes}</p>
-                            <p><i class="fas fa-road mr-2"></i>${carro.kms} km</p>
-                            <p><i class="fas fa-gas-pump mr-2"></i>${carro.combustivel}</p>
+                        <div class="text-sm text-gray-400 space-y-1">
+                            <p><i class="fas fa-calendar-alt mr-2 text-blue-600"></i>${carro.mes}</p>
+                            <p><i class="fas fa-road mr-2 text-blue-600"></i>${carro.kms} km</p>
+                            <p><i class="fas fa-gas-pump mr-2 text-blue-600"></i>${carro.combustivel}</p>
                         </div>
                     </div>
                     <div class="text-center">
-                        <p class="text-3xl font-black text-blue-900">${carro.preco}</p>
+                        <p class="text-3xl font-black text-blue-600">${carro.preco}</p>
                     </div>
                 </div>
             `;
@@ -69,8 +88,24 @@
         });
     </script>
 
-    <footer class="bg-white py-10 mt-20 border-t border-gray-100 text-center text-gray-400 text-xs">
-        <p>© 2026 GUIMACAR - Todos os direitos reservados</p>
+    <script>
+        // Controlo do Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-10">
+        <div class="text-center text-gray-500 text-sm">
+            <p>© 2026 GUIMACAR - Todos os direitos reservados</p>
+        </div>
     </footer>
 </body>
 </html>
