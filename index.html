@@ -10,9 +10,25 @@
         .zoom-effect { animation: zoom 20s infinite alternate; }
         @keyframes zoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
         html { scroll-behavior: smooth; }
+        
+        /* Animação do carrossel contínuo */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-2520px); } /* 6 cards * 420px */
+        }
+        
+        .carousel-container {
+            animation: scroll 20s linear infinite;
+            display: flex;
+            width: fit-content;
+        }
+        
+        .carousel-container:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
-<body class="bg-slate-900 font-sans text-gray-100 overflow-x-hidden">
+<body class="bg-slate-900 font-sans text-gray-100">
     <div id="sidebar" class="fixed inset-y-0 right-0 w-80 bg-slate-900 shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="p-8 flex flex-col h-full text-white">
             <button id="close-menu" class="self-end text-2xl mb-12 hover:text-blue-500 transition">
@@ -21,7 +37,7 @@
 
             <nav class="flex flex-col space-y-8 text-xl font-bold">
                 <a href="index.html" class="hover:text-blue-500 transition">Início</a>
-                <a href="stock.html" class="hover:text-blue-500 transition">Stock Completo</a>
+                <a href="stock.html" class="hover:text-blue-500 transition">Viaturas Disponíveis</a>
                 <a href="contacto.html" class="hover:text-blue-500 transition">Contactos</a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="hover:text-blue-400 text-blue-500 transition">Facebook</a>
             </nav>
@@ -61,7 +77,7 @@
                     <span class="text-gray-900">GUIMA</span><span class="text-blue-900">CAR</span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#stock" class="text-gray-700 hover:text-blue-600 font-semibold transition">Stock</a>
+                    <a href="stock.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Viaturas</a>
                     <a href="#contacto" class="text-gray-700 hover:text-blue-600 font-semibold transition">Contactos</a>
                     <a href="https://www.facebook.com/guimacar" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold transition">
                         <i class="fab fa-facebook-f"></i>
@@ -92,7 +108,7 @@
             Comércio de Automóveis Semi-novos e Usados
         </p>
         <a href="stock.html" class="bg-blue-900 hover:bg-blue-800 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105 inline-block">
-            Ver Viaturas Disponíveis<i class="fas fa-arrow-right ml-2 text-sm opacity-80"></i>
+            Viaturas Disponíveis<i class="fas fa-arrow-right ml-2 text-sm opacity-80"></i>
         </a>
     </div>
         <!-- Botão de menu móvel -->
@@ -111,7 +127,7 @@
             </a>
         </div>
     </section>
-    <!--Carros-->
+    <!--CARROS DESTACADOS-->
     <section id="stock" class="container mx-auto py-20 px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Destaques</h2>
@@ -124,8 +140,10 @@
                         class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
                     <i class="fas fa-chevron-left text-gray-900"></i>
                 </button>
-                <!--carrossel-->
-                <div id="carousel" class="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-start px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <!--DESTAQUES-->
+                <div class="relative overflow-hidden">
+                    <div id="carousel" class="carousel-container flex gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-start px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Cards originais -->
                     <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <!--carro1-->
@@ -217,6 +235,145 @@
                             </div>
                         </div>
                     </a>
+                    <!--carro 4-->
+                    <a href="detalhes.html?id=4" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-white leading-tight">Renault Megane</h3>
+                            <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro5-->
+                    <a href="detalhes.html?id=5" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-white leading-tight">Renault Megane</h3>
+                            <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro6-->
+                    <a href="detalhes.html?id=6" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                        <div class="p-3">
+                            <!--carro1-->
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-white leading-tight">Renault Megane</h3>
+                            <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Clones dos primeiros cards para loop contínuo -->
+                    <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-white leading-tight">Renault Megane</h3>
+                            <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="detalhes.html?id=2" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 89 000 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-white leading-tight">Citroen Berlingo</h3>
+                            <p class="text-gray-300 text-sm mb-4 font-medium">1.6 Hdi Longa</p>
+                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-blue-600">10250 €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 </div>
                 <button onclick="document.getElementById('carousel').scrollBy({left: 300, behavior: 'smooth'})" 
                         class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
@@ -227,7 +384,7 @@
 
         <div class="text-center mt-16">
             <a href="stock.html" class="inline-block bg-blue-600 text-white px-12 py-4 rounded-full font-black hover:bg-blue-700 transition shadow-xl">
-                VER STOCK COMPLETO
+                VER MAIS
             </a>
         </div>
     </section>
@@ -319,45 +476,6 @@
             }, 1000); // 1 segundo de delay mínimo
         });
 
-        // Auto-scroll do carrossel mais suave
-        const carousel = document.getElementById('carousel');
-        let scrollAmount = 0;
-        let isPaused = false;
-        let targetScroll = 0;
-        let currentScroll = 0;
-
-        function smoothScroll() {
-            if (!isPaused) {
-                // Avançar para o próximo card
-                targetScroll += 300; // Largura aproximada de cada card + gap
-                
-                // Se chegar ao fim, volta ao início
-                if (targetScroll >= carousel.scrollWidth - carousel.clientWidth) {
-                    targetScroll = 0;
-                }
-                
-                // Aplica scroll suave
-                carousel.scrollTo({
-                    left: targetScroll,
-                    behavior: 'smooth'
-                });
-                
-                scrollAmount = targetScroll;
-            }
-        }
-
-        // Pausar quando o utilizador interage
-        carousel.addEventListener('mouseenter', () => isPaused = true);
-        carousel.addEventListener('mouseleave', () => isPaused = false);
-        
-        // Pausar quando toca nos botões
-        document.querySelectorAll('button[onclick*="carousel"]').forEach(btn => {
-            btn.addEventListener('mouseenter', () => isPaused = true);
-            btn.addEventListener('mouseleave', () => isPaused = false);
-        });
-
-        // Mudar para o próximo card a cada 3 segundos
-        setInterval(smoothScroll, 3000);
-    </script>
+        </script>
 </body>
 </html>
