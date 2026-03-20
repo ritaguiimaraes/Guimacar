@@ -63,8 +63,13 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10"></div>
 
     <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
+        <!--
         <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 drop-shadow-lg">
             GUIMA<span class="text-blue-900">CAR</span>
+        </h1>
+        -->
+        <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight mb-4 drop-shadow-2xl uppercase italic">
+            GUIMA<span class="text-blue-900 font-black">CAR</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl font-light drop-shadow-md">
             Comércio de Automóveis Semi-novos e Usados
@@ -104,16 +109,16 @@
                 </button>
                 <!--carrossel-->
                 <div id="carousel" class="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-start px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700">
+                    <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <!--carro1-->
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                     <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
-                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i>2018</span>
-                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
-                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 176 307 km</span>
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
                                     </div>
                                 </div>
                             </div>
@@ -123,28 +128,27 @@
                             <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
                             <div class="flex items-end justify-between border-t border-gray-50 pt-4">
                                 <div>
-                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 16 900 €</p>
                                     <p class="text-3xl font-black text-blue-600">15 900 €</p>
-                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
                                 </div>
-                                <div class="text-right">
+                               <!-- <div class="text-right">
                                     <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
                                     <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
                                     <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!--carro2-->
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700">
+                    <a href="detalhes.html?id=2" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block" id="carro2">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                     <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
-                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i> 2018</span>
-                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
-                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 89 000 km</span>
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 89 000 km</span>
                                     </div>
                                 </div>
                             </div>
@@ -154,28 +158,27 @@
                             <p class="text-gray-300 text-sm mb-4 font-medium">1.6 Hdi Longa</p>
                             <div class="flex items-end justify-between border-t border-gray-50 pt-4">
                                 <div>
-                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 10500 €</p>
                                     <p class="text-3xl font-black text-blue-600">10250 €</p>
-                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
                                 </div>
-                                <div class="text-right">
+                              <!--  <div class="text-right">
                                     <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
                                     <p class="text-lg font-black text-gray-900 leading-none">298,45€</p>
                                     <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!--carro3-->
-                    <div class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700">
+                    <a href="detalhes.html?id=3" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro3/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                     <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
-                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-400"></i> 2015</span>
-                                        <span><i class="fas fa-gas-pump mr-1 text-blue-400"></i> Gasóleo</span>
-                                        <span><i class="fas fa-road mr-1 text-blue-400"></i> 110 000 km</span>
+                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2015</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 110 000 km</span>
                                     </div>
                                 </div>
                             </div>
@@ -185,22 +188,19 @@
                             <p class="text-gray-300 text-sm mb-4 font-medium">1.2</p>
                             <div class="flex items-end justify-between border-t border-gray-50 pt-4">
                                 <div>
-                                    <p class="text-gray-400 text-xs line-through mb-1">Antes 11000 €</p>
+                                    <!--<p class="text-gray-400 text-xs line-through mb-1">Antes 11000 €</p>-->
                                     <p class="text-3xl font-black text-blue-600">10999 €</p>
-                                    <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>
+                                   <!-- <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
                                 </div>
-                                <div class="text-right">
+                                <!--<div class="text-right">
                                     <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
                                     <p class="text-lg font-black text-gray-900 leading-none">250,67€</p>
                                     <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
-                    </div>
-                    
-
-                    </div>
-
+                    </a>
+                </div>
                 <button onclick="document.getElementById('carousel').scrollBy({left: 300, behavior: 'smooth'})" 
                         class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
                     <i class="fas fa-chevron-right text-gray-900"></i>
@@ -209,7 +209,7 @@
         </div>
 
         <div class="text-center mt-16">
-            <a href="stock.html" class="inline-block bg-slate-900 text-white px-12 py-4 rounded-full font-black hover:bg-blue-600 transition shadow-xl">
+            <a href="stock.html" class="inline-block bg-blue-600 text-white px-12 py-4 rounded-full font-black hover:bg-blue-700 transition shadow-xl">
                 VER STOCK COMPLETO
             </a>
         </div>
@@ -218,7 +218,7 @@
     <!-- Contactos -->
     <section id="contacto" class="container mx-auto py-20 px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-slate-900 tracking-tight">Contactos</h2>
+            <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Contactos</h2>
             <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
 
@@ -279,12 +279,54 @@
 
         </div>
     </section>
-    <footer class="bg-white border-t border-gray-200 py-10">
+    <!--footer-->
+    <footer class="bg-gray-100 border-t border-gray-200 py-10">
         <div class="text-center text-gray-500 text-sm">
             <p> 2026 GUIMACAR - Fafe</p>
         </div>
     </footer>
     
     <script src="script.js"></script>
+    <script>
+        // Auto-scroll do carrossel mais suave
+        const carousel = document.getElementById('carousel');
+        let scrollAmount = 0;
+        let isPaused = false;
+        let targetScroll = 0;
+        let currentScroll = 0;
+
+        function smoothScroll() {
+            if (!isPaused) {
+                // Avançar para o próximo card
+                targetScroll += 300; // Largura aproximada de cada card + gap
+                
+                // Se chegar ao fim, volta ao início
+                if (targetScroll >= carousel.scrollWidth - carousel.clientWidth) {
+                    targetScroll = 0;
+                }
+                
+                // Aplica scroll suave
+                carousel.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+                
+                scrollAmount = targetScroll;
+            }
+        }
+
+        // Pausar quando o utilizador interage
+        carousel.addEventListener('mouseenter', () => isPaused = true);
+        carousel.addEventListener('mouseleave', () => isPaused = false);
+        
+        // Pausar quando toca nos botões
+        document.querySelectorAll('button[onclick*="carousel"]').forEach(btn => {
+            btn.addEventListener('mouseenter', () => isPaused = true);
+            btn.addEventListener('mouseleave', () => isPaused = false);
+        });
+
+        // Mudar para o próximo card a cada 3 segundos
+        setInterval(smoothScroll, 3000);
+    </script>
 </body>
 </html>
