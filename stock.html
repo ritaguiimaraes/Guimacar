@@ -45,20 +45,20 @@
         <!--FILTROS-->
         <div class="flex flex-col gap-8">
             <!-- Barra de filtros horizontal -->
-            <div class="bg-gradient-to-r from-slate-800 via-slate-750 to-slate-800 rounded-[2rem] p-6 border border-slate-600 shadow-xl">
+            <div class="max-w-[1200px] mx-auto bg-gradient-to-r from-slate-800 via-slate-750 to-slate-800 rounded-[2rem] p-6 border border-slate-600 shadow-xl mb-8">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                    <h3 class="text-xl font-black text-white">Filtros</h3>
+                    <h3 class="text-xl font-black text-white italic">Filtros</h3>
                     <div class="flex items-center gap-4">
-                        <span class="text-gray-300 text-sm font-medium">
-                            <span id="results-count">12</span> carros encontrados
+                        <span class="text-gray-300 text-sm font-medium uppercase tracking-tighter">
+                            <span id="results-count" class="text-blue-400 font-bold">12</span> viaturas encontradas
                         </span>
-                        <button id="clear-filters" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-xl font-bold transition text-sm shadow-lg">
-                            <i class="fas fa-times mr-2"></i> Limpar
+                        <button id="clear-filters" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-bold transition text-xs uppercase tracking-widest shadow-lg">
+                            <i class="fas fa-redo-alt mr-2"></i> Limpar
                         </button>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <!-- Filtro de Combustível -->
                     <div>
                         <label class="block text-sm font-bold text-blue-400 mb-2 uppercase tracking-wider">Combustível</label>
@@ -109,14 +109,14 @@
             </div>
 
             <!-- Grid de carros -->
-            <div>
-                <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- Os cards serão gerados por JavaScript -->
                 </div>
-
-                <!-- Paginação -->
-                <div id="pagination"></div>
             </div>
+
+            <!-- Paginação -->
+            <div id="pagination"></div>
         </div>
     </main>
 
@@ -271,30 +271,28 @@
             
             carsToShow.forEach(carro => {
                 const card = document.createElement('div');
-                card.className = 'bg-slate-800 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 border border-slate-700';
+                card.className = 'bg-slate-800 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 border border-slate-700 w-full max-w-[460px]';
                 
                 card.innerHTML = `
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca}">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        <!--
-                        <div class="absolute bottom-0 left-0 right-0 p-4">
-                            <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase">Stock</span>
-                        </div>
-                        -->
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-black text-white mb-1">${carro.marca}</h3>
-                        <p class="text-gray-300 text-sm mb-4">${carro.modelo}</p>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="text-sm text-gray-400 space-y-1">
-                                <p><i class="fas fa-calendar-alt mr-2 text-blue-600"></i>${carro.mes}</p>
-                                <p><i class="fas fa-road mr-2 text-blue-600"></i>${carro.kms} km</p>
-                                <p><i class="fas fa-gas-pump mr-2 text-blue-600"></i>${carro.combustivel}</p>
+                    <div class="p-3">
+                        <div class="relative h-60 w-full overflow-hidden rounded-2xl shadow-sm">
+                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca}">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>${extractYear(carro.mes)}</span>
+                                    <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i>${carro.combustivel}</span>
+                                    <span><i class="fas fa-road mr-1 text-blue-600"></i>${carro.kms}</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <p class="text-3xl font-black text-blue-600">${carro.preco}</p>
+                    </div>
+                    <div class="px-6 py-2">
+                        <h3 class="text-2xl font-black text-white leading-tight">${carro.marca}</h3>
+                        <p class="text-gray-300 text-sm mb-4 font-medium">${carro.modelo}</p>
+                        <div class="flex items-end justify-between border-t border-gray-50 pt-4">
+                            <div>
+                                <p class="text-3xl font-black text-blue-600">${carro.preco}</p>
+                            </div>
                         </div>
                     </div>
                 `;

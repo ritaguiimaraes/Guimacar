@@ -98,15 +98,48 @@
             </div>
         </div>
     </main>
+
+    <!-- Modal para ver fotos em grande -->
+    <div id="modal-fotos" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4">
+        <div class="relative max-w-6xl max-h-[90vh] flex items-center">
+            <!-- Botão fechar -->
+            <button onclick="fecharModal()" class="absolute -top-12 right-0 text-white hover:text-blue-400 transition text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Foto grande -->
+            <img id="foto-modal" src="" class="max-w-full max-h-[80vh] object-contain rounded-2xl" alt="Foto ampliada">
+            
+            <!-- Navegação -->
+            <button onclick="fotoAnterior()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button onclick="proximaFoto()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            
+            <!-- Contador -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
+                <span id="contador-fotos">1 / 5</span>
+            </div>
+        </div>
+    </div>
+
     <script src="carros.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const idCarro = urlParams.get('id');
         const carro = stockGuimacar.find(c => c.id == idCarro);
 
+        // Variáveis para o modal
+        let fotoAtual = 0;
+        let totalFotos = 0;
+
         if (carro) {
             console.log('Carro encontrado:', carro);
             console.log('Fotos disponíveis:', carro.fotos);
+            totalFotos = carro.fotos.length;
+            
             // Preenche os textos
             document.getElementById('nome-carro').innerText = carro.marca;
             document.getElementById('sub-nome').innerText = carro.modelo;
@@ -118,6 +151,12 @@
             // Preenche a Foto Principal
             const fotoPrincipal = document.getElementById('foto-principal');
             fotoPrincipal.src = carro.fotos[0];
+
+            // Adiciona evento de clique para abrir modal
+            fotoPrincipal.style.cursor = 'pointer';
+            fotoPrincipal.onclick = function() {
+                abrirModal(0);
+            };
 
             // Cria as Miniaturas na div "galeria-miniaturas"
             const contentorMiniaturas = document.getElementById('galeria-miniaturas');
@@ -131,6 +170,7 @@
                 
                 imgMini.onclick = function() {
                     fotoPrincipal.src = this.src;
+                    abrirModal(index);
                 };
                 
                 contentorMiniaturas.appendChild(imgMini);
@@ -139,6 +179,64 @@
             console.log('Carro não encontrado para o ID:', idCarro);
             console.log('IDs disponíveis:', stockGuimacar.map(c => c.id));
         }
+
+        // Funções do Modal
+        function abrirModal(index) {
+            fotoAtual = index;
+            const modal = document.getElementById('modal-fotos');
+            const fotoModal = document.getElementById('foto-modal');
+            const contador = document.getElementById('contador-fotos');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            fotoModal.src = carro.fotos[index];
+            contador.textContent = `${index + 1} / ${totalFotos}`;
+            
+            // Prevene scroll do body
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModal() {
+            const modal = document.getElementById('modal-fotos');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            
+            // Restaura scroll do body
+            document.body.style.overflow = 'auto';
+        }
+
+        function proximaFoto() {
+            fotoAtual = (fotoAtual + 1) % totalFotos;
+            atualizarFotoModal();
+        }
+
+        function fotoAnterior() {
+            fotoAtual = (fotoAtual - 1 + totalFotos) % totalFotos;
+            atualizarFotoModal();
+        }
+
+        function atualizarFotoModal() {
+            document.getElementById('foto-modal').src = carro.fotos[fotoAtual];
+            document.getElementById('contador-fotos').textContent = `${fotoAtual + 1} / ${totalFotos}`;
+        }
+
+        // Fecha modal com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                fecharModal();
+            } else if (e.key === 'ArrowRight') {
+                proximaFoto();
+            } else if (e.key === 'ArrowLeft') {
+                fotoAnterior();
+            }
+        });
+
+        // Fecha modal clicando fora
+        document.getElementById('modal-fotos').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModal();
+            }
+        });
     </script>
 
     <script>
