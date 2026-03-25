@@ -74,20 +74,28 @@
     </div>
 
     <!-- Header Fixo (aparece após scroll) -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 bg-gray-100 shadow-sm z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08);">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-black tracking-tighter">
-                    <span class="text-gray-900">GUIMA</span><span class="text-blue-900">CAR</span>
+                    <span class="text-white">GUIMA</span><span class="text-blue-500">CAR</span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="stock.html" class="text-gray-700 hover:text-blue-600 font-semibold transition">Viaturas</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 font-semibold transition">Contactos</a>
-                    <a href="https://www.facebook.com/guimacar" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold transition">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="stock.html" class="text-gray-300 hover:text-white font-semibold transition relative group">
+                        Viaturas
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contacto" class="text-gray-300 hover:text-white font-semibold transition relative group">
+                        Contactos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank" 
+                    class="bg-blue-600 hover:bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full transition">
+                        <i class="fab fa-facebook-f text-sm"></i>
                     </a>
                 </nav>
-                <button id="open-menu-header" class="md:hidden bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-lg transition">
+                <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
                     <i class="fas fa-bars text-lg"></i>
                 </button>
             </div>
@@ -97,7 +105,7 @@
     <!-- Navbar -->
     <section class="relative h-screen w-full overflow-hidden bg-slate-950">
         <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover opacity-90 zoom-effect">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
 
     <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
         <!--
@@ -106,12 +114,12 @@
         </h1>
         -->
         <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight mb-4 drop-shadow-2xl uppercase italic">
-            GUIMA<span class="text-blue-900 font-black">CAR</span>
+            GUIMA<span class="text-blue-500 font-black">CAR</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl font-light drop-shadow-md">
             Comércio de Automóveis Semi-novos e Usados
         </p>
-        <a href="stock.html" class="bg-blue-900 hover:bg-blue-800 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105 inline-block">
+        <a href="stock.html" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105 inline-block">
             Viaturas Disponíveis<i class="fas fa-arrow-right ml-2 text-sm opacity-80"></i>
         </a>
     </div>
@@ -341,7 +349,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="stock.html" class="inline-block bg-blue-900 text-white px-12 py-4 rounded-full font-black hover:bg-blue-700 transition shadow-xl">
+            <a href="stock.html" class="inline-block bg-blue-500 text-white px-12 py-4 rounded-full font-black hover:bg-blue-600 transition shadow-xl">
                 VER MAIS
             </a>
         </div>
@@ -358,7 +366,7 @@
             
             <div class="bg-gray-100  p-8 rounded-3xl shadow-sm border border-slate-700 space-y-8">
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black text-blue-600">Guimacar</h3>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black">Guimacar</h3>
                     <p class="text-gray-500 font-bold text-sm uppercase mb-4 tracking-widest">Comércio de Automóveis</p>
                     <div class="space-y-1 text-gray-700">
                         <p class="font-bold text-slate-800 uppercase italic">Morada</p>
@@ -390,7 +398,7 @@
                         <div>
                             <p class="text-xs text-gray-500 uppercase font-bold text-slate-700">Horário de Funcionamento</p>
                             <div class="text-sm text-slate-800 mt-1 space-y-1">
-                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:30</p>
+                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:00</p>
                                 <p><span class="font-bold">Domingo:</span> Encerrado</p>
                             </div>
                         </div>
