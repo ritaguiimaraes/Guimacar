@@ -44,3 +44,24 @@ if (overlay) overlay.addEventListener('click', toggleMenu);
 if (openMenuHeader) openMenuHeader.addEventListener('click', toggleMenu);
 
 window.addEventListener('scroll', handleScroll, { passive: true });
+
+
+const header = document.getElementById('main-header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < 100) {
+        // No topo da página — esconde sempre
+        header.style.transform = 'translateY(-100%)';
+    } else if (currentScrollY < lastScrollY) {
+        // A fazer scroll para cima — mostra
+        header.style.transform = 'translateY(0)';
+    } else {
+        // A fazer scroll para baixo — esconde
+        header.style.transform = 'translateY(-100%)';
+    }
+
+    lastScrollY = currentScrollY;
+});

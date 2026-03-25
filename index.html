@@ -7,28 +7,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .zoom-effect { animation: zoom 20s infinite alternate; }
-        @keyframes zoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-        html { scroll-behavior: smooth; }
-        
-        /* Animação do carrossel contínuo */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-2520px); } /* 6 cards * 420px */
-        }
-        
         .carousel-container {
-            animation: scroll 20s linear infinite;
             display: flex;
-            width: fit-content;
+            will-change: transform;
         }
-        
-        .carousel-container:hover {
-            animation-play-state: paused;
+
+
+                /* Barra de scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a; /* cor do fundo — igual ao bg-slate-900 da página */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a; /* azul escuro — igual ao blue-900 */
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1d4ed8; /* azul mais claro no hover — blue-700 */
         }
     </style>
 </head>
-<body class="bg-slate-900 font-sans text-gray-100">
+<body class="bg-slate-900 font-sans text-gray-100">  <!--cor fundo da página-->
     <div id="sidebar" class="fixed inset-y-0 right-0 w-80 bg-slate-900 shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="p-8 flex flex-col h-full text-white">
             <button id="close-menu" class="self-end text-2xl mb-12 hover:text-blue-500 transition">
@@ -92,7 +96,7 @@
 
     <!-- Navbar -->
     <section class="relative h-screen w-full overflow-hidden bg-slate-950">
-        <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover opacity-50 zoom-effect">
+        <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover opacity-90 zoom-effect">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10"></div>
 
     <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
@@ -131,26 +135,26 @@
     <section id="stock" class="container mx-auto py-20 px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Destaques</h2>
-            <div class="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <div class="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>  <!--barra colorida a baixo da palavra DESTAQUES-->
         </div>
         
         <div class="flex justify-center">
-            <div class="relative group w-full max-w-6xl">
+            <div class="relative group w-full" style="max-width: 1250px;">
                 <button onclick="document.getElementById('carousel').scrollBy({left: -300, behavior: 'smooth'})" 
-                        class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                        class="absolute left-[-50px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
                     <i class="fas fa-chevron-left text-gray-900"></i>
                 </button>
                 <!--DESTAQUES-->
-                <div class="relative overflow-hidden">
-                    <div id="carousel" class="carousel-container flex gap-8 pb-12 snap-x snap-mandatory scrollbar-hide justify-start px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <div class="relative overflow-hidden" id="carousel-wrapper">
+                    <div class="carousel-container flex gap-8 pb-12 px-4" id="carousel">
                     <!-- Cards originais -->
-                    <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                    <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <!--carro1-->
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
@@ -175,12 +179,12 @@
                         </div>
                     </a>
                     <!--carro2-->
-                    <a href="detalhes.html?id=2" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block" id="carro2">
+                    <a href="detalhes.html?id=2" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block" id="carro2">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2018</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 89 000 km</span>
@@ -205,12 +209,12 @@
                         </div>
                     </a>
                     <!--carro3-->
-                    <a href="detalhes.html?id=3" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                    <a href="detalhes.html?id=3" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro3/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2015</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 110 000 km</span>
@@ -236,12 +240,12 @@
                         </div>
                     </a>
                     <!--carro 4-->
-                    <a href="detalhes.html?id=4" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                    <a href="detalhes.html?id=4" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
@@ -266,12 +270,12 @@
                         </div>
                     </a>
                     <!--carro5-->
-                    <a href="detalhes.html?id=5" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                    <a href="detalhes.html?id=5" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
@@ -296,13 +300,13 @@
                         </div>
                     </a>
                     <!--carro6-->
-                    <a href="detalhes.html?id=6" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
+                    <a href="detalhes.html?id=6" class="min-w-[300px] md:min-w-[380px] snap-center bg-gray-700 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
                         <div class="p-3">
                             <!--carro1-->
                             <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
                                 <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
                                         <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
                                         <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
                                         <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
@@ -325,65 +329,19 @@
                                 </div>-->
                             </div>
                         </div>
-                    </a>
-                    <!-- Clones dos primeiros cards para loop contínuo -->
-                    <a href="detalhes.html?id=1" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
-                        <div class="p-3">
-                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
-                                <img src="img/carro1/1.jpg" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
-                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i>2018</span>
-                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
-                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 176 307 km</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-6 py-2">
-                            <h3 class="text-2xl font-black text-white leading-tight">Renault Megane</h3>
-                            <p class="text-gray-300 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
-                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
-                                <div>
-                                    <p class="text-3xl font-black text-blue-600">15 900 €</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalhes.html?id=2" class="min-w-[300px] md:min-w-[380px] snap-center bg-slate-800 rounded-[2rem] shadow-lg relative transition-all duration-300 pb-4 border border-slate-700 hover:scale-105 cursor-pointer block">
-                        <div class="p-3">
-                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
-                                <img src="img/carro2/1.jpg" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
-                                        <span><i class="fas fa-calendar-alt mr-1 text-blue-600"></i> 2018</span>
-                                        <span><i class="fas fa-gas-pump mr-1 text-blue-600"></i> Gasóleo</span>
-                                        <span><i class="fas fa-road mr-1 text-blue-600"></i> 89 000 km</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-6 py-2">
-                            <h3 class="text-2xl font-black text-white leading-tight">Citroen Berlingo</h3>
-                            <p class="text-gray-300 text-sm mb-4 font-medium">1.6 Hdi Longa</p>
-                            <div class="flex items-end justify-between border-t border-gray-50 pt-4">
-                                <div>
-                                    <p class="text-3xl font-black text-blue-600">10250 €</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    </a>    
                 </div>
                 </div>
+                <!--BOTAO DA ESQUERDA DO CARROSSEL-->
                 <button onclick="document.getElementById('carousel').scrollBy({left: 300, behavior: 'smooth'})" 
-                        class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                        class="absolute right-[-30px] top-1/2 -translate-y-1/2 z-40 bg-white shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
                     <i class="fas fa-chevron-right text-gray-900"></i>
                 </button>
             </div>
         </div>
 
-        <div class="text-center mt-16">
-            <a href="stock.html" class="inline-block bg-blue-600 text-white px-12 py-4 rounded-full font-black hover:bg-blue-700 transition shadow-xl">
+        <div class="text-center mt-5">
+            <a href="stock.html" class="inline-block bg-blue-900 text-white px-12 py-4 rounded-full font-black hover:bg-blue-700 transition shadow-xl">
                 VER MAIS
             </a>
         </div>
@@ -411,9 +369,9 @@
 
                 <div class="space-y-4 pt-6 border-t border-gray-100">
                     <div class="flex items-center space-x-4">
-                        <div class="bg-green-50 p-3 rounded-lg text-green-600"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fas fa-mobile-alt"></i></div>
                         <div>
-                            <p class="text-xs text-gray-500 uppercase font-bold text-green-700">Telemóvel</p>
+                            <p class="text-xs text-gray-500 uppercase font-bold text-slate-700">Telemóvel</p>
                             <p class="font-bold text-lg text-slate-900 font-black">965 083 452</p>
                         </div>
                     </div>
@@ -421,14 +379,14 @@
                     <div class="flex items-center space-x-4">
                         <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <p class="text-xs text-gray-500 uppercase font-bold text-blue-700">E-mail</p>
+                            <p class="text-xs text-gray-500 uppercase font-bold text-slate-700">E-mail</p>
                             <a href="mailto:guimacar96@gmail.com" class="font-bold text-lg text-slate-900 hover:text-blue-600 transition-colors">
                                 guimacar96@gmail.com
                             </a>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4 pt-4 border-t border-gray-100">
-                        <div class="bg-slate-100 p-3 rounded-lg text-slate-600"><i class="fas fa-clock"></i></div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-50 p-3 rounded-lg text-blue-600"><i class="fas fa-clock"></i></div>
                         <div>
                             <p class="text-xs text-gray-500 uppercase font-bold text-slate-700">Horário de Funcionamento</p>
                             <div class="text-sm text-slate-800 mt-1 space-y-1">
@@ -461,6 +419,109 @@
     </footer>
     
     <script src="script.js"></script>
+    <script>
+        (function() {
+            const track = document.getElementById('carousel');
+            if (!track) return;
+
+            const cards = Array.from(track.children);
+            const totalOriginal = cards.length;
+            const cardWidth = 380 + 32; // largura + gap
+
+            // Clona os cards (antes e depois) para loop suave
+            cards.forEach(card => {
+                track.appendChild(card.cloneNode(true));
+            });
+            cards.forEach(card => {
+                track.insertBefore(card.cloneNode(true), track.firstChild);
+            });
+
+            // Começa no "meio" (nos cards originais)
+            let currentIndex = totalOriginal;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            function goTo(index, animate) {
+                track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+                track.style.transform = `translateX(-${index * cardWidth}px)`;
+            }
+
+            function next() {
+                currentIndex++;
+                goTo(currentIndex, true);
+
+                setTimeout(() => {
+                    // Se passou dos originais, volta ao início silenciosamente
+                    if (currentIndex >= totalOriginal * 2) {
+                        currentIndex = totalOriginal;
+                        goTo(currentIndex, false);
+                    }
+                }, 650);
+            }
+
+            function prev() {
+                currentIndex--;
+                goTo(currentIndex, true);
+
+                setTimeout(() => {
+                    // Se foi antes do início, salta para o fim silenciosamente
+                    if (currentIndex < totalOriginal) {
+                        currentIndex = totalOriginal * 2 - 1;
+                        goTo(currentIndex, false);
+                    }
+                }, 650);
+            }
+
+            // Autoplay
+            let autoplayInterval = setInterval(next, 3000);
+
+            track.parentElement.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            track.parentElement.addEventListener('mouseleave', () => {
+                autoplayInterval = setInterval(next, 3000);
+            });
+
+            // Botões
+            const btnLeft = document.querySelector('[onclick*="scrollBy({left: -300"]');
+            const btnRight = document.querySelector('[onclick*="scrollBy({left: 300"]');
+
+            if (btnLeft) {
+                btnLeft.removeAttribute('onclick');
+                btnLeft.addEventListener('click', () => {
+                    clearInterval(autoplayInterval);
+                    prev();
+                    autoplayInterval = setInterval(next, 3000);
+                });
+            }
+            if (btnRight) {
+                btnRight.removeAttribute('onclick');
+                btnRight.addEventListener('click', () => {
+                    clearInterval(autoplayInterval);
+                    next();
+                    autoplayInterval = setInterval(next, 3000);
+                });
+            }
+        })();
+
+
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 100) {
+                // No topo da página — esconde sempre
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScrollY < lastScrollY) {
+                // A fazer scroll para cima — mostra
+                header.style.transform = 'translateY(0)';
+            } else {
+                // A fazer scroll para baixo — esconde
+                header.style.transform = 'translateY(-100%)';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
     <script>
         // Controlo do Loader
         window.addEventListener('load', function() {
