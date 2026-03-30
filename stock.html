@@ -109,6 +109,8 @@
             width: 0;
         }
 
+        html { scroll-behavior: smooth; }
+
         .reveal-card {
             animation: cardIn 0.7s ease-out both;
         }
@@ -121,12 +123,41 @@
     </style>
 </head>
 <body class="bg-black font-sans text-gray-100 overflow-hidden overflow-x-hidden">
-    
+    <!-- Menu Mobile Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-black tracking-tighter"><span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span></span>
+                <button id="close-menu" class="text-gray-400 hover:text-white transition p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="index.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
+                </a>
+                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fab fa-facebook-f text-orange-500 w-5"></i> Facebook
+                </a>
+            </nav>
+            <div class="mt-auto text-gray-500 text-sm">
+                <p>Seg–Sáb: 09:30–13:00</p>
+                <p>14:30–19:00</p>
+                <p class="mt-1">965 083 452</p>
+            </div>
+        </div>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
     <!-- Loader/Splash Screen -->
     <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
             <div class="mb-8">
-                <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
                     GUIMA<span class="text-orange-500 font-black">CAR</span>
                 </h1>
             </div>
@@ -144,9 +175,23 @@
                 <a href="index.html" class="text-2xl font-black tracking-tighter">
                     <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
                 </a>
-                <a href="index.html" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600">
-                <i class="fas fa-arrow-left text-xs"></i> Voltar
-            </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Página Inicial
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Contactos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank" 
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-105 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                        <i class="fab fa-facebook-f text-base"></i>
+                    </a>
+                </nav>
+                <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -166,7 +211,7 @@
                     <h3 class="text-2xl font-black text-slate-900 italic">Filtros</h3>
                     <div class="flex items-center gap-4">
                         <span class="text-slate-600 text-sm font-medium uppercase tracking-tighter">
-                            <span id="results-count" class="text-lime-500 font-bold">12</span> viaturas encontradas
+                            <span id="results-count" class="text-lime-500 font-bold">0</span> viaturas encontradas
                         </span>
                         <button id="clear-filters" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl font-bold transition text-xs uppercase tracking-widest shadow-lg">
                             <i class="fas fa-redo-alt mr-2"></i> Limpar
@@ -391,17 +436,28 @@
             const carsToShow = filteredCars.slice(startIndex, endIndex);
             
             gridCarros.innerHTML = '';
+
+            if (carsToShow.length === 0) {
+                gridCarros.innerHTML = `
+                    <div class="col-span-full flex flex-col items-center justify-center py-24 text-center">
+                        <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>
+                        <p class="text-white text-2xl font-black mb-2">Nenhuma viatura encontrada</p>
+                        <p class="text-gray-400 text-sm">Ajuste os filtros para ver mais resultados.</p>
+                    </div>
+                `;
+                return;
+            }
             
             carsToShow.forEach((carro, idx) => {
                 const card = document.createElement('div');
-                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-110 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
+                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
                 card.style.animationDelay = `${Math.min(idx * 0.06, 0.4)}s`;
                 
                 card.innerHTML = `
                     <div class="p-3">\r\n                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
                             <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Clique para ver detalhes</span>
-                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca}">
+                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                 <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
                                     <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>${extractYear(carro.mes)}</span>
@@ -623,59 +679,29 @@
             <p>© 2026 GUIMACAR - Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('menu-overlay');
+            const openBtn = document.getElementById('open-menu-header');
+            const closeBtn = document.getElementById('close-menu');
+
+            function openMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            openBtn?.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            overlay?.addEventListener('click', closeMenu);
+        })();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
