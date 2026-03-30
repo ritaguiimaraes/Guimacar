@@ -117,7 +117,7 @@
 
     <!-- Header Fixo (aparece após scroll) -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out"
-        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.4); box-shadow: 0 12px 36px -20px rgba(249,115,22,0.45);">
+        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08);">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-black tracking-tighter">
@@ -478,6 +478,7 @@
         </div>
     </footer>
     
+    <script src="carros.js"></script>
     <script src="script.js"></script>
     <script>
         (function() {
@@ -647,48 +648,44 @@
             setInterval(updateOpenStatus, 60000);
         })();
     </script>
+    <script>
+        (function() {
+            if (typeof stockGuimacar === "undefined") return;
+            const cards = document.querySelectorAll('#carousel a[href^="detalhes.html?id="]');
+            cards.forEach(card => {
+                const href = card.getAttribute('href') || "";
+                const match = href.match(/id=(\d+)/);
+                if (!match) return;
+                const id = parseInt(match[1], 10);
+                const car = stockGuimacar.find(c => c.id === id);
+                if (!car || !car.fotos || car.fotos.length < 2) return;
+
+                const imgEl = card.querySelector('img');
+                if (!imgEl) return;
+
+                let hoverInterval = null;
+                let hoverIndex = 0;
+
+                card.addEventListener('mouseenter', () => {
+                    hoverIndex = 0;
+                    hoverInterval = setInterval(() => {
+                        hoverIndex = (hoverIndex + 1) % car.fotos.length;
+                        imgEl.src = car.fotos[hoverIndex];
+                    }, 900);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    if (hoverInterval) {
+                        clearInterval(hoverInterval);
+                        hoverInterval = null;
+                    }
+                    imgEl.src = car.fotos[0];
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

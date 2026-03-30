@@ -39,6 +39,76 @@
             box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
         }
 
+        .custom-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .custom-select-button {
+            width: 100%;
+            background: #ffffff;
+            color: #0f172a;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .custom-select-button:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+            background: #fff7ed;
+        }
+
+        .custom-select-options {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.35);
+            max-height: 240px;
+            overflow: auto;
+            z-index: 50;
+            display: none;
+            width: 100%;
+        }
+
+        .custom-select.open .custom-select-options {
+            display: block;
+        }
+
+        .custom-select-option {
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .custom-select-option:hover,
+        .custom-select-option.is-active {
+            background: #ffedd5;
+            color: #9a3412;
+        }
+
+        .native-select {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            height: 0;
+            width: 0;
+        }
+
         .reveal-card {
             animation: cardIn 0.7s ease-out both;
         }
@@ -49,7 +119,7 @@
         }
     </style>
 </head>
-<body class="bg-black font-sans text-gray-100">
+<body class="bg-black font-sans text-gray-100 overflow-x-hidden">
     
     <!-- Loader/Splash Screen -->
     <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
@@ -70,7 +140,7 @@
     <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out"
         style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.45); box-shadow: 0 14px 40px -18px rgba(249,115,22,0.55);">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <a href="index.html" class="text-2xl font-black tracking-tighter">
+            <a href="index.html" class="text-3xl font-black tracking-tighter">
                 <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
             </a>
             <a href="index.html" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600">
@@ -79,7 +149,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto py-12 px-6 pt-28">
+    <main class="max-w-none mx-auto py-12 px-6 pt-28">
         <div class="text-center mb-12">
             <h1 class="text-4xl font-black text-white tracking-tight italic uppercase">Viaturas Disponíveis</h1>
             <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
@@ -87,9 +157,9 @@
         <!--FILTROS-->
         <div class="flex flex-col gap-8">
             <!-- Barra de filtros horizontal -->
-            <div class="max-w-[1200px] mx-auto bg-white text-slate-900 rounded-[2rem] p-6 border border-gray-200 shadow-[0_35px_90px_-35px_rgba(249,115,22,0.35)] mb-8">
+            <div class="max-w-none mx-auto bg-white text-slate-900 rounded-[2.5rem] p-8 border border-gray-200 shadow-[0_35px_90px_-35px_rgba(249,115,22,0.35)] mb-8">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                    <h3 class="text-xl font-black text-slate-900 italic">Filtros</h3>
+                    <h3 class="text-2xl font-black text-slate-900 italic">Filtros</h3>
                     <div class="flex items-center gap-4">
                         <span class="text-slate-600 text-sm font-medium uppercase tracking-tighter">
                             <span id="results-count" class="text-lime-500 font-bold">12</span> viaturas encontradas
@@ -103,8 +173,8 @@
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <!-- Filtro de Combustível -->
                     <div>
-                        <label class="block text-sm font-bold text-orange-500 mb-2 uppercase tracking-wider">Combustível</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition" data-filter="combustivel">
+                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Combustível</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="combustivel">
                             <option value="Todos">Todos</option>
                             <option value="Gasóleo">Gasóleo</option>
                             <option value="Gasolina">Gasolina</option>
@@ -114,8 +184,8 @@
 
                     <!-- Filtro de Quilómetros -->
                     <div>
-                        <label class="block text-sm font-bold text-orange-500 mb-2 uppercase tracking-wider">Quilómetros</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition" data-filter="kms">
+                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Quilómetros</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="kms">
                             <option value="Todos">Todos</option>
                             <option value="0-50000">Até 50.000 km</option>
                             <option value="50000-100000">50.000 - 100.000 km</option>
@@ -126,8 +196,8 @@
 
                     <!-- Filtro de Ano -->
                     <div>
-                        <label class="block text-sm font-bold text-orange-500 mb-2 uppercase tracking-wider">Ano</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition" data-filter="ano">
+                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Ano</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="ano">
                             <option value="Todos">Todos</option>
                             <option value="2020+">2020 ou mais recente</option>
                             <option value="2018-2020">2018 - 2020</option>
@@ -138,8 +208,8 @@
 
                     <!-- Filtro de Preço -->
                     <div>
-                        <label class="block text-sm font-bold text-orange-500 mb-2 uppercase tracking-wider">Faixa de Preço</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition" data-filter="preco">
+                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Faixa de Preço</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="preco">
                             <option value="Todos">Todos</option>
                             <option value="0-10000">Até 10.000 €</option>
                             <option value="10000-15000">10.000 - 15.000 €</option>
@@ -151,7 +221,7 @@
             </div>
 
             <!-- Grid de carros -->
-            <div style="max-width: 1200px; margin: 28px auto 0;">
+            <div style="max-width: 1800px; margin: 28px auto 0;">
                 <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- Os cards serão gerados por JavaScript -->
                 </div>
@@ -320,11 +390,12 @@
             
             carsToShow.forEach(carro => {
                 const card = document.createElement('div');
-                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-110 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card';
+                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-110 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
                 
                 card.innerHTML = `
                     <div class="p-3">\r\n                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
+                            <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Clique para ver detalhes</span>
                             <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca}">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                 <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
@@ -335,10 +406,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-7 py-4">
-                        <h3 class="text-2xl font-black text-slate-900 leading-tight">${carro.marca}</h3>
+                    <div class="px-6 pt-2 pb-3 -mt-1">
+                        <h3 class="text-3xl font-black text-slate-900 leading-tight">${carro.marca}</h3>
                         <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">${carro.modelo}</p>
-                        <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                        <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-2 -mt-1">
                             <div>
                                 <p class="text-3xl font-black text-lime-500">${carro.preco}</p>
                             </div>
@@ -446,6 +517,106 @@
     </script>
 
     <script>
+        (function() {
+            function updateCustomSelect(select) {
+                const wrapper = document.querySelector(`.custom-select[data-custom-for="${select.dataset.filter}"]`);
+                if (!wrapper) return;
+                const label = wrapper.querySelector('.custom-select-label');
+                const options = wrapper.querySelectorAll('.custom-select-option');
+                const selectedText = select.options[select.selectedIndex]?.text || '';
+                if (label) label.textContent = selectedText;
+                options.forEach(opt => {
+                    opt.classList.toggle('is-active', opt.dataset.value === select.value);
+                });
+            }
+
+            function initCustomSelects() {
+                document.querySelectorAll('.filter-select').forEach(select => {
+                    if (select.dataset.customized === 'true') return;
+                    select.dataset.customized = 'true';
+
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'custom-select';
+                    wrapper.dataset.customFor = select.dataset.filter;
+
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'custom-select-button';
+                    button.innerHTML = `
+                        <span class="custom-select-label">${select.options[select.selectedIndex]?.text || ''}</span>
+                        <i class="fas fa-chevron-down text-xs opacity-70"></i>
+                    `;
+
+                    const options = document.createElement('div');
+                    options.className = 'custom-select-options';
+
+                    Array.from(select.options).forEach(opt => {
+                        const optEl = document.createElement('div');
+                        optEl.className = 'custom-select-option';
+                        optEl.dataset.value = opt.value;
+                        optEl.textContent = opt.text;
+                        if (opt.selected) optEl.classList.add('is-active');
+                        options.appendChild(optEl);
+                    });
+
+                    wrapper.appendChild(button);
+                    wrapper.appendChild(options);
+                    select.classList.add('native-select');
+                    select.parentNode.appendChild(wrapper);
+
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        document.querySelectorAll('.custom-select.open').forEach(el => {
+                            if (el !== wrapper) el.classList.remove('open');
+                        });
+                        wrapper.classList.toggle('open');
+                    });
+
+                    options.addEventListener('click', (e) => {
+                        const target = e.target.closest('.custom-select-option');
+                        if (!target) return;
+                        select.value = target.dataset.value;
+                        updateCustomSelect(select);
+                        select.dispatchEvent(new Event('change', { bubbles: true }));
+                        wrapper.classList.remove('open');
+                    });
+                });
+            }
+
+            function closeAllCustomSelects() {
+                document.querySelectorAll('.custom-select.open').forEach(el => el.classList.remove('open'));
+            }
+
+            initCustomSelects();
+            document.addEventListener('click', closeAllCustomSelects);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAllCustomSelects();
+            });
+
+            document.querySelectorAll('.filter-select').forEach(select => {
+                select.addEventListener('change', () => {
+                    select.classList.toggle('active', select.value !== 'Todos');
+                    updateCustomSelect(select);
+                });
+                select.classList.toggle('active', select.value !== 'Todos');
+                updateCustomSelect(select);
+            });
+
+            const clearBtn = document.getElementById('clear-filters');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        document.querySelectorAll('.filter-select').forEach(select => {
+                            select.classList.remove('active');
+                            updateCustomSelect(select);
+                        });
+                    }, 0);
+                });
+            }
+        })();
+    </script>
+
+    <script>
         // Controlo do Loader
         window.addEventListener('load', function() {
             setTimeout(function() {
@@ -467,6 +638,23 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
