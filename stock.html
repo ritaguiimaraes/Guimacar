@@ -117,9 +117,10 @@
             0% { opacity: 0; transform: translateY(14px) scale(0.98); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
+
     </style>
 </head>
-<body class="bg-black font-sans text-gray-100 overflow-x-hidden">
+<body class="bg-black font-sans text-gray-100 overflow-hidden overflow-x-hidden">
     
     <!-- Loader/Splash Screen -->
     <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
@@ -136,18 +137,21 @@
             </div>
         </div>
     </div>
-    
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out"
-        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.45); box-shadow: 0 14px 40px -18px rgba(249,115,22,0.55);">
-        <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <a href="index.html" class="text-3xl font-black tracking-tighter">
-                <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
-            </a>
-            <a href="index.html" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600">
+     <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform transition-transform duration-300 ease-in-out"
+        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.6); box-shadow: 0 18px 50px -18px rgba(249,115,22,0.7);">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black tracking-tighter">
+                    <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
+                </a>
+                <a href="index.html" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600">
                 <i class="fas fa-arrow-left text-xs"></i> Voltar
             </a>
+            </div>
         </div>
     </header>
+
+
 
     <main class="max-w-none mx-auto py-12 px-6 pt-28">
         <div class="text-center mb-12">
@@ -388,9 +392,10 @@
             
             gridCarros.innerHTML = '';
             
-            carsToShow.forEach(carro => {
+            carsToShow.forEach((carro, idx) => {
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-110 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
+                card.style.animationDelay = `${Math.min(idx * 0.06, 0.4)}s`;
                 
                 card.innerHTML = `
                     <div class="p-3">\r\n                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
@@ -495,24 +500,6 @@
 
         document.querySelectorAll('.filter-select').forEach(select => {
             select.classList.toggle('active', select.value !== 'Todos');
-        });
-    </script>
-    <script>
-        const header = document.getElementById('main-header');
-        let lastScrollY = window.scrollY;
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY < 100) {
-                header.style.transform = 'translateY(-100%)';
-            } else if (currentScrollY < lastScrollY) {
-                header.style.transform = 'translateY(0)';
-            } else {
-                header.style.transform = 'translateY(-100%)';
-            }
-
-            lastScrollY = currentScrollY;
         });
     </script>
 
@@ -638,6 +625,17 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
