@@ -166,7 +166,8 @@
                         <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-mobile-alt"></i></div>
                         <div>
                             <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">Telemóvel</p>
-                            <a href="tel:+351965083452" class="font-bold text-lg text-slate-900 hover:text-orange-500 transition-colors">965 083 452</a>
+                            <span class="hidden md:inline font-bold text-lg text-slate-900">965 083 452</span>
+                            <a href="tel:+351965083452" class="md:hidden font-bold text-lg text-slate-900 hover:text-orange-500 transition-colors">965 083 452</a>
                         </div>
                     </div>
 
@@ -174,8 +175,8 @@
                         <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-envelope"></i></div>
                         <div>
                             <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">E-mail</p>
-                            <a href="/cdn-cgi/l/email-protection#ed8a9884808c8e8c9fd4dbad8a808c8481c38e8280" class="font-bold text-lg text-slate-900 hover:text-lime-500 transition-colors">
-                                <span class="__cf_email__" data-cfemail="e285978b8f83818390dbd4a2858f838b8ecc818d8f">[email&#160;protected]</span>
+                            <a href="mailto:guimacar96@gmail.com" class="font-bold text-lg text-slate-900 hover:text-lime-500 transition-colors">
+                                guimacar96@gmail.com
                             </a>
                         </div>
                     </div>
@@ -216,7 +217,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const loader = document.getElementById('loader');
@@ -270,4 +271,13 @@
             function updateOpenStatus() {
                 const open = isOpenNow();
                 statusEl.classList.remove("open", "closed");
-                statusEl.classList.add(open 
+                statusEl.classList.add(open ? "open" : "closed");
+                statusText.textContent = open ? "Aberto agora" : "Fechado agora";
+            }
+
+            updateOpenStatus();
+            setInterval(updateOpenStatus, 60000);
+        })();
+    </script>
+</body>
+</html>
