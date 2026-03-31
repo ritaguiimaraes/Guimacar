@@ -459,7 +459,7 @@
                 card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
                 
                 card.innerHTML = `
-                    <div class="p-3">${carro.destaque ? \'<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>\' : \'\'}
+                    <div class="p-3">${carro.destaque ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
                             <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Clique para ver detalhes</span>
                             <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
