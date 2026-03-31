@@ -2,6 +2,7 @@ const stockGuimacar = [
     {
         id: 1,
         marca: "Renault Megane",
+        destaque: true,
         modelo: "1.5 Dci 110 CV",
         preco: "15.900 €",
         mes: "Jan. 2018",
@@ -19,6 +20,7 @@ const stockGuimacar = [
     {
         id: 2,
         marca: "Citroen Berlingo",
+        destaque: true,
         modelo: "1.6 HDI Longa",
         preco: "10.250 €",
         mes: "2018",
@@ -34,6 +36,7 @@ const stockGuimacar = [
     {
         id: 3,
         marca: "Citroen C3",
+        destaque: true,
         modelo: "1.2",
         preco: "10.999 €",
         mes: "2015",
@@ -49,6 +52,7 @@ const stockGuimacar = [
     {
         id: 4,
         marca: "Citroen C3",
+        destaque: true,
         modelo: "1.2",
         preco: "10.999 €",
         mes: "2015",
@@ -64,6 +68,7 @@ const stockGuimacar = [
     {
         id: 5,
         marca: "Volkswagen",
+        destaque: true,
         modelo: "Golf 1.6 TDI",
         preco: "14.500 €",
         mes: "2019",
@@ -79,6 +84,7 @@ const stockGuimacar = [
     {
         id: 6,
         marca: "Ford",
+        destaque: true,
         modelo: "Focus 1.5 TDCi",
         preco: "12.900 €",
         mes: "2020",
@@ -94,6 +100,7 @@ const stockGuimacar = [
     {
         id: 7,
         marca: "Peugeot",
+        destaque: false,
         modelo: "308 1.5 BlueHDi",
         preco: "13.750 €",
         mes: "2019",
@@ -109,6 +116,7 @@ const stockGuimacar = [
     {
         id: 8,
         marca: "Opel",
+        destaque: false,
         modelo: "Astra 1.6 CDTI",
         preco: "11.200 €",
         mes: "2018",
@@ -124,6 +132,7 @@ const stockGuimacar = [
     {
         id: 9,
         marca: "Renault",
+        destaque: false,
         modelo: "Clio 1.5 dCi",
         preco: "9.900 €",
         mes: "2017",
@@ -139,6 +148,7 @@ const stockGuimacar = [
     {
         id: 10,
         marca: "Toyota",
+        destaque: false,
         modelo: "Yaris 1.5 Hybrid",
         preco: "16.800 €",
         mes: "2020",
