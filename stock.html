@@ -114,6 +114,9 @@
         .reveal-card {
             animation: cardIn 0.7s ease-out both;
         }
+        .card-fade-in {
+            animation: cardIn 0.4s ease-out both;
+        }
 
         @keyframes cardIn {
             0% { opacity: 0; transform: translateY(14px) scale(0.98); }
@@ -198,17 +201,17 @@
 
 
 
-    <main class="max-w-none mx-auto py-12 px-6 pt-28">
+    <main class="max-w-none mx-auto py-8 md:py-12 px-4 md:px-6 pt-24 md:pt-28">
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-black text-white tracking-tight italic uppercase">Viaturas Disponíveis</h1>
+            <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight italic uppercase">Viaturas Disponíveis</h1>
             <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
         </div>
         <!--FILTROS-->
         <div class="flex flex-col gap-8">
             <!-- Barra de filtros horizontal -->
-            <div class="max-w-none mx-auto bg-white text-slate-900 rounded-[2.5rem] p-8 border border-gray-200 shadow-[0_35px_90px_-35px_rgba(249,115,22,0.35)] mb-8">
+            <div class="max-w-none mx-auto bg-white text-slate-900 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 border border-gray-200 shadow-[0_35px_90px_-35px_rgba(249,115,22,0.35)] mb-8">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                    <h3 class="text-2xl font-black text-slate-900 italic">Filtros</h3>
+                    <h3 class="text-lg md:text-2xl font-black text-slate-900 italic">Filtros</h3>
                     <div class="flex items-center gap-4">
                         <span class="text-slate-600 text-sm font-medium uppercase tracking-tighter">
                             <span id="results-count" class="text-lime-500 font-bold">0</span> viaturas encontradas
@@ -219,11 +222,11 @@
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                     <!-- Filtro de Combustível -->
                     <div>
-                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Combustível</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="combustivel">
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Combustível</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="combustivel">
                             <option value="Todos">Todos</option>
                             <option value="Gasóleo">Gasóleo</option>
                             <option value="Gasolina">Gasolina</option>
@@ -233,8 +236,8 @@
 
                     <!-- Filtro de Quilómetros -->
                     <div>
-                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Quilómetros</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="kms">
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Quilómetros</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="kms">
                             <option value="Todos">Todos</option>
                             <option value="0-50000">Até 50.000 km</option>
                             <option value="50000-100000">50.000 - 100.000 km</option>
@@ -245,8 +248,8 @@
 
                     <!-- Filtro de Ano -->
                     <div>
-                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Ano</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="ano">
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Ano</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="ano">
                             <option value="Todos">Todos</option>
                             <option value="2020+">2020 ou mais recente</option>
                             <option value="2018-2020">2018 - 2020</option>
@@ -257,8 +260,8 @@
 
                     <!-- Filtro de Preço -->
                     <div>
-                        <label class="block text-base font-bold text-orange-500 mb-2 uppercase tracking-wider">Faixa de Preço</label>
-                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="preco">
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Faixa de Preço</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="preco">
                             <option value="Todos">Todos</option>
                             <option value="0-10000">Até 10.000 €</option>
                             <option value="10000-15000">10.000 - 15.000 €</option>
@@ -271,7 +274,7 @@
 
             <!-- Grid de carros -->
             <div style="max-width: 1800px; margin: 28px auto 0;">
-                <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
                     <!-- Os cards serão gerados por JavaScript -->
                 </div>
             </div>
@@ -442,7 +445,7 @@
                     <div class="col-span-full flex flex-col items-center justify-center py-24 text-center">
                         <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>
                         <p class="text-white text-2xl font-black mb-2">Nenhuma viatura encontrada</p>
-                        <p class="text-gray-400 text-sm">Ajuste os filtros para ver mais resultados.</p>
+                        <p class="text-gray-400 text-sm">Tenta ajustar os filtros para ver mais resultados.</p>
                     </div>
                 `;
                 return;
@@ -451,10 +454,12 @@
             carsToShow.forEach((carro, idx) => {
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
-                card.style.animationDelay = `${Math.min(idx * 0.06, 0.4)}s`;
+                card.style.animation = 'none';
+                card.classList.add('card-fade-in');
+                card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
                 
                 card.innerHTML = `
-                    <div class="p-3">\r\n                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                    <div class="p-3">${carro.destaque ? \'<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>\' : \'\'}
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
                             <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Clique para ver detalhes</span>
                             <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
@@ -546,8 +551,12 @@
         function changePage(page) {
             currentPage = page;
             renderPage(page);
-            // Scroll para o topo da página
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Scroll até ao grid de carros
+            const grid = document.getElementById('grid-carros');
+            if (grid) {
+                const offset = grid.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
         }
 
         // Renderizar primeira página

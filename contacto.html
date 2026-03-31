@@ -65,14 +65,45 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #fb923c;
         }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-black font-sans text-gray-100 overflow-hidden">
 
+    <!-- Menu Mobile Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-black tracking-tighter"><span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span></span>
+                <button id="close-menu" class="text-gray-400 hover:text-white transition p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="index.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
+                </a>
+                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fab fa-facebook-f text-orange-500 w-5"></i> Facebook
+                </a>
+            </nav>
+            <div class="mt-auto text-gray-500 text-sm">
+                <p>Seg–Sáb: 09:30–13:00</p>
+                <p>14:30–19:00</p>
+                <p class="mt-1">965 083 452</p>
+            </div>
+        </div>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
     <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
             <div class="mb-8">
-                <h1 class="text-6xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
                     GUIMA<span class="text-orange-500 font-black">CAR</span>
                 </h1>
             </div>
@@ -108,19 +139,18 @@
                 <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
                     <i class="fas fa-bars text-lg"></i>
                 </button>
-            </a>
             </div>
         </div>
     </header>
 
-    <section id="contacto" class="container mx-auto py-20 px-6 pt-28">
+    <section id="contacto" class="container mx-auto py-10 md:py-20 px-4 md:px-6 pt-24 md:pt-28">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Contactos</h2>
+            <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight italic uppercase">Contactos</h2>
             <div class="h-1 w-20 bg-orange-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-gray-100 p-8 rounded-[2.5rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 space-y-8">
+            <div class="bg-gray-100 p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 space-y-6 md:space-y-8">
                 <div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black">Guimacar</h3>
                     <p class="text-slate-600 font-bold text-sm uppercase mb-4 tracking-widest">Comércio de Automóveis</p>
@@ -136,7 +166,7 @@
                         <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-mobile-alt"></i></div>
                         <div>
                             <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">Telemóvel</p>
-                            <p class="font-bold text-lg text-slate-900">965 083 452</p>
+                            <a href="tel:+351965083452" class="font-bold text-lg text-slate-900 hover:text-orange-500 transition-colors">965 083 452</a>
                         </div>
                     </div>
 
@@ -144,8 +174,8 @@
                         <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-envelope"></i></div>
                         <div>
                             <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">E-mail</p>
-                            <a href="mailto:guimacar96@gmail.com" class="font-bold text-lg text-slate-900 hover:text-lime-500 transition-colors">
-                                guimacar96@gmail.com
+                            <a href="/cdn-cgi/l/email-protection#ed8a9884808c8e8c9fd4dbad8a808c8481c38e8280" class="font-bold text-lg text-slate-900 hover:text-lime-500 transition-colors">
+                                <span class="__cf_email__" data-cfemail="e285978b8f83818390dbd4a2858f838b8ecc818d8f">[email&#160;protected]</span>
                             </a>
                         </div>
                     </div>
@@ -167,7 +197,7 @@
                 </div>
             </div>
 
-            <div class="h-[450px] md:h-full min-h-[400px] rounded-[2.5rem] overflow-hidden shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 ring-1 ring-orange-500/40 bg-black/30 transform hover:scale-[1.01] transition-transform duration-500">
+            <div class="h-[300px] md:h-full min-h-[300px] md:min-h-[400px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 ring-1 ring-orange-500/40 bg-black/30 transform hover:scale-[1.01] transition-transform duration-500">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.599326746814!2d-8.180954024576584!3d41.4696047908923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24e8801cb092ff%3A0x9608adc63cdbf440!2sGuimacar!5e0!3m2!1spt-PT!2spt!4v1773931842665!5m2!1spt-PT!2spt"
                     class="w-full h-full border-0" 
@@ -186,7 +216,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const loader = document.getElementById('loader');
@@ -240,13 +270,4 @@
             function updateOpenStatus() {
                 const open = isOpenNow();
                 statusEl.classList.remove("open", "closed");
-                statusEl.classList.add(open ? "open" : "closed");
-                statusText.textContent = open ? "Aberto agora" : "Fechado agora";
-            }
-
-            updateOpenStatus();
-            setInterval(updateOpenStatus, 60000);
-        })();
-    </script>
-</body>
-</html>
+                statusEl.classList.add(open 
