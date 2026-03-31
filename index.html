@@ -8,6 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #f97316 #000000;
+        }
+
         .carousel-container {
             display: flex;
             will-change: transform;
@@ -148,7 +154,7 @@
             0% { opacity: 0; transform: translateY(14px) scale(0.98); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
-        html { scroll-behavior: smooth; }
+        
 
         /* Micro-animação CTAs */
         .cta-btn {
