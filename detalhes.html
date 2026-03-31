@@ -78,13 +78,17 @@
                     </a>
                 </div>
 
-                <nav class="flex items-center gap-3 sm:gap-4">
-                    <a href="contacto.html" class="hidden sm:inline-flex text-white hover:text-orange-500 font-semibold transition relative group text-sm">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Página Inicial
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
                     <a href="https://www.facebook.com/guimacar" target="_blank" 
-                    class="hidden sm:flex w-9 h-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-110 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-105 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
                         <i class="fab fa-facebook-f text-base"></i>
                     </a>
                 </nav>
@@ -271,18 +275,6 @@
         }
 
         function voltarPagina() {
-            const referrer = document.referrer;
-
-            if (referrer && !referrer.includes('detalhes.html')) {
-                window.location.href = referrer;
-                return;
-            }
-
-            if (window.history.length > 1) {
-                window.history.back();
-                return;
-            }
-
             window.location.href = 'stock.html';
         }
 
@@ -354,4 +346,3 @@
     </script>
 </body>
 </html>
-
