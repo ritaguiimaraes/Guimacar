@@ -243,14 +243,7 @@
             </div>
         </div>
 
-        <section class="mt-8 md:mt-14">
-            <h2 id="titulo-descricao" class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-orange-500 mb-5">Descrição</h2>
-            <p id="descricao-carro" class="text-white text-base sm:text-lg leading-8">
-                Descrição da viatura.
-            </p>
-        </section>
-
-        <section id="secao-extras" class="mt-8 md:mt-12">
+        <section id="secao-extras" class="mt-8 md:mt-12 hidden">
             <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-orange-500 mb-5">Extras</h2>
             <div id="lista-extras" class="flex flex-wrap gap-3"></div>
         </section>
@@ -326,10 +319,15 @@
             'vlante pele': 'Volante em pele',
             ac: 'Ar condicionado',
             'climatizacao auto': 'Climatização automática',
+            'climatizacao bi-zona': 'Climatização bi-zona',
+            'sensores luz': 'Sensores de luz',
+            'sensores chuva': 'Sensores de chuva',
             'sensores frontais': 'Sensores frontais',
             'sensores traseiros': 'Sensores traseiros',
             abs: 'ABS',
-            esp: 'ESP'
+            esp: 'ESP',
+            'direcao assistida': 'Direção assistida',
+            'fecho central': 'Fecho central'
         };
 
         let fotoAtual = 0;
@@ -377,18 +375,6 @@
             }
         }
 
-        function formatarDescricao(texto) {
-            if (!texto || !String(texto).trim()) {
-                return 'Sem descrição disponível.';
-            }
-
-            return String(texto)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/\*\*(.+?)\*\*/g, '<span class="text-orange-500 font-semibold">$1</span>');
-        }
-
         function renderizarExtras(extras) {
             const secao = document.getElementById('secao-extras');
             const lista = document.getElementById('lista-extras');
@@ -397,7 +383,7 @@
             lista.innerHTML = '';
 
             if (!Array.isArray(extras) || extras.length === 0) {
-                lista.innerHTML = '<p class="text-white text-base sm:text-lg leading-8">Não Aplicável</p>';
+                secao.classList.add('hidden');
                 return;
             }
 
@@ -411,8 +397,10 @@
                 lista.appendChild(badge);
             });
 
-            if (lista.childElementCount === 0) {
-                lista.innerHTML = '<p class="text-white text-base sm:text-lg leading-8">Não Aplicável</p>';
+            if (lista.childElementCount > 0) {
+                secao.classList.remove('hidden');
+            } else {
+                secao.classList.add('hidden');
             }
         }
 
@@ -425,7 +413,6 @@
             document.getElementById('detalhe-ano').innerText = carro.mes || '-';
             document.getElementById('detalhe-kms').innerText = carro.kms ? `${carro.kms} km` : '-';
             document.getElementById('detalhe-combustivel').innerText = carro.combustivel || '-';
-            document.getElementById('descricao-carro').innerHTML = formatarDescricao(carro.descricao);
 
             preencherCampoOpcional('bloco-cilindrada', 'detalhe-cilindrada', carro.cilindrada);
             preencherCampoOpcional('bloco-potencia', 'detalhe-potencia', carro.potencia);

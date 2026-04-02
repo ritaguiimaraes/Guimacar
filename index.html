@@ -623,8 +623,62 @@
             const track = document.getElementById('carousel');
             if (!track) return;
 
+            function escapeHtml(value) {
+                return String(value ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function formatYearLabel(value) {
+                const text = String(value ?? '').trim();
+                if (!text) return '-';
+                const match = text.match(/(\d{4})$/);
+                return match ? match[1] : text;
+            }
+
+            function formatKmsLabel(value) {
+                const text = String(value ?? '').trim();
+                if (!text) return '-';
+                return /\bkm\b/i.test(text) ? text : `${text} km`;
+            }
+
+            if (typeof stockGuimacar !== 'undefined') {
+                const featuredCars = stockGuimacar.filter(car => car.destaque);
+                if (featuredCars.length) {
+                    track.innerHTML = featuredCars.map((car, index) => `
+                        <a href="detalhes.html?id=${car.id}" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: ${0.05 + index * 0.08}s;">
+                            <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                            <div class="p-3">
+                                <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                    <img src="${escapeHtml(car.fotos?.[0] || 'img/inicio.jpg')}" loading="lazy" class="w-full h-full object-cover" alt="${escapeHtml(`${car.marca} ${car.modelo}`)}">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                        <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                            <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>${escapeHtml(formatYearLabel(car.mes))}</span>
+                                            <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> ${escapeHtml(car.combustivel || '-')}</span>
+                                            <span><i class="fas fa-road mr-1 text-lime-500"></i> ${escapeHtml(formatKmsLabel(car.kms))}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-2">
+                                <h3 class="text-2xl font-black text-slate-900 leading-tight">${escapeHtml(car.marca || '')}</h3>
+                                <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">${escapeHtml(car.modelo || '')}</p>
+                                <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                    <div>
+                                        <p class="text-3xl font-black text-lime-500">${escapeHtml(car.preco || '')}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+            }
+
             const originalCards = Array.from(track.children);
             const totalOriginal = originalCards.length;
+            if (!totalOriginal) return;
 
             // Clona os cards para loop infinito
             originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
@@ -634,6 +688,7 @@
             const dotsContainer = document.getElementById('carousel-dots');
             const dots = [];
             if (dotsContainer) {
+                dotsContainer.innerHTML = '';
                 for (let i = 0; i < totalOriginal; i++) {
                     const dot = document.createElement('button');
                     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
