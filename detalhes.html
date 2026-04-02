@@ -17,11 +17,84 @@
         ::-webkit-scrollbar-track { background: #000000; }
         ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 999px; }
         ::-webkit-scrollbar-thumb:hover { background: #fb923c; }
+
+        .thumb-strip-wrap {
+            position: relative;
+        }
+
+        .thumb-strip {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 6px 2px 10px;
+            scroll-snap-type: x proximity;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .thumb-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .thumb-strip img {
+            flex: 0 0 96px;
+            width: 96px;
+            height: 72px;
+            object-fit: cover;
+            scroll-snap-align: start;
+        }
+
+        @media (max-width: 640px) {
+            .thumb-strip img {
+                flex-basis: 82px;
+                width: 82px;
+                height: 62px;
+            }
+        }
+
+        .thumb-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 999px;
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            background: rgba(0, 0, 0, 0.72);
+            color: #f97316;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 5;
+        }
+
+        .thumb-nav:hover {
+            background: rgba(20, 20, 20, 0.9);
+            border-color: rgba(249, 115, 22, 0.65);
+        }
+
+        .thumb-nav.left {
+            left: -8px;
+        }
+
+        .thumb-nav.right {
+            right: -8px;
+        }
+
+        .thumb-nav.hidden {
+            display: none;
+        }
+
+        .phone-modal-backdrop {
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(8px);
+        }
     </style>
 </head>
 <body class="bg-black font-sans text-gray-100 overflow-hidden">
 
-    <!-- Menu Mobile Drawer -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
         style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
         <div class="flex flex-col h-full p-8">
@@ -46,15 +119,14 @@
                 </a>
             </nav>
             <div class="mt-auto text-gray-500 text-sm">
-                <p>Seg–Sáb: 09:30–13:00</p>
-                <p>14:30–19:00</p>
+                <p>Seg-Sáb: 09:30-13:00</p>
+                <p>14:30-19:30</p>
                 <p class="mt-1">965 083 452</p>
             </div>
         </div>
     </div>
     <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
 
-    <!-- Loader/Splash Screen -->
     <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
             <div class="mb-8">
@@ -92,7 +164,7 @@
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="https://www.facebook.com/guimacar" target="_blank" 
+                    <a href="https://www.facebook.com/guimacar" target="_blank"
                     class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-105 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
                         <i class="fab fa-facebook-f text-base"></i>
                     </a>
@@ -104,78 +176,130 @@
         </div>
     </header>
 
-    <main class="container mx-auto py-12 px-6 pt-28">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+    <main class="container mx-auto py-6 md:py-12 px-4 md:px-6 pt-24 md:pt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             <div class="space-y-4">
-                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white p-2">
-                    <img id="foto-principal" src="img/carro1/1.jpg" class="w-full h-[450px] object-cover rounded-[2rem]" alt="Carro">
+                <div class="rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-white p-1.5 md:p-2">
+                    <img id="foto-principal" src="img/carro1/1.jpg" class="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover rounded-[1.5rem] md:rounded-[2rem]" alt="Carro">
                 </div>
-                <div id="galeria-miniaturas" class="grid grid-cols-4 gap-4">
-                    </div>
+                <div class="thumb-strip-wrap">
+                    <button id="thumb-prev" type="button" class="thumb-nav left hidden" aria-label="Miniaturas anteriores">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <div id="galeria-miniaturas" class="thumb-strip"></div>
+                    <button id="thumb-next" type="button" class="thumb-nav right hidden" aria-label="Miniaturas seguintes">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="flex flex-col justify-center space-y-8">
+            <div class="flex flex-col justify-center space-y-4 md:space-y-8">
                 <div>
                     <span class="bg-blue-100 text-orange-500 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest">Destaque Guimacar</span>
-                    <h1 id="nome-carro" class="text-5xl font-black text-white mt-4 leading-tight uppercase italic">BMW 116d</h1>
-                    <p id="sub-nome" class="text-xl text-gray-300 font-medium">Aut. Advantage - Pack M</p>
+                    <h1 id="nome-carro" class="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 leading-tight uppercase italic">BMW 116d</h1>
+                    <p id="sub-nome" class="text-base md:text-xl text-gray-300 font-medium">Aut. Advantage - Pack M</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-8 shadow-xl border border-gray-200">
-                    <div class="flex items-end justify-between mb-8">
+                <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 shadow-xl border border-gray-200">
+                    <div class="flex items-end justify-between mb-4 md:mb-8">
                         <div>
-                            <p id="preco-carro" class="text-5xl font-black text-lime-500 tracking-tighter">15 900 €</p>
+                            <p id="preco-carro" class="text-4xl md:text-5xl font-black text-lime-500 tracking-tighter">15 900 €</p>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-6 pt-4 border-t-2 border-orange-400/60">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t-2 border-orange-400/60">
                         <div class="flex items-center space-x-4">
                             <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-calendar-alt"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase font-bold">Ano</p><p class="font-black text-slate-900">2018</p></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Mês/Ano</p><p id="detalhe-ano" class="font-black text-slate-900">2018</p></div>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-road"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase font-bold">Quilómetros</p><p class="font-black text-slate-900">176.307 km</p></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Quilómetros</p><p id="detalhe-kms" class="font-black text-slate-900">176.307 km</p></div>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-gas-pump"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase font-bold">Combustível</p><p class="font-black text-slate-900">Gasóleo</p></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Combustível</p><p id="detalhe-combustivel" class="font-black text-slate-900">Gasóleo</p></div>
                         </div>
-                        <div class="flex items-center space-x-4">
+                        <div id="bloco-cilindrada" class="flex items-center space-x-4">
                             <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-cogs"></i></div>
-                            <div><p class="text-xs text-gray-400 uppercase font-bold">Transmissão</p><p class="font-black text-slate-900">Automática</p></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Cilindrada</p><p id="detalhe-cilindrada" class="font-black text-slate-900">-</p></div>
+                        </div>
+                        <div id="bloco-potencia" class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-bolt"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Potência</p><p id="detalhe-potencia" class="font-black text-slate-900">-</p></div>
+                        </div>
+                        <div id="bloco-registos" class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-id-card"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Registos</p><p id="detalhe-registos" class="font-black text-slate-900">-</p></div>
                         </div>
                     </div>
                 </div>
-
+                <!-- Botões de contacto rápido -->
+                <div class="flex justify-center mt-2">
+                    <button id="botao-ligar" type="button" class="w-full max-w-xs flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-2xl transition text-sm">
+                        <i class="fas fa-phone"></i> Ligar
+                    </button>
+                </div>
             </div>
         </div>
+
+        <section class="mt-8 md:mt-14">
+            <h2 id="titulo-descricao" class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-orange-500 mb-5">Descrição</h2>
+            <p id="descricao-carro" class="text-white text-base sm:text-lg leading-8">
+                Descrição da viatura.
+            </p>
+        </section>
+
+        <section id="secao-extras" class="mt-8 md:mt-12">
+            <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-orange-500 mb-5">Extras</h2>
+            <div id="lista-extras" class="flex flex-wrap gap-3"></div>
+        </section>
     </main>
 
-    <!-- Modal para ver fotos em grande -->
     <div id="modal-fotos" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4">
         <div class="relative max-w-6xl max-h-[90vh] flex items-center">
-            <!-- Botão fechar -->
-            <button onclick="fecharModal()" class="absolute -top-12 right-0 text-white hover:text-blue-400 transition text-3xl">
+            <button onclick="fecharModal()" class="absolute -top-12 right-0 text-white hover:text-orange-500 transition text-3xl">
                 <i class="fas fa-times"></i>
             </button>
-            
-            <!-- Foto grande -->
+
             <img id="foto-modal" src="" class="max-w-full max-h-[80vh] object-contain rounded-2xl" alt="Foto ampliada">
-            
-            <!-- Navegação -->
+
             <button onclick="fotoAnterior()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
                 <i class="fas fa-chevron-left text-xl"></i>
             </button>
             <button onclick="proximaFoto()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
                 <i class="fas fa-chevron-right text-xl"></i>
             </button>
-            
-            <!-- Contador -->
+
             <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
                 <span id="contador-fotos">1 / 5</span>
             </div>
+        </div>
+    </div>
+
+    <div id="modal-telefone" class="fixed inset-0 z-[9998] hidden items-center justify-center p-4 phone-modal-backdrop">
+        <div class="w-full max-w-sm rounded-[2rem] border border-orange-500/25 bg-zinc-950 p-7 shadow-2xl">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs font-black uppercase tracking-[0.25em] text-orange-500">Contacto</p>
+                    <h3 class="mt-2 text-2xl font-black text-white">Ligar para Guimacar</h3>
+                </div>
+                <button id="fechar-modal-telefone" type="button" class="text-gray-400 transition hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-center">
+                <p id="numero-telefone-popup" class="text-3xl font-black tracking-wide text-lime-500">965 083 452</p>
+            </div>
+
+            <div class="mt-5">
+                <button id="copiar-telefone" type="button" class="w-full rounded-2xl bg-white/10 px-4 py-3 text-sm font-bold text-white transition hover:bg-white/15">
+                    Copiar número
+                </button>
+            </div>
+
+            <p id="estado-copia" class="mt-4 text-center text-xs font-semibold text-gray-400"></p>
         </div>
     </div>
 
@@ -184,48 +308,159 @@
         const urlParams = new URLSearchParams(window.location.search);
         const idCarro = urlParams.get('id');
         const carro = stockGuimacar.find(c => c.id == idCarro);
+        const numeroTelefoneVisual = '965 083 452';
+        const numeroTelefoneLink = '+351965083452';
+        const extrasLabels = {
+            gps: 'GPS',
+            usb: 'USB',
+            'radio cd': 'Rádio CD',
+            bluetooth: 'Bluetooth',
+            'jante sespeciais': 'Jantes especiais',
+            'camera traseira': 'Câmara traseira',
+            'cruise control': 'Cruise control',
+            jantes: 'Jantes',
+            'farois xenon': 'Faróis xenon',
+            'farois led': 'Faróis LED',
+            'farois nevoeiro': 'Faróis de nevoeiro',
+            'volante multifuncoes': 'Volante multifunções',
+            'vlante pele': 'Volante em pele',
+            ac: 'Ar condicionado',
+            'climatizacao auto': 'Climatização automática',
+            'sensores frontais': 'Sensores frontais',
+            'sensores traseiros': 'Sensores traseiros',
+            abs: 'ABS',
+            esp: 'ESP'
+        };
 
-        // Variáveis para o modal
         let fotoAtual = 0;
         let totalFotos = 0;
 
+        function atualizarMiniaturaAtiva() {
+            const miniaturas = document.querySelectorAll('#galeria-miniaturas img');
+            miniaturas.forEach((img, index) => {
+                if (index === fotoAtual) {
+                    img.classList.add('border-orange-500', 'ring-2', 'ring-orange-500/40', 'opacity-100');
+                    img.classList.remove('border-transparent', 'opacity-70');
+                } else {
+                    img.classList.remove('border-orange-500', 'ring-2', 'ring-orange-500/40', 'opacity-100');
+                    img.classList.add('border-transparent', 'opacity-70');
+                }
+            });
+        }
+
+        function atualizarBotoesMiniaturas() {
+            const galeria = document.getElementById('galeria-miniaturas');
+            const prevBtn = document.getElementById('thumb-prev');
+            const nextBtn = document.getElementById('thumb-next');
+            if (!galeria || !prevBtn || !nextBtn) return;
+
+            const overflowAtivo = galeria.scrollWidth > galeria.clientWidth + 4;
+            if (!overflowAtivo) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+                return;
+            }
+
+            prevBtn.classList.toggle('hidden', galeria.scrollLeft <= 4);
+            nextBtn.classList.toggle('hidden', galeria.scrollLeft + galeria.clientWidth >= galeria.scrollWidth - 4);
+        }
+
+        function preencherCampoOpcional(blocoId, valorId, valor) {
+            const bloco = document.getElementById(blocoId);
+            const valorEl = document.getElementById(valorId);
+            if (!bloco || !valorEl) return;
+
+            if (valor && String(valor).trim()) {
+                valorEl.innerText = valor;
+            } else {
+                bloco.classList.add('hidden');
+            }
+        }
+
+        function formatarDescricao(texto) {
+            if (!texto || !String(texto).trim()) {
+                return 'Sem descrição disponível.';
+            }
+
+            return String(texto)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/\*\*(.+?)\*\*/g, '<span class="text-orange-500 font-semibold">$1</span>');
+        }
+
+        function renderizarExtras(extras) {
+            const secao = document.getElementById('secao-extras');
+            const lista = document.getElementById('lista-extras');
+            if (!secao || !lista) return;
+
+            lista.innerHTML = '';
+
+            if (!Array.isArray(extras) || extras.length === 0) {
+                lista.innerHTML = '<p class="text-white text-base sm:text-lg leading-8">Não Aplicável</p>';
+                return;
+            }
+
+            extras.forEach(extra => {
+                const chave = String(extra || '').trim().toLowerCase();
+                if (!chave) return;
+
+                const badge = document.createElement('span');
+                badge.className = 'inline-flex items-center rounded-full border border-orange-500/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white';
+                badge.textContent = extrasLabels[chave] || extra;
+                lista.appendChild(badge);
+            });
+
+            if (lista.childElementCount === 0) {
+                lista.innerHTML = '<p class="text-white text-base sm:text-lg leading-8">Não Aplicável</p>';
+            }
+        }
+
         if (carro) {
             totalFotos = carro.fotos.length;
-            
-            // Preenche os textos
+
             document.getElementById('nome-carro').innerText = carro.marca;
             document.getElementById('sub-nome').innerText = carro.modelo;
             document.getElementById('preco-carro').innerText = carro.preco;
+            document.getElementById('detalhe-ano').innerText = carro.mes || '-';
+            document.getElementById('detalhe-kms').innerText = carro.kms ? `${carro.kms} km` : '-';
+            document.getElementById('detalhe-combustivel').innerText = carro.combustivel || '-';
+            document.getElementById('descricao-carro').innerHTML = formatarDescricao(carro.descricao);
 
-            // Atualiza o título da página com o nome do carro
+            preencherCampoOpcional('bloco-cilindrada', 'detalhe-cilindrada', carro.cilindrada);
+            preencherCampoOpcional('bloco-potencia', 'detalhe-potencia', carro.potencia);
+            preencherCampoOpcional('bloco-registos', 'detalhe-registos', carro.registos);
+            renderizarExtras(carro.extras);
+
             document.title = `${carro.marca} ${carro.modelo} | Guimacar`;
 
-            // Preenche a Foto Principal
             const fotoPrincipal = document.getElementById('foto-principal');
             fotoPrincipal.src = carro.fotos[0];
 
-            // Adiciona evento de clique para abrir modal
             fotoPrincipal.style.cursor = 'pointer';
             fotoPrincipal.onclick = function() {
                 abrirModal(0);
             };
 
-            // Cria as Miniaturas na div "galeria-miniaturas"
             const contentorMiniaturas = document.getElementById('galeria-miniaturas');
-            contentorMiniaturas.innerHTML = ''; // Limpa o que lá estiver
+            contentorMiniaturas.innerHTML = '';
 
             carro.fotos.forEach((fotoUrl, index) => {
-                    const imgMini = document.createElement('img');
+                const imgMini = document.createElement('img');
                 imgMini.src = fotoUrl;
-                imgMini.className = "h-24 w-full object-cover rounded-2xl cursor-pointer hover:opacity-80 transition border-2 border-transparent hover:border-orange-500";
-                
+                imgMini.className = "rounded-2xl cursor-pointer transition border-2 border-transparent hover:border-orange-500 hover:opacity-100 opacity-70";
+
                 imgMini.onclick = function() {
+                    fotoAtual = index;
                     fotoPrincipal.src = this.src;
-                    abrirModal(index);
+                    atualizarMiniaturaAtiva();
                 };
-                
+
                 contentorMiniaturas.appendChild(imgMini);
             });
+
+            atualizarMiniaturaAtiva();
+            atualizarBotoesMiniaturas();
         } else {
             document.querySelector('main').innerHTML = `
                 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-6">
@@ -239,28 +474,24 @@
             `;
         }
 
-        // Funções do Modal
         function abrirModal(index) {
             fotoAtual = index;
             const modal = document.getElementById('modal-fotos');
             const fotoModal = document.getElementById('foto-modal');
             const contador = document.getElementById('contador-fotos');
-            
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             fotoModal.src = carro.fotos[index];
             contador.textContent = `${index + 1} / ${totalFotos}`;
-            
-            // Prevene scroll do body
             document.body.style.overflow = 'hidden';
+            atualizarMiniaturaAtiva();
         }
 
         function fecharModal() {
             const modal = document.getElementById('modal-fotos');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            
-            // Restaura scroll do body
             document.body.style.overflow = 'auto';
         }
 
@@ -279,11 +510,42 @@
             document.getElementById('contador-fotos').textContent = `${fotoAtual + 1} / ${totalFotos}`;
         }
 
+        function dispositivoComChamadaDireta() {
+            return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+        }
+
+        function abrirModalTelefone() {
+            const modal = document.getElementById('modal-telefone');
+            const estado = document.getElementById('estado-copia');
+            if (!modal) return;
+            if (estado) estado.textContent = '';
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModalTelefone() {
+            const modal = document.getElementById('modal-telefone');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        async function copiarNumeroTelefone() {
+            const estado = document.getElementById('estado-copia');
+            try {
+                await navigator.clipboard.writeText(numeroTelefoneVisual);
+                if (estado) estado.textContent = 'Número copiado.';
+            } catch (error) {
+                if (estado) estado.textContent = 'Não foi possível copiar automaticamente.';
+            }
+        }
+
         function voltarPagina() {
             window.location.href = 'stock.html';
         }
 
-        // Fecha modal com ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 fecharModal();
@@ -294,14 +556,45 @@
             }
         });
 
-        // Fecha modal clicando fora
         document.getElementById('modal-fotos').addEventListener('click', function(e) {
             if (e.target === this) {
                 fecharModal();
             }
         });
 
-        // Swipe no modal para mobile
+        document.getElementById('botao-ligar')?.addEventListener('click', function() {
+            if (dispositivoComChamadaDireta()) {
+                window.location.href = `tel:${numeroTelefoneLink}`;
+                return;
+            }
+
+            abrirModalTelefone();
+        });
+
+        document.getElementById('fechar-modal-telefone')?.addEventListener('click', fecharModalTelefone);
+        document.getElementById('copiar-telefone')?.addEventListener('click', copiarNumeroTelefone);
+        document.getElementById('modal-telefone')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModalTelefone();
+            }
+        });
+
+        (function() {
+            const galeria = document.getElementById('galeria-miniaturas');
+            const prevBtn = document.getElementById('thumb-prev');
+            const nextBtn = document.getElementById('thumb-next');
+            if (!galeria || !prevBtn || !nextBtn) return;
+
+            function deslocarMiniaturas(direcao) {
+                galeria.scrollBy({ left: direcao * 220, behavior: 'smooth' });
+            }
+
+            prevBtn.addEventListener('click', () => deslocarMiniaturas(-1));
+            nextBtn.addEventListener('click', () => deslocarMiniaturas(1));
+            galeria.addEventListener('scroll', atualizarBotoesMiniaturas, { passive: true });
+            window.addEventListener('resize', atualizarBotoesMiniaturas);
+        })();
+
         (function() {
             const modal = document.getElementById('modal-fotos');
             let touchStartX = 0;
@@ -311,16 +604,14 @@
                 if (Math.abs(diff) >= 50) { diff > 0 ? proximaFoto() : fotoAnterior(); }
             }, { passive: true });
         })();
-
     </script>
 
     <script>
-        // Controlo do Loader
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
-                
+
                 setTimeout(function() {
                     loader.style.display = 'none';
                     document.body.classList.remove('overflow-hidden');
@@ -334,7 +625,6 @@
             <p> 2026 GUIMACAR - Todos os direitos reservados</p>
         </div>
     </footer>
-
 
     <script>
         (function() {

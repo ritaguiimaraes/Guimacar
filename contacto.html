@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -98,7 +98,7 @@
             </nav>
             <div class="mt-auto text-gray-500 text-sm">
                 <p>Seg–Sáb: 09:30–13:00</p>
-                <p>14:30–19:00</p>
+                <p>14:30–19:30</p>
                 <p class="mt-1">965 083 452</p>
             </div>
         </div>
@@ -200,9 +200,13 @@
                                 <span id="open-status-text">A verificar...</span>
                             </div>
                             <div class="text-sm text-slate-800 sm:text-slate-700 mt-1 space-y-1">
-                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:00</p>
+                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:30</p>
                                 <p><span class="font-bold">Domingo:</span> Encerrado</p>
                             </div>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida%20de%20Santa%20Comba%2C%201524%2C%204820-428%20Fornelos" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600 hover:scale-[1.02]">
+                                <i class="fas fa-route text-xs"></i>
+                                Obter Direções
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -256,7 +260,7 @@
 
             const openMinutes = [
                 [9 * 60 + 30, 13 * 60],
-                [14 * 60 + 30, 19 * 60]
+                [14 * 60 + 30, 19 * 60 + 30]
             ];
 
             function getLisbonParts(date) {

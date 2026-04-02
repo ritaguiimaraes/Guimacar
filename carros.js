@@ -5,17 +5,25 @@ const stockGuimacar = [
         destaque: true,
         modelo: "1.5 Dci 110 CV",
         preco: "15.900 €",
-        mes: "Jan. 2018",
+        mes: "01/2018",
         kms: "176.307",
         combustivel: "Gasóleo",
+        cilindrada: "a",
+        potencia: "a",
+        registos: "a",
+        extras: ["gps", "bluetooth", "câmara de marcha atrás", "sensores de estacionamento", "jante sespeciais","radio cd", "camera traseira", "cruise control"],
         fotos: [
             "img/carro1/1.jpg",
             "img/carro1/2.jpg",
             "img/carro1/3.jpg",
             "img/carro1/4.jpg",
-            "img/carro1/5.jpg"
+            "img/carro1/5.jpg",
+            "img/carro1/6.jpg",
+            "img/carro1/7.jpg",
+            "img/carro1/8.jpg"
         ],
-        descricao: "Viatura em excelente estado, com revisões na marca..."
+        descricao: "Viatura em excelente estado, com **garantia**, **revisões em dia** e **financiamento disponível**."
+
     },
     {
         id: 2,
@@ -26,6 +34,10 @@ const stockGuimacar = [
         mes: "2018",
         kms: "134.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro2/1.jpg",
             "img/carro2/2.jpg",
@@ -42,6 +54,10 @@ const stockGuimacar = [
         mes: "2015",
         kms: "110.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro3/1.jpg",
             "img/carro3/2.jpg",
@@ -58,6 +74,10 @@ const stockGuimacar = [
         mes: "2015",
         kms: "110.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro3/1.jpg",
             "img/carro3/2.jpg",
@@ -74,6 +94,10 @@ const stockGuimacar = [
         mes: "2019",
         kms: "95.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro1/1.jpg",
             "img/carro1/2.jpg",
@@ -90,6 +114,10 @@ const stockGuimacar = [
         mes: "2020",
         kms: "78.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro2/1.jpg",
             "img/carro2/2.jpg",
@@ -106,6 +134,10 @@ const stockGuimacar = [
         mes: "2019",
         kms: "112.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro3/1.jpg",
             "img/carro3/2.jpg",
@@ -122,6 +154,10 @@ const stockGuimacar = [
         mes: "2018",
         kms: "145.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro1/1.jpg",
             "img/carro1/2.jpg",
@@ -138,6 +174,10 @@ const stockGuimacar = [
         mes: "2017",
         kms: "167.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro2/1.jpg",
             "img/carro2/2.jpg",
@@ -154,6 +194,10 @@ const stockGuimacar = [
         mes: "2020",
         kms: "89.000",
         combustivel: "Híbrido",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro3/1.jpg",
             "img/carro3/2.jpg",
@@ -169,6 +213,10 @@ const stockGuimacar = [
         mes: "2021",
         kms: "67.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro1/1.jpg",
             "img/carro1/2.jpg",
@@ -184,6 +232,10 @@ const stockGuimacar = [
         mes: "2019",
         kms: "123.000",
         combustivel: "Gasóleo",
+        cilindrada: "",
+        potencia: "",
+        registos: "",
+        extras: [],
         fotos: [
             "img/carro2/1.jpg",
             "img/carro2/2.jpg",
