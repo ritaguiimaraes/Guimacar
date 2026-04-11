@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Guimacar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fb923c; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .float { animation: float 3.5s ease-in-out infinite; }
+
+        @keyframes glitch {
+            0%, 100% { text-shadow: 0 0 40px rgba(249,115,22,0.6); }
+            25% { text-shadow: -3px 0 0 rgba(249,115,22,0.8), 3px 0 0 rgba(255,255,255,0.2); }
+            75% { text-shadow: 3px 0 0 rgba(249,115,22,0.8), -3px 0 0 rgba(255,255,255,0.2); }
+        }
+        .glitch { animation: glitch 2.5s ease-in-out infinite; }
+
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+        .cta-btn:hover::after { left: 160%; }
+        .cta-btn:hover {
+            transform: scale(1.06) translateY(-2px);
+            box-shadow: 0 0 32px rgba(249,115,22,0.55);
+        }
+        .cta-btn:active { transform: scale(0.97); }
+    </style>
+</head>
+<body class="bg-black font-sans text-gray-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.6); box-shadow: 0 18px 50px -18px rgba(249,115,22,0.7);">
+        <div class="container mx-auto px-6 py-4">
+            <a href="index.html" class="text-2xl font-black tracking-tighter">
+                <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo -->
+    <main class="flex-1 flex items-center justify-center px-4 py-16">
+        <div class="text-center max-w-lg">
+
+            <!-- Ícone flutuante -->
+            <div class="float mb-8">
+                <i class="fas fa-car text-orange-500/20 text-8xl md:text-9xl"></i>
+            </div>
+
+            <!-- 404 -->
+            <h1 class="glitch text-[8rem] md:text-[12rem] font-black text-orange-500 leading-none tracking-tighter">
+                404
+            </h1>
+
+            <h2 class="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tight mt-2 mb-4">
+                Página não encontrada
+            </h2>
+
+            <p class="text-gray-400 text-base md:text-lg mb-10 leading-relaxed">
+                A página que procura não existe ou foi movida.<br>
+                Mas temos ótimas viaturas à sua espera!
+            </p>
+
+            <!-- Botões -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-home"></i> Página Inicial
+                </a>
+                <a href="stock.html" class="cta-btn bg-white/5 hover:bg-white/10 border border-white/10 hover:border-orange-500/40 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-car text-orange-500"></i> Ver Viaturas
+                </a>
+            </div>
+
+            <!-- Contacto -->
+            <p class="text-gray-500 text-sm mt-12">
+                Precisa de ajuda?
+                <a href="contacto.html" class="text-orange-500 hover:underline font-bold ml-1">Contacte-nos</a>
+            </p>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <p class="text-gray-700 font-bold text-base">MUDAR PELO NOME OFICIAL DA EMPRESA</p>
+                <p class="text-gray-500 text-xs mt-1">NIF: NIF DA EMPRESA | Sede: Rua Exemplo, Fafe</p>
+                <p class="text-[10px] text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+                    Em caso de litígio, o consumidor pode recorrer ao Centro de Arbitragem do Sector Automóvel (CASA), com sítio em <a href="https://www.arbitragemauto.pt" class="underline hover:text-orange-600">www.arbitragemauto.pt</a>.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-gray-500 text-xs font-semibold uppercase tracking-wider mb-6">
+                <a href="privacidade.html" class="hover:text-orange-600 transition">Política de Privacidade</a>
+                <a href="cookies.html" class="hover:text-orange-600 transition">Política de Cookies</a>
+                <a href="termos.html" class="hover:text-orange-600 transition">Termos de Utilização</a>
+                <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 transition">Livro de Reclamações</a>
+            </div>
+
+            <div class="text-center text-gray-400 text-sm border-t border-gray-200 pt-6">
+                <p>&copy; 2026 <span class="font-bold text-gray-600">GUIMACAR</span> - Fafe</p>
+                <p class="text-[10px] mt-2 opacity-70">Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

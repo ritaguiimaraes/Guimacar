@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQXD05YKH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3HQXD05YKH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Guimacar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fb923c; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-black font-sans text-gray-100 overflow-hidden">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-orange-500 font-black">CAR</span>
+                </h1>
+            </div>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Mobile Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-black tracking-tighter"><span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span></span>
+                <button id="close-menu" class="text-gray-400 hover:text-white transition p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="index.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
+                </a>
+                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
+                </a>
+                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fab fa-facebook-f text-orange-500 w-5"></i> Facebook
+                </a>
+            </nav>
+            <div class="mt-auto text-gray-500 text-sm">
+                <p>Seg–Sáb: 09:30–13:00</p>
+                <p>14:30–19:00</p>
+                <p class="mt-1">965 083 452</p>
+            </div>
+        </div>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform transition-transform duration-300 ease-in-out"
+        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.6); box-shadow: 0 18px 50px -18px rgba(249,115,22,0.7);">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black tracking-tighter">
+                    <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Página Inicial
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="stock.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Viaturas Disponíveis
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Contactos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank"
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-110 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                        <i class="fab fa-facebook-f text-base"></i>
+                    </a>
+                </nav>
+                <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo -->
+    <main class="container mx-auto py-10 md:py-20 px-4 md:px-6 pt-24 md:pt-28 max-w-3xl">
+
+        <div class="text-center mb-12">
+            <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight italic uppercase">Política de Privacidade</h1>
+            <div class="h-1 w-20 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+            <p class="text-gray-400 text-sm mt-4">Última atualização: Janeiro de 2026</p>
+        </div>
+
+        <div class="space-y-6 text-gray-300 leading-relaxed">
+
+            <!-- Responsável -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-building"></i> Responsável pelo tratamento
+                </h2>
+                <div class="text-sm md:text-base space-y-1">
+                    <p><span class="text-white font-bold">Guimacar</span> — Comércio de Automóveis</p>
+                    <p>Avenida de Santa Comba, 1524, 4820-428 Fornelos</p>
+                    <p>E-mail: <a href="mailto:guimacar96@gmail.com" class="text-orange-500 hover:underline">guimacar96@gmail.com</a></p>
+                    <p>Telemóvel: <a href="tel:+351965083452" class="text-orange-500 hover:underline">965 083 452</a></p>
+                </div>
+            </div>
+
+            <!-- Que dados recolhemos -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-database"></i> Que dados recolhemos?
+                </h2>
+                <p class="text-sm md:text-base mb-4">Este website recolhe apenas dados de forma anónima e automática através do Google Analytics:</p>
+                <ul class="space-y-2 text-sm md:text-base">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Páginas visitadas e tempo de visita</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Tipo de dispositivo, browser e sistema operativo</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> País e região geográfica aproximada</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Fonte de tráfego (como chegou ao site)</li>
+                </ul>
+                <p class="text-sm md:text-base mt-4 text-gray-400">
+                    <strong class="text-white">Não recolhemos</strong> nomes, e-mails, números de telefone, moradas ou qualquer outro dado pessoal identificável através do site.
+                    Se nos contactar por e-mail ou telefone, os dados fornecidos são usados exclusivamente para responder ao seu contacto.
+                </p>
+            </div>
+
+            <!-- Finalidade -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-bullseye"></i> Para que são usados os dados?
+                </h2>
+                <ul class="space-y-2 text-sm md:text-base">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Perceber quais as páginas mais visitadas para melhorar o site</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Avaliar o desempenho do site em diferentes dispositivos</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs shrink-0"></i> Melhorar a experiência de navegação dos utilizadores</li>
+                </ul>
+                <p class="text-sm md:text-base mt-4 text-gray-400">
+                    Os dados nunca são vendidos, partilhados com terceiros para fins comerciais, nem usados para publicidade direcionada.
+                </p>
+            </div>
+
+            <!-- Base legal -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-balance-scale"></i> Base legal (RGPD)
+                </h2>
+                <p class="text-sm md:text-base">
+                    O tratamento de dados através do Google Analytics é realizado com base no seu <strong class="text-white">consentimento</strong>, nos termos do artigo 6.º, n.º 1, alínea a) do Regulamento Geral sobre a Proteção de Dados (RGPD). Pode retirar o seu consentimento a qualquer momento desativando os cookies nas definições do seu browser ou através do <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" class="text-orange-500 hover:underline">opt-out do Google Analytics</a>.
+                </p>
+            </div>
+
+            <!-- Partilha com terceiros -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-share-alt"></i> Partilha com terceiros
+                </h2>
+                <p class="text-sm md:text-base mb-3">
+                    Os dados recolhidos através do Google Analytics são processados pela <strong class="text-white">Google LLC</strong>, nos termos da sua própria política de privacidade. A Google pode transferir estes dados para servidores localizados fora da União Europeia, garantindo no entanto mecanismos de proteção adequados.
+                </p>
+                <p class="text-sm md:text-base">
+                    Não partilhamos dados pessoais com quaisquer outras entidades terceiras.
+                </p>
+            </div>
+
+            <!-- Direitos -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-user-shield"></i> Os seus direitos
+                </h2>
+                <p class="text-sm md:text-base mb-4">Ao abrigo do RGPD, tem os seguintes direitos relativamente aos seus dados pessoais:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div class="flex items-start gap-2 bg-white/5 rounded-xl p-3">
+                        <i class="fas fa-eye text-orange-500 mt-0.5 shrink-0"></i>
+                        <div><span class="text-white font-bold block">Acesso</span> Saber que dados temos sobre si</div>
+                    </div>
+                    <div class="flex items-start gap-2 bg-white/5 rounded-xl p-3">
+                        <i class="fas fa-edit text-orange-500 mt-0.5 shrink-0"></i>
+                        <div><span class="text-white font-bold block">Retificação</span> Corrigir dados incorretos</div>
+                    </div>
+                    <div class="flex items-start gap-2 bg-white/5 rounded-xl p-3">
+                        <i class="fas fa-trash text-orange-500 mt-0.5 shrink-0"></i>
+                        <div><span class="text-white font-bold block">Eliminação</span> Solicitar a remoção dos seus dados</div>
+                    </div>
+                    <div class="flex items-start gap-2 bg-white/5 rounded-xl p-3">
+                        <i class="fas fa-ban text-orange-500 mt-0.5 shrink-0"></i>
+                        <div><span class="text-white font-bold block">Oposição</span> Opor-se ao tratamento dos seus dados</div>
+                    </div>
+                </div>
+                <p class="text-sm mt-4 text-gray-400">
+                    Para exercer qualquer um destes direitos, contacte-nos em <a href="mailto:guimacar96@gmail.com" class="text-orange-500 hover:underline">guimacar96@gmail.com</a>. Tem também o direito de apresentar reclamação à <a href="https://www.cnpd.pt" target="_blank" class="text-orange-500 hover:underline">CNPD — Comissão Nacional de Proteção de Dados</a>.
+                </p>
+            </div>
+
+            <!-- Conservação -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-clock"></i> Conservação dos dados
+                </h2>
+                <p class="text-sm md:text-base">
+                    Os dados recolhidos pelo Google Analytics são conservados por um período máximo de <strong class="text-white">26 meses</strong>, após os quais são automaticamente eliminados. Os dados de contacto que nos envie por e-mail ou telefone são conservados apenas pelo tempo necessário para responder ao seu pedido.
+                </p>
+            </div>
+
+            <!-- Alterações -->
+            <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8">
+                <h2 class="text-lg md:text-xl font-black text-orange-500 uppercase tracking-wide mb-4 flex items-center gap-3">
+                    <i class="fas fa-sync-alt"></i> Alterações a esta política
+                </h2>
+                <p class="text-sm md:text-base">
+                    Podemos atualizar esta política de privacidade ocasionalmente. Quaisquer alterações serão publicadas nesta página com a data de atualização revista. Recomendamos que consulte esta página periodicamente.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <a href="cookies.html" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
+                    <i class="fas fa-cookie-bite text-orange-500"></i> Política de Cookies
+                </a>
+                <a href="contacto.html" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
+                    <i class="fas fa-envelope text-orange-500"></i> Contactar-nos
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Separador visual -->
+    <div class="relative h-px w-full bg-white/5">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent shadow-[0_0_15px_rgba(249,115,22,0.3)]"></div>
+</div>
+    <footer class="bg-[#0a0a0a] border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+
+                <div class="col-span-2 md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4">
+                        <span class="text-white font-black text-2xl tracking-tighter italic uppercase">GUIMA<span class="text-orange-500">CAR</span></span>
+                    </a>
+                    <p class="text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-3">NOME DA EMPRESA, LDA</p>
+                    <div class="text-zinc-400 text-xs space-y-1.5 leading-relaxed">
+                        <p class="flex items-center gap-2"><i class="fas fa-fingerprint text-[10px] text-zinc-600"></i> NIF: XXXXXXXXX</p>
+                        <p class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-[10px] text-zinc-600 mt-1"></i> 
+                            <span>Avenida de Santa Comba, 1524<br>4820-428 Fornelos, Fafe</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Navegação</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="index.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Página Inicial</a>
+                        <a href="stock.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Viaturas Disponíveis</a>
+                        <a href="contacto.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Contactos</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Legal</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="politica-privacidade.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Privacidade</a>
+                        <a href="cookies.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Cookies</a>
+                        <a href="termos.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Termos de Utilização</a>
+                        <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-1">
+                            Livro de Reclamações <i class="fas fa-external-link-alt text-[8px]"></i>
+                        </a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Contactos rápidos</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                                <i class="fas fa-phone text-orange-500 text-[10px]"></i>
+                            </span> 
+                            965 083 452
+                        </a>
+                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                                <i class="fas fa-envelope text-orange-500 text-[10px]"></i>
+                            </span> 
+                            guimacar96@gmail.com
+                        </a>
+                        <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                                <i class="fab fa-facebook-f text-orange-500 text-[10px]"></i>
+                            </span> 
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8">
+                <p class="text-zinc-500 text-[10px] md:text-[11px] leading-relaxed mb-6 max-w-3xl">
+                    Em caso de litígio, o consumidor pode recorrer ao <span class="text-zinc-300">Centro de Arbitragem do Sector Automóvel (CASA)</span>, com sítio em 
+                    <a href="https://www.arbitragemauto.pt" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:underline">www.arbitragemauto.pt</a>.
+                </p>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5 pt-6">
+                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest">
+                        &copy; 2026 <span class="text-white">GUIMACAR</span> — Todos os direitos reservados.
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }, 500);
+            }, 1000);
+        });
+    </script>
+
+    <script>
+        (function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('menu-overlay');
+            const openBtn = document.getElementById('open-menu-header');
+            const closeBtn = document.getElementById('close-menu');
+            function openMenu() { mobileMenu.classList.remove('translate-x-full'); overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+            function closeMenu() { mobileMenu.classList.add('translate-x-full'); overlay.classList.add('hidden'); document.body.style.overflow = ''; }
+            openBtn?.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            overlay?.addEventListener('click', closeMenu);
+        })();
+    </script>
+
+</body>
+</html>
