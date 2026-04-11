@@ -575,14 +575,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             
-            <div class="bg-gray-100 p-8 rounded-[2.5rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 space-y-8">
+            <div class="bg-gray-100 p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 space-y-6 md:space-y-8">
                 <div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black">Guimacar</h3>
-                    <p class="text-slate-600 font-bold text-sm uppercase mb-4 tracking-widest">MUDAR PELO NOME OFICIAL</p>
-                    <div class="text-slate-800 text-xs space-y-1">
-                        <p>NIF: XXXXXXXXX</p>
+                    <p class="text-slate-600 font-bold text-sm uppercase mb-4 tracking-widest">Comércio de Automóveis</p>
+                    <div class="space-y-1 text-slate-800 sm:text-slate-700">
+                        <p class="font-bold text-orange-500 uppercase tracking-wider">Morada</p>
                         <p>Avenida de Santa Comba, 1524</p>
-                        <p>4820-428 Fornelos, Fafe</p>
+                        <p>4820-428 Fornelos</p>
                     </div>
                 </div>
 
@@ -591,7 +591,8 @@
                         <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-mobile-alt"></i></div>
                         <div>
                             <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">Telemóvel</p>
-                            <p class="font-bold text-lg text-slate-900">965 083 452</p>
+                            <span class="hidden md:inline font-bold text-lg text-slate-900">965 083 452</span>
+                            <a href="tel:965083452" class="md:hidden font-bold text-lg text-slate-900 hover:text-orange-500 transition-colors">965 083 452</a>
                         </div>
                     </div>
 
@@ -625,7 +626,7 @@
                 </div>
             </div>
 
-            <div class="h-[450px] md:h-full min-h-[400px] rounded-[2.5rem] overflow-hidden shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 ring-1 ring-orange-500/40 bg-black/30 transform hover:scale-[1.01] transition-transform duration-500">
+            <div class="h-[300px] md:h-full min-h-[300px] md:min-h-[400px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 ring-1 ring-orange-500/40 bg-black/30 transform hover:scale-[1.01] transition-transform duration-500">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.599326746814!2d-8.180954024576584!3d41.4696047908923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24e8801cb092ff%3A0x9608adc63cdbf440!2sGuimacar!5e0!3m2!1spt-PT!2spt!4v1773931842665!5m2!1spt-PT!2spt"
                     class="w-full h-full border-0" 
@@ -674,7 +675,7 @@
                 <div>
                     <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Legal</p>
                     <nav class="flex flex-col gap-3">
-                        <a href="politica-privacidade.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Privacidade</a>
+                        <a href="privacidade.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Privacidade</a>
                         <a href="cookies.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Cookies</a>
                         <a href="termos.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Termos de Utilização</a>
                         <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-1">
@@ -686,13 +687,15 @@
                 <div>
                     <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Contactos rápidos</p>
                     <div class="flex flex-col gap-3">
-                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                        <a href="tel:+351965083452" 
+                        class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3 pointer-events-auto md:pointer-events-none cursor-default">
+                            
                             <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
                                 <i class="fas fa-phone text-orange-500 text-[10px]"></i>
                             </span> 
                             965 083 452
                         </a>
-                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                                                <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
                             <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
                                 <i class="fas fa-envelope text-orange-500 text-[10px]"></i>
                             </span> 
