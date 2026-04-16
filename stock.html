@@ -214,7 +214,7 @@
 
 
     <main class="max-w-none mx-auto py-8 md:py-12 px-4 md:px-6 pt-24 md:pt-28">
-        <div class="text-center mb-12">
+        <div class="text-center mb-8 md:mb-12">
             <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight italic uppercase">Viaturas Disponíveis</h1>
             <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
         </div>
@@ -477,7 +477,7 @@
                 card.innerHTML = `
                     <div class="p-3">${carro.destaque ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
-                            <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Clique para ver detalhes</span>
+                            <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>
                             <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                 <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
@@ -523,6 +523,15 @@
                     }
                 });
 
+                // Touch: tap na imagem para ver próxima foto (mobile)
+                let touchPhotoIndex = 0;
+                imgEl && imgEl.addEventListener('touchend', (e) => {
+                    if (!carro.fotos || carro.fotos.length < 2) return;
+                    e.stopPropagation();
+                    touchPhotoIndex = (touchPhotoIndex + 1) % carro.fotos.length;
+                    imgEl.src = carro.fotos[touchPhotoIndex];
+                }, { passive: true });
+
                 card.onclick = function() {
                     window.location.href = `detalhes.html?id=${carro.id}`;
                 };
@@ -546,18 +555,18 @@
             
             // Botão Anterior
             if (currentPage > 1) {
-                paginationHTML += `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2 bg-black/30 text-white rounded-lg hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10">← Anterior</button>`;
+                paginationHTML += `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">← Anterior</button>`;
             }
             
             // Números das páginas
             for (let i = 1; i <= totalPages; i++) {
                 const isActive = i === currentPage;
-                paginationHTML += `<button onclick="changePage(${i})" class="px-4 py-2 ${isActive ? 'bg-orange-500 text-white shadow-[0_0_18px_rgba(249,115,22,0.5)]' : 'bg-black/30 text-gray-300 hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] border border-white/10'} rounded-lg transition">${i}</button>`;
+                paginationHTML += `<button onclick="changePage(${i})" class="px-4 py-2.5 text-sm font-bold rounded-xl ${isActive ? 'bg-orange-500 text-white shadow-[0_0_18px_rgba(249,115,22,0.5)]' : 'bg-black/30 text-gray-300 hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] border border-white/10'} rounded-lg transition">${i}</button>`;
             }
             
             // Botão Seguinte
             if (currentPage < totalPages) {
-                paginationHTML += `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2 bg-black/30 text-white rounded-lg hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10">Seguinte →</button>`;
+                paginationHTML += `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">Seguinte →</button>`;
             }
             
             paginationHTML += '</div>';
