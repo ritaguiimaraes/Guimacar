@@ -11,7 +11,20 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes da Viatura | Guimacar</title>
+    <title>Detalhes da Viatura | Guimacar — Stand em Fafe</title>
+    <meta name="description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe — carros usados de qualidade.">
+    <link rel="canonical" href="https://www.guimacar.com/detalhes.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.guimacar.com/detalhes.html">
+    <meta property="og:title" content="Detalhes da Viatura | Guimacar">
+    <meta property="og:description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe.">
+    <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Guimacar">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Detalhes da Viatura | Guimacar">
+    <meta name="twitter:description" content="Ficha completa da viatura com fotos, equipamentos e preço. Stand Guimacar em Fafe.">
+    <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -438,7 +451,6 @@
             carro.fotos.forEach((fotoUrl, index) => {
                 const imgMini = document.createElement('img');
                 imgMini.src = fotoUrl;
-                imgMini.loading = "lazy";
                 imgMini.className = "rounded-2xl cursor-pointer transition border-2 border-transparent hover:border-orange-500 hover:opacity-100 opacity-70";
 
                 imgMini.onclick = function() {
