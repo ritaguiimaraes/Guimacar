@@ -1,0 +1,1118 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQXD05YKH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3HQXD05YKH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guimacar | Stand Automóvel em Fafe</title>
+    <meta name="description" content="Stand automóvel em Fafe com viaturas usadas de qualidade. Carros revisados, a preços justos. Visite-nos em Fornelos, Fafe, ou contacte-nos pelo 965 083 452.">
+    <link rel="canonical" href="https://www.guimacar.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.guimacar.com/">
+    <meta property="og:title" content="Guimacar | Stand Automóvel em Fafe">
+    <meta property="og:description" content="Stand automóvel em Fafe com viaturas usadas de qualidade. Carros revisados, a preços justos. Visite-nos em Fornelos, Fafe.">
+    <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Guimacar">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guimacar | Stand Automóvel em Fafe">
+    <meta name="twitter:description" content="Stand automóvel em Fafe com viaturas usadas de qualidade. Carros revisados, a preços justos.">
+    <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "Guimacar",
+      "legalName": "Guimacar Comercio de Automoveis Unipessoal Lda",
+      "url": "https://www.guimacar.com",
+      "telephone": "+351965083452",
+      "email": "guimacar96@gmail.com",
+      "vatID": "510609180",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida de Santa Comba, 1524",
+        "addressLocality": "Fornelos",
+        "postalCode": "4820-428",
+        "addressRegion": "Fafe",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.4511,
+        "longitude": -8.1764
+      },
+      "sameAs": ["https://www.facebook.com/guimacar"]
+    }
+    </script>
+    <link rel="preload" as="image" href="img/inicio.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #f97316 #000000;
+        }
+
+        .carousel-container {
+            display: flex;
+            will-change: transform;
+        }
+
+        .zoom-effect {
+            animation: heroZoom 18s ease-in-out infinite;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        @keyframes heroZoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .reveal-card {
+            animation: cardIn 0.7s ease-out both;
+        }
+
+        @keyframes cardIn {
+            0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            color: #334155;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #9ca3af;
+        }
+
+        .status-pill.open {
+            background: rgba(132, 204, 22, 0.18);
+            border-color: rgba(132, 204, 22, 0.45);
+            color: #365314;
+        }
+
+        .status-pill.open .status-dot {
+            background: #84cc16;
+        }
+
+        .status-pill.closed {
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.35);
+            color: #9a3412;
+        }
+
+        .status-pill.closed .status-dot {
+            background: #f97316;
+        }
+
+
+                /* Barra de scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000; /* cor do fundo — igual ao preto da página */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f97316; /* orange-500 */
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb923c; /* orange-400 */
+        }
+
+                #carousel > a {
+            width: calc(33.333% - 22px);
+            flex-shrink: 0;
+            margin: 0 12px;
+        }
+        @media (max-width: 1024px) and (min-width: 769px) {
+            /* Tablet landscape: 2 cards */
+            #carousel > a {
+                width: calc(50% - 22px);
+                margin: 0 11px;
+            }
+        }
+        @media (max-width: 768px) {
+            #carousel > a {
+                width: calc(100% - 24px);
+                margin: 0 12px;
+            }
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .carousel-dot.active {
+            background: #f97316;
+            width: 24px;
+            border-color: #f97316;
+            box-shadow: 0 0 8px rgba(249,115,22,0.6);
+        }
+
+        /* Hover sofisticado nos cards */
+        .car-card {
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 35px 90px -35px rgba(249,115,22,0.55), 0 0 0 2px rgba(249,115,22,0.45), 0 20px 60px -10px rgba(249,115,22,0.4);
+            border-color: rgba(249,115,22,0.5);
+        }
+
+        /* Reveal ao scroll */
+        .reveal-card {
+            opacity: 0;
+            transform: translateY(20px) scale(0.97);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+        }
+        .reveal-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        @keyframes cardIn {
+            0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+
+        /* Micro-animaÃ§Ã£o CTAs */
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+        .cta-btn:hover::after {
+            left: 160%;
+        }
+        .cta-btn:hover {
+            transform: scale(1.06) translateY(-2px);
+            box-shadow: 0 0 32px rgba(249,115,22,0.55);
+        }
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body class="bg-black font-sans text-gray-100">  <!--removi o overflow-hidden para permitir scroll na página inicial-->
+    <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-sm z-[200] hidden"
+     style="animation: slideUp 0.4s ease-out;">
+        <div style="background:#18181b; border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:20px; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+            <div class="flex items-start gap-4">
+                <div style="background:rgba(249,115,22,0.12); border-radius:12px; padding:10px; flex-shrink:0;">
+                    <i class="fas fa-cookie-bite text-orange-500 text-lg"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-white font-black text-lg uppercase tracking-wider mb-4">Privacidade & Cookies</p>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                        Usamos cookies do Google Analytics para melhorar a experiência no site. Pode aceitar ou recusar a qualquer momento.
+                        <a href="cookies.html" class="text-orange-500 font-semibold hover:underline ml-1">Saber mais</a>
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <button onclick="acceptCookies()" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-[11px] font-black py-2 px-4 rounded-xl transition uppercase tracking-wider">
+                            Aceitar
+                        </button>
+                        <button onclick="rejectCookies()" class="flex-1 text-zinc-300 text-[11px] font-black py-2 px-4 rounded-xl transition uppercase tracking-wider" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);">
+                            Recusar
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Mobile Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-black tracking-tighter"><span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span></span>
+                <button id="close-menu" class="text-gray-400 hover:text-white transition p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
+                </a>
+                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fab fa-facebook-f text-orange-500 w-5"></i> Facebook
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- Loader/Splash Screen -->
+    <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-orange-500 font-black">CAR</span>
+                </h1>
+            </div>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Header Fixo (aparece apÃ³s scroll) -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform -translate-y-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.6); box-shadow: 0 18px 50px -18px rgba(249,115,22,0.7);">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black tracking-tighter">
+                    <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="stock.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Viaturas Disponíveis
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Contactos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank" 
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-110 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                        <i class="fab fa-facebook-f text-base"></i>
+                    </a>
+                </nav>
+                <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SeÃ§Ã£o Principal -->
+    <section class="relative h-screen w-full overflow-hidden bg-slate-950">
+        <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover zoom-effect opacity-95">
+        <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+            
+            <div class="bg-black/20 backdrop-blur-[2px] p-6 md:p-16 rounded-[1.5rem] md:rounded-[3rem] border border-white/10 shadow-2xl mx-2">
+                
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight mb-4 drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-orange-500 font-black">CAR</span>
+                </h1>
+                
+                <p class="text-base md:text-2xl text-gray-200 mb-8 md:mb-12 max-w-2xl font-light drop-shadow-md">
+                    Comércio de Automóveis Semi-novos e Usados
+                </p>
+                
+                <a href="stock.html" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg inline-block">
+                    Viaturas Disponíveis<i class="fas fa-arrow-right ml-2 text-sm opacity-80"></i>
+                </a>
+                
+            </div>
+            </div>
+    
+        <!-- BotÃµes de contacto flutuantes -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-6 bg-black/20 backdrop-blur-[2px] p-4 rounded-[2rem] border border-white/10 shadow-2xl">
+    
+            <a href="contacto.html" class="group relative flex items-center justify-center w-14 h-14 bg-gray-500/20 rounded-2xl border border-gray-500/30 transition-all duration-300 hover:border-gray-400 hover:bg-gray-500/40 hover:-translate-y-2">
+                <i class="fas fa-phone text-white group-hover:text-white transition-colors"></i>
+                <div class="absolute inset-0 rounded-2xl bg-gray-500/30 group-hover:bg-gray-500/50 blur-xl transition-all"></div>
+            </a>
+
+            <a href="https://www.facebook.com/guimacar" target="_blank" class="group relative flex items-center justify-center w-14 h-14 bg-gray-500/20 rounded-2xl border border-gray-500/30 transition-all duration-300 hover:border-gray-400 hover:bg-gray-500/40 hover:-translate-y-2">
+                <i class="fab fa-facebook-f text-white group-hover:text-white transition-colors text-xl"></i>
+                <div class="absolute inset-0 rounded-2xl bg-gray-500/30 group-hover:bg-gray-500/50 blur-xl transition-all"></div>
+            </a>
+    
+        </div>
+    </section>
+    <!--CARROS DESTACADOS-->
+    <section id="stock" class="container mx-auto py-20 px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Destaques</h2>
+            <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>  <!--barra colorida a baixo da palavra DESTAQUES-->
+        </div>
+        
+        <div class="flex justify-center">
+            <div class="relative group w-full px-0 md:px-14" style="max-width: 1280px;">
+                <button id="carousel-prev"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-40 bg-black/30 backdrop-blur-md border border-white/10 shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center text-white transition hover:shadow-[0_0_24px_rgba(249,115,22,0.6)] hover:bg-orange-500/20 active:scale-95">
+                    <i class="fas fa-chevron-left text-orange-500"></i>
+                </button>
+                <!--DESTAQUES-->
+                <div style="overflow-x:hidden; padding: 120px 0; margin: -120px 0;">
+                <div class="relative" id="carousel-wrapper">
+                    <div class="carousel-container flex" id="carousel" style="gap:0">
+                    <!-- Cards originais -->
+                    <a href="detalhes.html?id=1" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: 0.05s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <!--carro1-->
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Renault Megane</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-lime-500">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro2-->
+                    <a href="detalhes.html?id=2" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" id="carro2" style="animation-delay: 0.13s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro2/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i> 2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 89 000 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Citroen Berlingo</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.6 Hdi Longa</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-lime-500">10250 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                              <!--  <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">298,45€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro3-->
+                    <a href="detalhes.html?id=3" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: 0.21s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro3/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i> 2015</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 110 000 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Citroen C3</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.2</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <!--<p class="text-gray-400 text-xs line-through mb-1">Antes 11000 Ã¢â€šÂ¬</p>-->
+                                    <p class="text-3xl font-black text-lime-500">10999 €</p>
+                                   <!-- <span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                                <!--<div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">250,67€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro 4-->
+                    <a href="detalhes.html?id=4" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: 0.29s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Renault Megane</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-lime-500">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro5-->
+                    <a href="detalhes.html?id=5" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: 0.37s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Renault Megane</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-lime-500">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>
+                    <!--carro6-->
+                    <a href="detalhes.html?id=6" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: 0.45s;">
+                        <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                        <div class="p-3">
+                            <!--carro1-->
+                            <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                <img src="img/carro1/1.jpg" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                    <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                        <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>2018</span>
+                                        <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> Gasóleo</span>
+                                        <span><i class="fas fa-road mr-1 text-lime-500"></i> 176 307 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-2">
+                            <h3 class="text-2xl font-black text-slate-900 leading-tight">Renault Megane</h3>
+                            <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">1.5 Dci 110 CV</p>
+                            <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                <div>
+                                    <p class="text-3xl font-black text-lime-500">15 900 €</p>
+                                    <!--<span class="inline-block bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-0.5 rounded mt-1 uppercase">Promoção</span>-->
+                                </div>
+                               <!-- <div class="text-right">
+                                    <p class="text-[10px] text-gray-400 font-bold uppercase">Desde</p>
+                                    <p class="text-lg font-black text-gray-900 leading-none">211,09€</p>
+                                    <p class="text-[10px] text-gray-500 font-medium">/mês*</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </a>    
+                </div>
+                </div>
+                </div>
+                <button id="carousel-next"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-40 bg-black/30 backdrop-blur-md border border-white/10 shadow-xl rounded-full w-12 h-12 hidden md:flex items-center justify-center text-white transition hover:shadow-[0_0_24px_rgba(249,115,22,0.6)] hover:bg-orange-500/20 active:scale-95">
+                    <i class="fas fa-chevron-right text-orange-500"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- BotÃµes mobile do carrossel -->
+        <div class="flex md:hidden justify-center gap-6 mt-4">
+            <button id="carousel-prev-mobile"
+                    class="bg-black/40 backdrop-blur-md border border-white/10 shadow-xl rounded-full w-14 h-14 flex items-center justify-center text-white transition hover:shadow-[0_0_24px_rgba(249,115,22,0.6)] hover:bg-orange-500/20 active:scale-95">
+                <i class="fas fa-chevron-left text-orange-500 text-lg"></i>
+            </button>
+            <button id="carousel-next-mobile"
+                    class="bg-black/40 backdrop-blur-md border border-white/10 shadow-xl rounded-full w-14 h-14 flex items-center justify-center text-white transition hover:shadow-[0_0_24px_rgba(249,115,22,0.6)] hover:bg-orange-500/20 active:scale-95">
+                <i class="fas fa-chevron-right text-orange-500 text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Dots indicator -->
+        <div id="carousel-dots" class="flex justify-center gap-2 mt-6"></div>
+
+        <div class="text-center mt-5">
+            <a href="stock.html" class="cta-btn inline-block bg-orange-500 text-white px-12 py-4 rounded-full font-black">
+                VER MAIS
+            </a>
+        </div>
+    </section>
+
+    <!-- Contactos -->
+    <section id="contacto" class="container mx-auto py-20 px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-white tracking-tight italic uppercase">Contactos</h2>
+            <div class="h-1 w-20 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <div class="bg-gray-100 p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 space-y-6 md:space-y-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 font-black">Guimacar</h3>
+                    <p class="text-slate-600 font-bold text-sm uppercase mb-4 tracking-widest">Comércio de Automóveis</p>
+                    <div class="space-y-1 text-slate-800 sm:text-slate-700">
+                        <p class="font-bold text-orange-500 uppercase tracking-wider">Morada</p>
+                        <p>Avenida de Santa Comba, 1524</p>
+                        <p>4820-428 Fornelos</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-6 border-t border-gray-100">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-mobile-alt"></i></div>
+                        <div>
+                            <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">Telemóvel</p>
+                            <span class="hidden md:inline font-bold text-lg text-slate-900">965 083 452</span>
+                            <a href="tel:965083452" class="md:hidden font-bold text-lg text-slate-900 hover:text-orange-500 transition-colors">965 083 452</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">E-mail</p>
+                            <a href="mailto:guimacar96@gmail.com" class="font-bold text-lg text-slate-900 hover:text-lime-500 transition-colors">
+                                guimacar96@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white/5 p-3 rounded-full border border-white/10 text-orange-500 transition-all duration-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.45)]"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <p class="text-xs text-orange-500 uppercase font-bold tracking-wider">Horário de Funcionamento</p>
+                            <div id="open-status" class="status-pill closed mt-2">
+                                <span class="status-dot" id="open-status-dot"></span>
+                                <span id="open-status-text">A verificar...</span>
+                            </div>
+                            <div class="text-sm text-slate-800 sm:text-slate-700 mt-1 space-y-1">
+                                <p><span class="font-bold">Segunda a Sábado:</span> 09:30 — 13:00 | 14:30 — 19:30</p>
+                                <p><span class="font-bold">Domingo:</span> Encerrado</p>
+                            </div>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida%20de%20Santa%20Comba%2C%201524%2C%204820-428%20Fornelos" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/25 transition hover:bg-orange-600 hover:scale-[1.02]">
+                                <i class="fas fa-route text-xs"></i>
+                                Obter Direções
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-[300px] md:h-full min-h-[300px] md:min-h-[400px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] border border-orange-400/30 ring-1 ring-orange-500/40 bg-black/30 transform hover:scale-[1.01] transition-transform duration-500">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.599326746814!2d-8.180954024576584!3d41.4696047908923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24e8801cb092ff%3A0x9608adc63cdbf440!2sGuimacar!5e0!3m2!1spt-PT!2spt!4v1773931842665!5m2!1spt-PT!2spt"
+                    class="w-full h-full border-0" 
+                    style="pointer-events: all;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+    <!--footer-->
+    <!-- Separador visual -->
+    <div class="relative h-px w-full bg-white/5">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent shadow-[0_0_15px_rgba(249,115,22,0.3)]"></div>
+</div>
+    <footer class="bg-[#0a0a0a] border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+
+                <div class="col-span-2 md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4">
+                        <span class="text-white font-black text-2xl tracking-tighter italic uppercase">GUIMA<span class="text-orange-500">CAR</span></span>
+                    </a>
+                    <p class="text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-3">Guimacar Comercio de Automoveis Unipessoal Lda</p>
+                    <div class="text-zinc-400 text-xs space-y-1.5 leading-relaxed">
+                        <p class="flex items-center gap-2"><i class="fas fa-fingerprint text-[10px] text-zinc-600"></i> NIF: 510609180</p>
+                        <p class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-[10px] text-zinc-600 mt-1"></i> 
+                            <span>Avenida de Santa Comba, 1524<br>4820-428 Fornelos, Fafe</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Navegação</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="index.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Página Inicial</a>
+                        <a href="stock.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Viaturas Disponíveis</a>
+                        <a href="contacto.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Contactos</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Legal</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="privacidade.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Privacidade</a>
+                        <a href="cookies.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Cookies</a>
+                        <a href="termos.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Termos de Utilização</a>
+                        <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-1">
+                            Livro de Reclamações <i class="fas fa-external-link-alt text-[8px]"></i>
+                        </a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Contactos rápidos</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3 pointer-events-auto md:pointer-events-none cursor-default">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
+                                <i class="fas fa-phone text-orange-500 text-[10px]"></i>
+                            </span> 
+                            <span class="truncate">965 083 452</span>
+                        </a>
+                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 hover:text-orange-500 transition-colors flex items-center gap-3 min-w-0">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
+                                <i class="fas fa-envelope text-orange-500 text-[10px]"></i>
+                            </span> 
+                            <span class="text-[11px] sm:text-xs font-medium break-all leading-tight">guimacar96@gmail.com</span>
+                        </a>
+                        <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
+                                <i class="fab fa-facebook-f text-orange-500 text-[10px]"></i>
+                            </span> 
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8">
+                <p class="text-zinc-500 text-[10px] md:text-[11px] leading-relaxed mb-6 max-w-3xl">
+                    Em caso de litígio, o consumidor pode recorrer ao <span class="text-zinc-300">Centro de Arbitragem do Sector Automóvel (CASA)</span>, com sítio em 
+                    <a href="https://www.arbitragemauto.pt" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:underline">www.arbitragemauto.pt</a>.
+                </p>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5 pt-6">
+                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest">
+                        &copy; 2026 <span class="text-white">GUIMACAR</span> — Todos os direitos reservados.
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+            
+    <script src="carros.js"></script>
+    <script src="script.js"></script>
+    <script>
+        (function() {
+            const track = document.getElementById('carousel');
+            if (!track) return;
+
+            function escapeHtml(value) {
+                return String(value ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function formatYearLabel(value) {
+                const text = String(value ?? '').trim();
+                if (!text) return '-';
+                const match = text.match(/(\d{4})$/);
+                return match ? match[1] : text;
+            }
+
+            function formatKmsLabel(value) {
+                const text = String(value ?? '').trim();
+                if (!text) return '-';
+                return /\bkm\b/i.test(text) ? text : `${text} km`;
+            }
+
+            if (typeof stockGuimacar !== 'undefined') {
+                const featuredCars = stockGuimacar.filter(car => car.destaque);
+                if (featuredCars.length) {
+                    track.innerHTML = featuredCars.map((car, index) => `
+                        <a href="detalhes.html?id=${car.id}" class="flex-shrink-0 bg-white rounded-[2rem] shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 pb-4 border border-gray-200 car-card cursor-pointer block" style="animation-delay: ${0.05 + index * 0.08}s;">
+                            <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
+                            <div class="p-3">
+                                <div class="relative h-52 w-full overflow-hidden rounded-2xl shadow-sm">
+                                    <img src="${escapeHtml(car.fotos?.[0] || 'img/inicio.jpg')}" loading="lazy" class="w-full h-full object-cover" alt="${escapeHtml(`${car.marca} ${car.modelo}`)}">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                        <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[12px] font-bold uppercase tracking-wider">
+                                            <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>${escapeHtml(formatYearLabel(car.mes))}</span>
+                                            <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i> ${escapeHtml(car.combustivel || '-')}</span>
+                                            <span><i class="fas fa-road mr-1 text-lime-500"></i> ${escapeHtml(formatKmsLabel(car.kms))}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-2">
+                                <h3 class="text-2xl font-black text-slate-900 leading-tight">${escapeHtml(car.marca || '')}</h3>
+                                <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">${escapeHtml(car.modelo || '')}</p>
+                                <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-4">
+                                    <div>
+                                        <p class="text-3xl font-black text-lime-500">${escapeHtml(car.preco || '')}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+            }
+
+            const originalCards = Array.from(track.children);
+            const totalOriginal = originalCards.length;
+            if (!totalOriginal) return;
+
+            // Clona os cards para loop infinito
+            originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
+            originalCards.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
+
+            // Dots
+            const dotsContainer = document.getElementById('carousel-dots');
+            const dots = [];
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalOriginal; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Card ' + (i + 1));
+                    dot.addEventListener('click', () => {
+                        clearAutoplay();
+                        currentIndex = totalOriginal + i;
+                        goTo(currentIndex, true);
+                        updateDots();
+                        startAutoplay();
+                    });
+                    dotsContainer.appendChild(dot);
+                    dots.push(dot);
+                }
+            }
+
+            function updateDots() {
+                const realIndex = ((currentIndex - totalOriginal) % totalOriginal + totalOriginal) % totalOriginal;
+                dots.forEach((d, i) => d.classList.toggle('active', i === realIndex));
+            }
+
+            let currentIndex = totalOriginal;
+
+            function getCardWidth() {
+                const card = track.children[totalOriginal];
+                if (!card) return 380;
+                const rect = card.getBoundingClientRect();
+                const style = getComputedStyle(card);
+                return rect.width + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+            }
+
+            function goTo(index, animate) {
+                const cw = getCardWidth();
+                track.style.transition = animate ? 'transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+                track.style.transform = 'translateX(-' + (index * cw) + 'px)';
+            }
+
+            goTo(currentIndex, false);
+
+            function next() {
+                currentIndex++;
+                goTo(currentIndex, true);
+                updateDots();
+                setTimeout(() => {
+                    if (currentIndex >= totalOriginal * 2) {
+                        currentIndex = totalOriginal;
+                        goTo(currentIndex, false);
+                    }
+                }, 600);
+            }
+
+            function prev() {
+                currentIndex--;
+                goTo(currentIndex, true);
+                updateDots();
+                setTimeout(() => {
+                    if (currentIndex < totalOriginal) {
+                        currentIndex = totalOriginal * 2 - 1;
+                        goTo(currentIndex, false);
+                    }
+                }, 600);
+            }
+
+            let autoplayTimer = null;
+            function startAutoplay() { autoplayTimer = setInterval(next, 3500); }
+            function clearAutoplay() { clearInterval(autoplayTimer); autoplayTimer = null; }
+            startAutoplay();
+
+            const wrapper = document.getElementById('carousel-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', clearAutoplay);
+                wrapper.addEventListener('mouseleave', startAutoplay);
+            }
+
+            document.getElementById('carousel-prev')?.addEventListener('click', () => { clearAutoplay(); prev(); startAutoplay(); });
+            document.getElementById('carousel-next')?.addEventListener('click', () => { clearAutoplay(); next(); startAutoplay(); });
+
+            // Touch / Swipe
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) >= 50) { clearAutoplay(); diff > 0 ? next() : prev(); startAutoplay(); }
+            }, { passive: true });
+
+            window.addEventListener('resize', () => goTo(currentIndex, false));
+            updateDots();
+
+            // BotÃµes mobile
+            document.getElementById('carousel-prev-mobile')?.addEventListener('click', () => { clearAutoplay(); prev(); startAutoplay(); });
+            document.getElementById('carousel-next-mobile')?.addEventListener('click', () => { clearAutoplay(); next(); startAutoplay(); });
+
+            // Intersection Observer para reveal-card
+            const revealCards = document.querySelectorAll('#carousel > a');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('reveal-card', 'visible');
+                        }, i * 80);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            // Observar apenas os cards originais
+            Array.from(track.children).slice(totalOriginal, totalOriginal * 2).forEach(card => {
+                card.classList.add('reveal-card');
+                observer.observe(card);
+            });
+
+        })();
+
+
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 100) {
+                // No topo da pÃƒÂ¡gina Ã¢â‚¬â€ esconde sempre
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScrollY < lastScrollY) {
+                // A fazer scroll para cima Ã¢â‚¬â€ mostra
+                header.style.transform = 'translateY(0)';
+            } else {
+                // A fazer scroll para baixo Ã¢â‚¬â€ esconde
+                header.style.transform = 'translateY(-100%)';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+    <script>
+        // Controlo do Loader
+        window.addEventListener('load', function() {
+            // Espera um pouco mais para garantir que tudo estÃ¡ carregado
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                
+                // Remove o loader completamente apÃ³s a animaÃ§Ã£o
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }, 500);
+            }, 1000); // 1 segundo de delay mÃ­nimo
+        });
+
+        </script>
+    <script>
+        (function() {
+            const statusEl = document.getElementById("open-status");
+            const statusText = document.getElementById("open-status-text");
+            if (!statusEl || !statusText) return;
+
+            const openMinutes = [
+                [9 * 60 + 30, 13 * 60],
+                [14 * 60 + 30, 19 * 60 + 30]
+            ];
+
+            function getLisbonParts(date) {
+                const parts = new Intl.DateTimeFormat("pt-PT", {
+                    timeZone: "Europe/Lisbon",
+                    weekday: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false
+                }).formatToParts(date);
+
+                const get = (type) => parts.find(p => p.type === type)?.value || "";
+                return {
+                    weekday: get("weekday").toLowerCase(),
+                    hour: parseInt(get("hour"), 10),
+                    minute: parseInt(get("minute"), 10)
+                };
+            }
+
+            function isOpenNow() {
+                const { weekday, hour, minute } = getLisbonParts(new Date());
+                const isSunday = weekday.startsWith("dom");
+                if (isSunday) return false;
+
+                const minutes = hour * 60 + minute;
+                return openMinutes.some(([start, end]) => minutes >= start && minutes < end);
+            }
+
+            function updateOpenStatus() {
+                const open = isOpenNow();
+                statusEl.classList.remove("open", "closed");
+                statusEl.classList.add(open ? "open" : "closed");
+                statusText.textContent = open ? "Aberto agora" : "Fechado agora";
+            }
+
+            updateOpenStatus();
+            setInterval(updateOpenStatus, 60000);
+        })();
+    </script>
+    <script>
+        (function() {
+            if (typeof stockGuimacar === "undefined") return;
+            const cards = document.querySelectorAll('#carousel a[href^="detalhes.html?id="]');
+            cards.forEach(card => {
+                const href = card.getAttribute('href') || "";
+                const match = href.match(/id=(\d+)/);
+                if (!match) return;
+                const id = parseInt(match[1], 10);
+                const car = stockGuimacar.find(c => c.id === id);
+                if (!car || !car.fotos || car.fotos.length < 2) return;
+
+                const imgEl = card.querySelector('img');
+                if (!imgEl) return;
+
+                let hoverInterval = null;
+                let hoverIndex = 0;
+
+                card.addEventListener('mouseenter', () => {
+                    hoverIndex = 0;
+                    hoverInterval = setInterval(() => {
+                        hoverIndex = (hoverIndex + 1) % car.fotos.length;
+                        imgEl.src = car.fotos[hoverIndex];
+                    }, 900);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    if (hoverInterval) {
+                        clearInterval(hoverInterval);
+                        imgEl.src = car.fotos[0];
+                    }
+                });
+            });
+        })();
+    </script>
+    <style>
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        (function() {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+
+            if (!consent) {
+                setTimeout(() => {
+                    banner.classList.remove('hidden');
+                }, 1200);
+            }
+
+            window.acceptCookies = function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.classList.add('hidden');
+                // Aqui podes ativar o Google Analytics se estiver desativado por defeito
+            };
+
+            window.rejectCookies = function() {
+                localStorage.setItem('cookieConsent', 'rejected');
+                banner.classList.add('hidden');
+            };
+        })();
+    </script>
+</body>
+</html>
+                       
