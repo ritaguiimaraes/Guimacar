@@ -27,6 +27,7 @@
     <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <style>
         html {
             scroll-behavior: smooth;
@@ -114,7 +115,7 @@
         }
     </style>
 </head>
-<body class="bg-black font-sans text-gray-100 overflow-hidden">
+<body class="bg-black font-sans text-gray-100">
 
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
         style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
@@ -636,9 +637,9 @@
                     <a href="index.html" class="inline-block mb-4">
                         <span class="text-white font-black text-2xl tracking-tighter italic uppercase">GUIMA<span class="text-orange-500">CAR</span></span>
                     </a>
-                    <p class="text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-3">NOME DA EMPRESA, LDA</p>
+                    <p class="text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-3">Guimacar Comercio de Automoveis Unipessoal Lda</p>
                     <div class="text-zinc-400 text-xs space-y-1.5 leading-relaxed">
-                        <p class="flex items-center gap-2"><i class="fas fa-fingerprint text-[10px] text-zinc-600"></i> NIF: XXXXXXXXX</p>
+                        <p class="flex items-center gap-2"><i class="fas fa-fingerprint text-[10px] text-zinc-600"></i> NIF: 510609180</p>
                         <p class="flex items-start gap-2">
                             <i class="fas fa-map-marker-alt text-[10px] text-zinc-600 mt-1"></i> 
                             <span>Avenida de Santa Comba, 1524<br>4820-428 Fornelos, Fafe</span>
@@ -670,23 +671,23 @@
                 <div>
                     <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Contactos rápidos</p>
                     <div class="flex flex-col gap-3">
-                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3 pointer-events-auto md:pointer-events-none cursor-default">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
                                 <i class="fas fa-phone text-orange-500 text-[10px]"></i>
                             </span> 
-                            965 083 452
+                            <span class="truncate">965 083 452</span>
                         </a>
-                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 hover:text-orange-500 transition-colors flex items-center gap-3 min-w-0">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
                                 <i class="fas fa-envelope text-orange-500 text-[10px]"></i>
                             </span> 
-                            guimacar96@gmail.com
+                            <span class="text-[11px] sm:text-xs font-medium break-all leading-tight">guimacar96@gmail.com</span>
                         </a>
                         <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
                                 <i class="fab fa-facebook-f text-orange-500 text-[10px]"></i>
                             </span> 
-                            Facebook
+                            <span>Facebook</span>
                         </a>
                     </div>
                 </div>
