@@ -23,8 +23,14 @@ gps: 'GPS',
             esp: 'ESP',
             'direcao assistida': 'Direção assistida',
             'fecho central': 'Fecho central',
+
+
+
+
+            extras: ["gps","usb","radio cd","bluetooth","jante sespeciais", "camera traseira","cruise control","jantes","farois xenon","farois led", "farois nevoeiro", "volante multifuncoes", "volante pele","ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores frontais","sensores traseiros","abs","esp", "direcao assistida", "fecho central"],
 */
 const stockGuimacar = [
+    /*
     {
         id: 1,
         marca: "Renault Megane",
@@ -47,44 +53,10 @@ const stockGuimacar = [
             "img/carro1/6.jpg",
             "img/carro1/7.jpg",
             "img/carro1/8.jpg",
-            "img/carro1/9.jpg",
-            "img/carro1/10.jpg",
-            "img/carro1/11.jpg"
+            "img/carro1/9.jpg" 
         ]
-    },
-    {
-        id: 2,
-        marca: "Citroen Berlingo Longa",
-        destaque: true,
-        modelo: "1.6 Hdi 3L 2018",
-        preco: "10.250 €",
-        mes: "06/2018",
-        kms: "142.100",
-        combustivel: "Gasóleo",
-        cilindrada: "1600",
-        potencia: "100",
-        registos: "N/C",
-        extras: ["gps","bluetooth","cruise control","direcao assistida", "volante multifuncoes", "fecho central","sensores traseiros","abs","esp"],
-        fotos: [
-            "img/carro2/1.jpg",
-            "img/carro2/2.jpg",
-            "img/carro2/3.jpg",
-            "img/carro2/4.jpg",
-            "img/carro2/5.jpg",
-            "img/carro2/6.jpg",
-            "img/carro2/7.jpg",
-            "img/carro2/8.jpg",
-            "img/carro2/9.jpg",
-            "img/carro2/10.jpg",
-            "img/carro2/11.jpg",
-            "img/carro2/12.jpg",
-            "img/carro2/13.jpg",
-            "img/carro2/14.jpg",
-            "img/carro2/15.jpg",
-            "img/carro2/16.jpg",
-            "img/carro2/17.jpg"
-        ]
-    },
+    },*/
+    /*
     {
         id: 3,
         marca: "Citroen C3",
@@ -118,7 +90,7 @@ const stockGuimacar = [
             "img/carro3/17.jpg"
 
         ]
-    },
+    },*/
     {
         id: 4,
         marca: "Peugeot Partner",
@@ -153,7 +125,7 @@ const stockGuimacar = [
         id: 5,
         marca: "Peugeot",
         destaque: true,
-        modelo: "308 SW 2019",
+        modelo: "308 SW 2018",
         preco: "13.750 €",
         mes: "05/2018",
         kms: "135.000",
@@ -188,7 +160,7 @@ const stockGuimacar = [
         marca: "Peugeot",
         destaque: true,
         modelo: "308 Hdi 2019",
-        preco: "A DEFINIR",
+        preco: "13.750 €",
         mes: "07/2019",
         kms: "146.100",
         combustivel: "Gasóleo",
@@ -211,6 +183,32 @@ const stockGuimacar = [
             "img/carro6/12.jpg",
             "img/carro6/13.jpg",
             "img/carro6/14.jpg"
+        ]
+    },
+    {
+        id: 7,
+        marca: "Renault",
+        destaque: true,
+        modelo: " Captur 1.5 2016",
+        preco: "10.250 €",
+        mes: "10/2016",
+        kms: "163.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1500",
+        potencia: "90",
+        registos: "N/C",
+        extras:[],
+        fotos: [
+            "img/carro7/1.jpg",
+            "img/carro7/2.jpg",
+            "img/carro7/3.jpg",
+            "img/carro7/4.jpg",
+            "img/carro7/5.jpg",
+            "img/carro7/6.jpg",
+            "img/carro7/7.jpg",
+            "img/carro7/8.jpg",
+            "img/carro7/9.jpg",
+            "img/carro7/10.jpg"
         ]
     }
 ];

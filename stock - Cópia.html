@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQXD05YKH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3HQXD05YKH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaturas Disponíveis | Guimacar — Stand em Fafe</title>
+    <meta name="description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais. Preços justos e transparentes.">
+    <link rel="canonical" href="https://www.guimacar.com/stock.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.guimacar.com/stock.html">
+    <meta property="og:title" content="Viaturas Disponíveis | Guimacar — Stand em Fafe">
+    <meta property="og:description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais.">
+    <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Guimacar">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Viaturas Disponíveis | Guimacar — Stand em Fafe">
+    <meta name="twitter:description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe.">
+    <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #f97316 #000000;
+        }
+
+        /* Barra de scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f97316; /* orange-500 */
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb923c; /* orange-400 */
+        }
+
+        .filter-select,
+        .filter-select option {
+            color: #0f172a;
+        }
+
+        .filter-select option {
+            background: #ffffff;
+        }
+
+        .filter-select.active {
+            border-color: #f97316;
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+        }
+
+        .custom-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .custom-select-button {
+            width: 100%;
+            background: #ffffff;
+            color: #0f172a;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .custom-select-button:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+            background: #fff7ed;
+        }
+
+        .custom-select-options {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.35);
+            max-height: 240px;
+            overflow: auto;
+            z-index: 50;
+            display: none;
+            width: 100%;
+        }
+
+        .custom-select.open .custom-select-options {
+            display: block;
+        }
+
+        .custom-select-option {
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .custom-select-option:hover,
+        .custom-select-option.is-active {
+            background: #ffedd5;
+            color: #9a3412;
+        }
+
+        .native-select {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            height: 0;
+            width: 0;
+        }
+
+        .reveal-card {
+            animation: cardIn 0.7s ease-out both;
+        }
+        .card-fade-in {
+            animation: cardIn 0.4s ease-out both;
+        }
+
+        @keyframes cardIn {
+            0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+    </style>s
+</head>
+<body class="bg-black font-sans text-gray-100 overflow-hidden overflow-x-hidden">
+    <!-- Menu Mobile Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out"
+        style="background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(249,115,22,0.3);">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-black tracking-tighter"><span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span></span>
+                <button id="close-menu" class="text-gray-400 hover:text-white transition p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="/" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
+                </a>
+                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                    <i class="fab fa-facebook-f text-orange-500 w-5"></i> Facebook
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-[90] hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- Loader/Splash Screen -->
+    <div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">
+                    GUIMA<span class="text-orange-500 font-black">CAR</span>
+                </h1>
+            </div>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+        </div>
+    </div>
+     <header id="main-header" class="fixed top-0 left-0 right-0 z-[80] transform transition-transform duration-300 ease-in-out"
+        style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,115,22,0.6); box-shadow: 0 18px 50px -18px rgba(249,115,22,0.7);">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-4 min-w-0">
+                    <button id="botao-voltar" type="button" onclick="voltarPagina()" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20 shrink-0">
+                        <i class="fas fa-arrow-left text-xs"></i>
+                    </button>
+                    <a href="/" class="text-2xl font-black tracking-tighter shrink-0">
+                        <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Página Inicial
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                        Contactos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="https://www.facebook.com/guimacar" target="_blank" 
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:scale-105 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                        <i class="fab fa-facebook-f text-base"></i>
+                    </a>
+                </nav>
+                <button id="open-menu-header" class="md:hidden text-gray-300 hover:text-white p-2 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="max-w-none mx-auto py-8 md:py-12 px-4 md:px-6 pt-24 md:pt-28">
+        <div class="text-center mb-8 md:mb-12">
+            <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight italic uppercase">Viaturas Disponíveis</h1>
+            <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        <!--FILTROS-->
+        <div class="flex flex-col gap-8">
+            <!-- Barra de filtros horizontal -->
+            <div class="max-w-none mx-auto bg-white text-slate-900 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 border border-gray-200 shadow-[0_35px_90px_-35px_rgba(249,115,22,0.35)] mb-8">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <h3 class="text-lg md:text-2xl font-black text-slate-900 italic">Filtros</h3>
+                    <div class="flex items-center gap-4">
+                        <span class="text-slate-600 text-sm font-medium uppercase tracking-tighter">
+                            <span id="results-count" class="text-lime-500 font-bold">0</span> viaturas encontradas
+                        </span>
+                        <button id="clear-filters" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl font-bold transition text-xs uppercase tracking-widest shadow-lg">
+                            <i class="fas fa-redo-alt mr-2"></i> Limpar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+                    <!-- Filtro de Combustível -->
+                    <div>
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Combustível</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="combustivel">
+                            <option value="Todos">Todos</option>
+                            <option value="Gasóleo">Gasóleo</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Híbrido">Híbrido</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro de Quilómetros -->
+                    <div>
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Quilómetros</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="kms">
+                            <option value="Todos">Todos</option>
+                            <option value="0-50000">Até 50.000 km</option>
+                            <option value="50000-100000">50.000 - 100.000 km</option>
+                            <option value="100000-150000">100.000 - 150.000 km</option>
+                            <option value="150000+">Mais de 150.000 km</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro de Ano -->
+                    <div>
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Ano</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="ano">
+                            <option value="Todos">Todos</option>
+                            <option value="2020+">2020 ou mais recente</option>
+                            <option value="2018-2020">2018 - 2020</option>
+                            <option value="2015-2018">2015 - 2018</option>
+                            <option value="antes-2015">Antes de 2015</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro de Preço -->
+                    <div>
+                        <label class="block text-xs md:text-sm font-bold text-orange-500 mb-1.5 uppercase tracking-wider">Faixa de Preço</label>
+                        <select class="filter-select w-full bg-white text-slate-900 border border-gray-200 rounded-xl px-3 py-1.5 md:px-4 md:py-2 text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition focus:bg-orange-50" data-filter="preco">
+                            <option value="Todos">Todos</option>
+                            <option value="0-10000">Até 10.000 €</option>
+                            <option value="10000-15000">10.000 - 15.000 €</option>
+                            <option value="15000-20000">15.000 - 20.000 €</option>
+                            <option value="20000+">Mais de 20.000 €</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de carros -->
+            <div style="max-width: 1800px; margin: 28px auto 0;">
+                <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+                    <!-- Os cards serão gerados por JavaScript -->
+                </div>
+            </div>
+
+            <!-- Paginação -->
+            <div id="pagination"></div>
+        </div>
+    </main>
+
+    <script src="carros.js"></script>
+    <script>
+        function voltarPagina() {
+            window.location.href = '/';
+        }
+
+        const gridCarros = document.getElementById('grid-carros');
+        const carsPerPage = 9;
+        let currentPage = 1;
+        let filteredCars = [];
+        
+        // Ordenar carros por ID decrescente (mais recentes primeiro)
+        const sortedCars = [...stockGuimacar].sort((a, b) => b.id - a.id);
+        filteredCars = sortedCars;
+        
+        // Estado dos filtros
+        const filters = {
+            combustivel: 'Todos',
+            kms: 'Todos',
+            ano: 'Todos',
+            preco: 'Todos'
+        };
+
+        // Função para extrair valor numérico do preço
+        function extractPrice(priceString) {
+            return parseInt(priceString.replace(/[^\d]/g, ''));
+        }
+
+        // Função para extrair ano do mês
+        function extractYear(mesString) {
+            const yearMatch = mesString.match(/\d{4}/);
+            return yearMatch ? parseInt(yearMatch[0]) : 0;
+        }
+
+        // Função para extrair valor numérico dos kms
+        function extractKms(kmsString) {
+            return parseInt(kmsString.replace(/[^\d]/g, ''));
+        }
+
+        // Função para aplicar filtros
+        function applyFilters() {
+            filteredCars = sortedCars.filter(carro => {
+                // Filtro de combustível
+                if (filters.combustivel !== 'Todos' && carro.combustivel !== filters.combustivel) {
+                    return false;
+                }
+
+                // Filtro de quilómetros
+                if (filters.kms !== 'Todos') {
+                    const kms = extractKms(carro.kms);
+                    switch (filters.kms) {
+                        case '0-50000':
+                            if (kms > 50000) return false;
+                            break;
+                        case '50000-100000':
+                            if (kms < 50000 || kms > 100000) return false;
+                            break;
+                        case '100000-150000':
+                            if (kms < 100000 || kms > 150000) return false;
+                            break;
+                        case '150000+':
+                            if (kms < 150000) return false;
+                            break;
+                    }
+                }
+
+                // Filtro de ano
+                if (filters.ano !== 'Todos') {
+                    const year = extractYear(carro.mes);
+                    switch (filters.ano) {
+                        case '2020+':
+                            if (year < 2020) return false;
+                            break;
+                        case '2018-2020':
+                            if (year < 2018 || year > 2020) return false;
+                            break;
+                        case '2015-2018':
+                            if (year < 2015 || year > 2018) return false;
+                            break;
+                        case 'antes-2015':
+                            if (year >= 2015) return false;
+                            break;
+                    }
+                }
+
+                // Filtro de preço
+                if (filters.preco !== 'Todos') {
+                    const price = extractPrice(carro.preco);
+                    switch (filters.preco) {
+                        case '0-10000':
+                            if (price > 10000) return false;
+                            break;
+                        case '10000-15000':
+                            if (price < 10000 || price > 15000) return false;
+                            break;
+                        case '15000-20000':
+                            if (price < 15000 || price > 20000) return false;
+                            break;
+                        case '20000+':
+                            if (price < 20000) return false;
+                            break;
+                    }
+                }
+
+                return true;
+            });
+
+            // Reset para primeira página
+            currentPage = 1;
+            renderPage(1);
+            updateResultsCount();
+
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.classList.toggle('active', select.value !== 'Todos');
+        });
+        }
+
+        // Função para atualizar contador de resultados
+        function updateResultsCount() {
+            document.getElementById('results-count').textContent = filteredCars.length;
+        }
+
+        // Event listeners para filtros
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', function() {
+                const filterType = this.dataset.filter;
+                const filterValue = this.value;
+
+                this.classList.toggle('active', this.value !== 'Todos');
+
+                // Atualiza o filtro
+                filters[filterType] = filterValue;
+
+                applyFilters();
+            });
+        });
+
+        // Botão limpar filtros
+        document.getElementById('clear-filters').addEventListener('click', function() {
+            // Reset todos os filtros
+            Object.keys(filters).forEach(key => {
+                filters[key] = 'Todos';
+            });
+
+            // Reset selects
+            document.querySelectorAll('.filter-select').forEach(select => {
+                select.value = 'Todos';
+                select.classList.remove('active');
+            });
+
+            applyFilters();
+        });
+
+        function renderPage(page) {
+            const startIndex = (page - 1) * carsPerPage;
+            const endIndex = startIndex + carsPerPage;
+            const carsToShow = filteredCars.slice(startIndex, endIndex);
+            
+            gridCarros.innerHTML = '';
+
+            if (carsToShow.length === 0) {
+                gridCarros.innerHTML = `
+                    <div class="col-span-full flex flex-col items-center justify-center py-24 text-center">
+                        <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>
+                        <p class="text-white text-2xl font-black mb-2">Nenhuma viatura encontrada</p>
+                        <p class="text-gray-400 text-sm">Tenta ajustar os filtros para ver mais resultados.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            carsToShow.forEach((carro, idx) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
+                card.style.animation = 'none';
+                card.classList.add('card-fade-in');
+                card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
+                
+                card.innerHTML = `
+                    <div class="p-3">${carro.destaque ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
+                        <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
+                            <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>
+                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                                <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
+                                    <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>${extractYear(carro.mes)}</span>
+                                    <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i>${carro.combustivel}</span>
+                                    <span><i class="fas fa-road mr-1 text-lime-500"></i>${carro.kms}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pt-2 pb-3 -mt-1">
+                        <h3 class="text-3xl font-black text-slate-900 leading-tight">${carro.marca}</h3>
+                        <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">${carro.modelo}</p>
+                        <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-2 -mt-1">
+                            <div>
+                                <p class="text-3xl font-black text-lime-500">${carro.preco}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Hover: cycle through photos of the same car
+                const imgEl = card.querySelector('img');
+                let hoverInterval = null;
+                let hoverIndex = 0;
+
+                card.addEventListener('mouseenter', () => {
+                    if (!carro.fotos || carro.fotos.length < 2 || !imgEl) return;
+                    hoverIndex = 0;
+                    hoverInterval = setInterval(() => {
+                        hoverIndex = (hoverIndex + 1) % carro.fotos.length;
+                        imgEl.src = carro.fotos[hoverIndex];
+                    }, 900);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    if (hoverInterval) {
+                        clearInterval(hoverInterval);
+                        hoverInterval = null;
+                    }
+                    if (imgEl) {
+                        imgEl.src = carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg';
+                    }
+                });
+
+                // Touch: tap na imagem para ver próxima foto (mobile)
+                let touchPhotoIndex = 0;
+                imgEl && imgEl.addEventListener('touchend', (e) => {
+                    if (!carro.fotos || carro.fotos.length < 2) return;
+                    e.stopPropagation();
+                    touchPhotoIndex = (touchPhotoIndex + 1) % carro.fotos.length;
+                    imgEl.src = carro.fotos[touchPhotoIndex];
+                }, { passive: true });
+
+                card.onclick = function() {
+                    window.location.href = `detalhes.html?id=${carro.id}`;
+                };
+
+                gridCarros.appendChild(card);
+            });
+            
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredCars.length / carsPerPage);
+            const paginationContainer = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+            
+            let paginationHTML = '<div class="flex justify-center items-center space-x-2 mt-12">';
+            
+            // Botão Anterior
+            if (currentPage > 1) {
+                paginationHTML += `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">← Anterior</button>`;
+            }
+            
+            // Números das páginas
+            for (let i = 1; i <= totalPages; i++) {
+                const isActive = i === currentPage;
+                paginationHTML += `<button onclick="changePage(${i})" class="px-4 py-2.5 text-sm font-bold rounded-xl ${isActive ? 'bg-orange-500 text-white shadow-[0_0_18px_rgba(249,115,22,0.5)]' : 'bg-black/30 text-gray-300 hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] border border-white/10'} rounded-lg transition">${i}</button>`;
+            }
+            
+            // Botão Seguinte
+            if (currentPage < totalPages) {
+                paginationHTML += `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">Seguinte →</button>`;
+            }
+            
+            paginationHTML += '</div>';
+            paginationContainer.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderPage(page);
+            // Scroll até ao grid de carros
+            const grid = document.getElementById('grid-carros');
+            if (grid) {
+                const offset = grid.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
+        }
+
+        // Renderizar primeira página
+        renderPage(1);
+        updateResultsCount();
+
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.classList.toggle('active', select.value !== 'Todos');
+        });
+    </script>
+
+    <script>
+        (function() {
+            function updateCustomSelect(select) {
+                const wrapper = document.querySelector(`.custom-select[data-custom-for="${select.dataset.filter}"]`);
+                if (!wrapper) return;
+                const label = wrapper.querySelector('.custom-select-label');
+                const options = wrapper.querySelectorAll('.custom-select-option');
+                const selectedText = select.options[select.selectedIndex]?.text || '';
+                if (label) label.textContent = selectedText;
+                options.forEach(opt => {
+                    opt.classList.toggle('is-active', opt.dataset.value === select.value);
+                });
+            }
+
+            function initCustomSelects() {
+                document.querySelectorAll('.filter-select').forEach(select => {
+                    if (select.dataset.customized === 'true') return;
+                    select.dataset.customized = 'true';
+
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'custom-select';
+                    wrapper.dataset.customFor = select.dataset.filter;
+
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'custom-select-button';
+                    button.innerHTML = `
+                        <span class="custom-select-label">${select.options[select.selectedIndex]?.text || ''}</span>
+                        <i class="fas fa-chevron-down text-xs opacity-70"></i>
+                    `;
+
+                    const options = document.createElement('div');
+                    options.className = 'custom-select-options';
+
+                    Array.from(select.options).forEach(opt => {
+                        const optEl = document.createElement('div');
+                        optEl.className = 'custom-select-option';
+                        optEl.dataset.value = opt.value;
+                        optEl.textContent = opt.text;
+                        if (opt.selected) optEl.classList.add('is-active');
+                        options.appendChild(optEl);
+                    });
+
+                    wrapper.appendChild(button);
+                    wrapper.appendChild(options);
+                    select.classList.add('native-select');
+                    select.parentNode.appendChild(wrapper);
+
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        document.querySelectorAll('.custom-select.open').forEach(el => {
+                            if (el !== wrapper) el.classList.remove('open');
+                        });
+                        wrapper.classList.toggle('open');
+                    });
+
+                    options.addEventListener('click', (e) => {
+                        const target = e.target.closest('.custom-select-option');
+                        if (!target) return;
+                        select.value = target.dataset.value;
+                        updateCustomSelect(select);
+                        select.dispatchEvent(new Event('change', { bubbles: true }));
+                        wrapper.classList.remove('open');
+                    });
+                });
+            }
+
+            function closeAllCustomSelects() {
+                document.querySelectorAll('.custom-select.open').forEach(el => el.classList.remove('open'));
+            }
+
+            initCustomSelects();
+            document.addEventListener('click', closeAllCustomSelects);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAllCustomSelects();
+            });
+
+            document.querySelectorAll('.filter-select').forEach(select => {
+                select.addEventListener('change', () => {
+                    select.classList.toggle('active', select.value !== 'Todos');
+                    updateCustomSelect(select);
+                });
+                select.classList.toggle('active', select.value !== 'Todos');
+                updateCustomSelect(select);
+            });
+
+            const clearBtn = document.getElementById('clear-filters');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        document.querySelectorAll('.filter-select').forEach(select => {
+                            select.classList.remove('active');
+                            updateCustomSelect(select);
+                        });
+                    }, 0);
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        // Controlo do Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }, 500);
+            }, 1000);
+        });
+    </script>
+
+    <!-- Separador visual -->
+    <div class="relative h-px w-full bg-white/5">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent shadow-[0_0_15px_rgba(249,115,22,0.3)]"></div>
+</div>
+    <footer class="bg-[#0a0a0a] border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+
+                <div class="col-span-2 md:col-span-1">
+                    <a href="/" class="inline-block mb-4">
+                        <span class="text-white font-black text-2xl tracking-tighter italic uppercase">GUIMA<span class="text-orange-500">CAR</span></span>
+                    </a>
+                    <p class="text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-3">Guimacar Comercio de Automoveis Unipessoal Lda</p>
+                    <div class="text-zinc-400 text-xs space-y-1.5 leading-relaxed">
+                        <p class="flex items-center gap-2"><i class="fas fa-fingerprint text-[10px] text-zinc-600"></i> NIF: 510609180</p>
+                        <p class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-[10px] text-zinc-600 mt-1"></i> 
+                            <span>Avenida de Santa Comba, 1524<br>4820-428 Fornelos, Fafe</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Navegação</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="/" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Página Inicial</a>
+                        <a href="stock.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Viaturas Disponíveis</a>
+                        <a href="contacto.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Contactos</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Legal</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="privacidade.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Privacidade</a>
+                        <a href="cookies.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Política de Cookies</a>
+                        <a href="termos.html" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors">Termos de Utilização</a>
+                        <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" class="text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-1">
+                            Livro de Reclamações <i class="fas fa-external-link-alt text-[8px]"></i>
+                        </a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-5">Contactos rápidos</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="tel:+351965083452" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                                <i class="fas fa-phone text-orange-500 text-[10px]"></i>
+                            </span> 
+                            965 083 452
+                        </a>
+                        <a href="mailto:guimacar96@gmail.com" class="group text-zinc-300 hover:text-orange-500 transition-colors flex items-center gap-3 min-w-0">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors shrink-0">
+                                <i class="fas fa-envelope text-orange-500 text-[10px]"></i>
+                            </span> 
+                            <span class="text-[11px] sm:text-xs font-medium break-all leading-tight">guimacar96@gmail.com</span>
+                        </a>
+                        <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer" class="group text-zinc-300 text-xs font-medium hover:text-orange-500 transition-colors flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-orange-500/10 transition-colors">
+                                <i class="fab fa-facebook-f text-orange-500 text-[10px]"></i>
+                            </span> 
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8">
+                <p class="text-zinc-500 text-[10px] md:text-[11px] leading-relaxed mb-6 max-w-3xl">
+                    Em caso de litígio, o consumidor pode recorrer ao <span class="text-zinc-300">Centro de Arbitragem do Sector Automóvel (CASA)</span>, com sítio em 
+                    <a href="https://www.arbitragemauto.pt" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:underline">www.arbitragemauto.pt</a>.
+                </p>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5 pt-6">
+                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest">
+                        &copy; 2026 <span class="text-white">GUIMACAR</span> — Todos os direitos reservados.
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        (function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('menu-overlay');
+            const openBtn = document.getElementById('open-menu-header');
+            const closeBtn = document.getElementById('close-menu');
+
+            function openMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            openBtn?.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            overlay?.addEventListener('click', closeMenu);
+        })();
+    </script>
+</body>
+</html>
