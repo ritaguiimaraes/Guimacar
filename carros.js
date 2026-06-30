@@ -202,18 +202,44 @@ const stockGuimacar = [
         ]
     }
     ,
+    {
+        id: 8,
+        marca: "Opel Corsa D",
+        destaque: false,
+        modelo: "1.3 CDTi ecoFLEX ",
+        preco: "Sob Consulta",
+        mes: "03/2008",
+        kms: "107000",
+        combustivel: "Gasolina",
+        cilindrada: "1200",
+        potencia: "75",
+        extras:[],
+        fotos: [
+            "img/carro8/1.jpg",
+            "img/carro8/2.jpg",
+            "img/carro8/3.jpg",
+            "img/carro8/4.jpg",
+            "img/carro8/5.jpg",
+            "img/carro8/6.jpg",
+            "img/carro8/7.jpg",
+            "img/carro8/8.jpg",
+            "img/carro8/9.jpg",
+            "img/carro8/10.jpg",
+            "img/carro8/11.jpg"
+        ]
+    },
     /*
     {
         id: 8,
-        marca: "Opel Corsa",
+        marca: "Opel Corsa d",
         destaque: false,
-        modelo: "",
+        modelo: "1.2 CDTI ECO FLEX ",
         preco: "Sob Consulta",
-        mes: "-----",
-        kms: "-----",
-        combustivel: "-----",
+        mes: "03/2008",
+        kms: "107000",
+        combustivel: "Gasolina",
         cilindrada: "1200",
-        potencia: "-----",
+        potencia: "75",
         extras:[],
         fotos: [
             "img/carro8/1.jpg",
