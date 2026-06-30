@@ -56,43 +56,19 @@ const stockGuimacar = [
         ]
     },*/
     
-    {
-        id: 2,
-        marca: "Citroen C4 Van",
-        destaque: false,
-        modelo: "1.6 Hdi 2010",
-        preco: "Sob Consulta",
-        mes: "02/2010",
-        kms: "189.000",
-        combustivel: "Gasóleo",
-        cilindrada: "1600",
-        potencia: "92",
-        extras: ["ac"], 
-        fotos: [
-            "img/carro2/1.jpg",
-            "img/carro2/2.jpg",
-            "img/carro2/3.jpg",
-            "img/carro2/4.jpg",
-            "img/carro2/5.jpg",
-            "img/carro2/6.jpg",
-            "img/carro2/7.jpg",
-            "img/carro2/8.jpg",
-            "img/carro2/9.jpg",
-            "img/carro2/10.jpg" 
-        ]
-    },
+
 /*
     {
         id: 3,
         marca: "Citroen C3",
         destaque: true,
         modelo: "1.2 2019",
-        preco: "------ €",
+        preco: "9.750 €",
         mes: "-----",
-        kms: "88.000",
-        combustivel: "Gasolina",
+        kms: "-----",
+        combustivel: "---GASOLINA--",
         cilindrada: "1200",
-        potencia: "",
+        potencia: "-----",
         extras: [],
         fotos: [
             "img/carro3/1.jpg",
@@ -229,7 +205,6 @@ const stockGuimacar = [
         ]
     }
     ,
-    
     {
         id: 8,
         marca: "Opel Corsa",
@@ -255,21 +230,19 @@ const stockGuimacar = [
             "img/carro8/10.jpg",
             "img/carro8/11.jpg"
         ]
-    }
-
-   /*
-    {
+    },
+   {
         id: 9,
-        marca: "Opel Corsa",
+        marca: "Citroen C4 Van",
         destaque: false,
-        modelo: "1.2 2008",
+        modelo: "1.6 Hdi 2010",
         preco: "Sob Consulta",
-        mes: "-----",
-        kms: "-----",
-        combustivel: "-----",
-        cilindrada: "1200",
-        potencia: "-----",
-        extras:[],
+        mes: "02/2010",
+        kms: "189.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1600",
+        potencia: "92",
+        extras: ["ac"], 
         fotos: [
             "img/carro9/1.jpg",
             "img/carro9/2.jpg",
@@ -280,9 +253,7 @@ const stockGuimacar = [
             "img/carro9/7.jpg",
             "img/carro9/8.jpg",
             "img/carro9/9.jpg",
-            "img/carro9/10.jpg",
-            "img/carro9/11.jpg"
+            "img/carro9/10.jpg" 
         ]
     }
-    */
 ];
