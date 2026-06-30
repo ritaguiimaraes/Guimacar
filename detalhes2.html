@@ -178,128 +178,79 @@
         </div>
     </header>
 
-    <main class="pt-20 md:pt-24">
+    <main class="container mx-auto py-6 md:py-12 px-4 md:px-6 pt-24 md:pt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
+            <div class="space-y-4">
+                <div class="rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl">
+                    <img id="foto-principal" src="img/carro1/1.jpeg" class="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover" alt="Carro">
+                </div>
+                <div class="thumb-strip-wrap">
+                    <button id="thumb-prev" type="button" class="thumb-nav left hidden" aria-label="Miniaturas anteriores">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <div id="galeria-miniaturas" class="thumb-strip"></div>
+                    <button id="thumb-next" type="button" class="thumb-nav right hidden" aria-label="Miniaturas seguintes">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
 
-        <div class="container mx-auto px-4 md:px-6 py-8 md:py-12">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
+            <div class="flex flex-col justify-center space-y-4 md:space-y-8">
+                <div>
+                    <span class="bg-blue-100 text-orange-500 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest">Destaque Guimacar</span>
+                    <h1 id="nome-carro" class="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 leading-tight uppercase italic">BMW 116d</h1>
+                    <p id="sub-nome" class="text-base md:text-xl text-gray-300 font-medium">Aut. Advantage - Pack M</p>
+                </div>
 
-                <!-- Coluna esquerda: título + specs + preço + ligar -->
-                <div class="lg:col-span-2 space-y-4">
-
-                    <!-- Badge + título -->
-                    <div>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="w-4 h-px bg-orange-500"></span>
-                            <span class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em]">Guimacar</span>
-                        </div>
-                        <h1 id="nome-carro" class="text-3xl sm:text-4xl font-black text-white leading-none uppercase tracking-tighter">BMW 116d</h1>
-                        <p id="sub-nome" class="text-sm text-gray-400 font-medium mt-1.5">Aut. Advantage - Pack M</p>
-                    </div>
-
-                    <!-- Specs grid -->
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-calendar-alt text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Mês/Ano</p>
-                                <p id="detalhe-ano" class="font-black text-white text-sm">2018</p>
-                            </div>
-                        </div>
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-road text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Quilómetros</p>
-                                <p id="detalhe-kms" class="font-black text-white text-sm">-</p>
-                            </div>
-                        </div>
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-gas-pump text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Combustível</p>
-                                <p id="detalhe-combustivel" class="font-black text-white text-sm">-</p>
-                            </div>
-                        </div>
-                        <div id="bloco-cilindrada" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-cogs text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Cilindrada</p>
-                                <p id="detalhe-cilindrada" class="font-black text-white text-sm">-</p>
-                            </div>
-                        </div>
-                        <div id="bloco-potencia" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-bolt text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Potência</p>
-                                <p id="detalhe-potencia" class="font-black text-white text-sm">-</p>
-                            </div>
-                        </div>
-                        <div id="bloco-registos" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-id-card text-orange-500 text-[10px]"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Registos</p>
-                                <p id="detalhe-registos" class="font-black text-white text-sm">-</p>
-                            </div>
+                <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 shadow-xl border border-gray-200">
+                    <div class="flex items-end justify-between mb-4 md:mb-8">
+                        <div>
+                            <p id="preco-carro" class="text-4xl md:text-5xl font-black text-lime-500 tracking-tighter">15 900 €</p>
                         </div>
                     </div>
 
-                    <!-- Extras -->
-                    <section id="secao-extras" class="hidden">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="w-4 h-px bg-orange-500"></span>
-                            <h2 class="text-sm font-black uppercase tracking-[0.2em] text-orange-500">Equipamento</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t-2 border-orange-400/60">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-calendar-alt"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Mês/Ano</p><p id="detalhe-ano" class="font-black text-slate-900">2018</p></div>
                         </div>
-                        <div id="lista-extras" class="flex flex-wrap gap-2"></div>
-                    </section>
-
-                    <!-- Preço -->
-                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 shadow-[0_0_40px_rgba(249,115,22,0.08)]">
-                        <p class="text-[10px] text-gray-500 uppercase font-black tracking-[0.2em] mb-1">Preço</p>
-                        <p id="preco-carro" class="text-4xl font-black text-lime-500 tracking-tighter leading-none">15 900 €</p>
-                        <p id="iva-dedutivel-label" class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-2 hidden">
-                            <i class="fas fa-check mr-1"></i>IVA Dedutível
-                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-road"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Quilómetros</p><p id="detalhe-kms" class="font-black text-slate-900">176.307 km</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-gas-pump"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Combustível</p><p id="detalhe-combustivel" class="font-black text-slate-900">Gasóleo</p></div>
+                        </div>
+                        <div id="bloco-cilindrada" class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-cogs"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Cilindrada</p><p id="detalhe-cilindrada" class="font-black text-slate-900">-</p></div>
+                        </div>
+                        <div id="bloco-potencia" class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-bolt"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Potência</p><p id="detalhe-potencia" class="font-black text-slate-900">-</p></div>
+                        </div>
+                        <div id="bloco-registos" class="flex items-center space-x-4">
+                            <div class="bg-gray-100 p-3 rounded-2xl text-lime-500"><i class="fas fa-id-card"></i></div>
+                            <div><p class="text-xs text-gray-400 uppercase font-bold">Registos</p><p id="detalhe-registos" class="font-black text-slate-900">-</p></div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Botão ligar -->
-                    <a id="botao-ligar" href="tel:+351965083452"
-                        class="w-full flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-black py-4 px-6 rounded-2xl transition-all shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.5)] text-sm uppercase tracking-widest">
-                        <i class="fas fa-phone"></i> Ligar agora
+                
+                <!-- Botões de contacto rápido -->
+                <div class="flex justify-center mt-2">
+                    <a id="botao-ligar" href="tel:+351965083452" class="w-full max-w-xs flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-2xl transition text-sm">
+                        <i class="fas fa-phone"></i> Ligar
                     </a>
-
                 </div>
-
-                <!-- Coluna direita: galeria -->
-                <div class="lg:col-span-3 space-y-3">
-                    <div class="relative bg-zinc-900 rounded-2xl overflow-hidden flex items-center justify-center" style="height: 420px;">
-                        <img id="foto-principal" src="img/carro1/1.jpeg"
-                            class="max-h-full max-w-full object-contain cursor-pointer"
-                            alt="Carro" onclick="abrirModal(0)">
-                        <span id="foto-contador-hero" class="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider"></span>
-                        <button onclick="abrirModal(0)" class="absolute bottom-3 left-3 bg-black/70 hover:bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider transition-colors flex items-center gap-1">
-                            <i class="fas fa-expand text-[9px]"></i> Ampliar
-                        </button>
-                    </div>
-                    <div class="thumb-strip-wrap">
-                        <button id="thumb-prev" type="button" class="thumb-nav left hidden" aria-label="Anteriores"><i class="fas fa-chevron-left text-sm"></i></button>
-                        <div id="galeria-miniaturas" class="thumb-strip"></div>
-                        <button id="thumb-next" type="button" class="thumb-nav right hidden" aria-label="Seguintes"><i class="fas fa-chevron-right text-sm"></i></button>
-                    </div>
-                </div>
-
             </div>
         </div>
+
+        <section id="secao-extras" class="mt-8 md:mt-12 hidden">
+            <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-orange-500 mb-5">Extras</h2>
+            <div id="lista-extras" class="flex flex-wrap gap-3"></div>
+        </section>
     </main>
 
     <div id="modal-fotos" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4">
@@ -445,7 +396,7 @@
                 if (!chave) return;
 
                 const badge = document.createElement('span');
-                badge.className = 'inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 hover:border-orange-500/30 hover:bg-orange-500/5 px-3 py-1.5 text-xs font-bold text-gray-300 transition-colors';
+                badge.className = 'inline-flex items-center rounded-full border border-orange-500/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white';
                 badge.textContent = extrasLabels[chave] || extra;
                 lista.appendChild(badge);
             });
@@ -477,16 +428,6 @@
             const fotoPrincipal = document.getElementById('foto-principal');
             fotoPrincipal.src = carro.fotos[0];
 
-            // Contador de fotos no hero
-            const contadorHero = document.getElementById('foto-contador-hero');
-            if (contadorHero) contadorHero.textContent = `1 / ${carro.fotos.length}`;
-
-            // IVA Dedutível
-            if (carro.ivaDedutivel) {
-                const ivaLabel = document.getElementById('iva-dedutivel-label');
-                if (ivaLabel) ivaLabel.classList.remove('hidden');
-            }
-
             fotoPrincipal.style.cursor = 'pointer';
             fotoPrincipal.onclick = function() {
                 abrirModal(0);
@@ -504,8 +445,6 @@
                     fotoAtual = index;
                     fotoPrincipal.src = this.src;
                     atualizarMiniaturaAtiva();
-                    const contadorHero = document.getElementById('foto-contador-hero');
-                    if (contadorHero) contadorHero.textContent = `${index + 1} / ${totalFotos}`;
                 };
 
                 contentorMiniaturas.appendChild(imgMini);

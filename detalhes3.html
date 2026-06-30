@@ -180,11 +180,37 @@
 
     <main class="pt-20 md:pt-24">
 
+        <!-- Galeria hero -->
+        <div class="w-full bg-black">
+            <div class="relative overflow-hidden" style="height: clamp(220px, 35vw, 420px);">
+                <img id="foto-principal" src="img/carro1/1.jpeg"
+                    class="w-full h-full object-cover cursor-pointer transition-transform duration-500 hover:scale-[1.02]"
+                    alt="Carro" onclick="abrirModal(0)">
+                <!-- Gradiente inferior -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                <!-- Contador fotos -->
+                <span id="foto-contador-hero" class="absolute bottom-4 right-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm tracking-wider"></span>
+                <!-- Botão ampliar -->
+                <button onclick="abrirModal(0)" class="absolute bottom-4 left-4 bg-black/60 hover:bg-orange-500/80 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm tracking-wider transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-expand text-[10px]"></i> Ampliar
+                </button>
+            </div>
+            <!-- Miniaturas -->
+            <div class="bg-black/90 border-t border-white/5 px-4 py-3">
+                <div class="thumb-strip-wrap">
+                    <button id="thumb-prev" type="button" class="thumb-nav left hidden" aria-label="Anteriores"><i class="fas fa-chevron-left text-sm"></i></button>
+                    <div id="galeria-miniaturas" class="thumb-strip"></div>
+                    <button id="thumb-next" type="button" class="thumb-nav right hidden" aria-label="Seguintes"><i class="fas fa-chevron-right text-sm"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo -->
         <div class="container mx-auto px-4 md:px-6 py-8 md:py-12">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
 
-                <!-- Coluna esquerda: título + specs + preço + ligar -->
-                <div class="lg:col-span-2 space-y-4">
+                <!-- Coluna esquerda: título + specs -->
+                <div class="lg:col-span-3 space-y-6">
 
                     <!-- Badge + título -->
                     <div>
@@ -192,60 +218,60 @@
                             <span class="w-4 h-px bg-orange-500"></span>
                             <span class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em]">Guimacar</span>
                         </div>
-                        <h1 id="nome-carro" class="text-3xl sm:text-4xl font-black text-white leading-none uppercase tracking-tighter">BMW 116d</h1>
-                        <p id="sub-nome" class="text-sm text-gray-400 font-medium mt-1.5">Aut. Advantage - Pack M</p>
+                        <h1 id="nome-carro" class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-none uppercase tracking-tighter">BMW 116d</h1>
+                        <p id="sub-nome" class="text-base md:text-lg text-gray-400 font-medium mt-2">Aut. Advantage - Pack M</p>
                     </div>
 
                     <!-- Specs grid -->
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-calendar-alt text-orange-500 text-[10px]"></i>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-calendar-alt text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Mês/Ano</p>
                                 <p id="detalhe-ano" class="font-black text-white text-sm">2018</p>
                             </div>
                         </div>
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-road text-orange-500 text-[10px]"></i>
+                        <div class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-road text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Quilómetros</p>
                                 <p id="detalhe-kms" class="font-black text-white text-sm">-</p>
                             </div>
                         </div>
-                        <div class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-gas-pump text-orange-500 text-[10px]"></i>
+                        <div class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-gas-pump text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Combustível</p>
                                 <p id="detalhe-combustivel" class="font-black text-white text-sm">-</p>
                             </div>
                         </div>
-                        <div id="bloco-cilindrada" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-cogs text-orange-500 text-[10px]"></i>
+                        <div id="bloco-cilindrada" class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-cogs text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Cilindrada</p>
                                 <p id="detalhe-cilindrada" class="font-black text-white text-sm">-</p>
                             </div>
                         </div>
-                        <div id="bloco-potencia" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-bolt text-orange-500 text-[10px]"></i>
+                        <div id="bloco-potencia" class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-bolt text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Potência</p>
                                 <p id="detalhe-potencia" class="font-black text-white text-sm">-</p>
                             </div>
                         </div>
-                        <div id="bloco-registos" class="bg-white/5 border border-white/8 rounded-xl p-3 flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                                <i class="fas fa-id-card text-orange-500 text-[10px]"></i>
+                        <div id="bloco-registos" class="bg-white/5 border border-white/8 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-id-card text-orange-500 text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Registos</p>
@@ -262,39 +288,31 @@
                         </div>
                         <div id="lista-extras" class="flex flex-wrap gap-2"></div>
                     </section>
-
-                    <!-- Preço -->
-                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 shadow-[0_0_40px_rgba(249,115,22,0.08)]">
-                        <p class="text-[10px] text-gray-500 uppercase font-black tracking-[0.2em] mb-1">Preço</p>
-                        <p id="preco-carro" class="text-4xl font-black text-lime-500 tracking-tighter leading-none">15 900 €</p>
-                        <p id="iva-dedutivel-label" class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-2 hidden">
-                            <i class="fas fa-check mr-1"></i>IVA Dedutível
-                        </p>
-                    </div>
-
-                    <!-- Botão ligar -->
-                    <a id="botao-ligar" href="tel:+351965083452"
-                        class="w-full flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-black py-4 px-6 rounded-2xl transition-all shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.5)] text-sm uppercase tracking-widest">
-                        <i class="fas fa-phone"></i> Ligar agora
-                    </a>
-
                 </div>
 
-                <!-- Coluna direita: galeria -->
-                <div class="lg:col-span-3 space-y-3">
-                    <div class="relative bg-zinc-900 rounded-2xl overflow-hidden flex items-center justify-center" style="height: 420px;">
-                        <img id="foto-principal" src="img/carro1/1.jpeg"
-                            class="max-h-full max-w-full object-contain cursor-pointer"
-                            alt="Carro" onclick="abrirModal(0)">
-                        <span id="foto-contador-hero" class="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider"></span>
-                        <button onclick="abrirModal(0)" class="absolute bottom-3 left-3 bg-black/70 hover:bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider transition-colors flex items-center gap-1">
-                            <i class="fas fa-expand text-[9px]"></i> Ampliar
-                        </button>
-                    </div>
-                    <div class="thumb-strip-wrap">
-                        <button id="thumb-prev" type="button" class="thumb-nav left hidden" aria-label="Anteriores"><i class="fas fa-chevron-left text-sm"></i></button>
-                        <div id="galeria-miniaturas" class="thumb-strip"></div>
-                        <button id="thumb-next" type="button" class="thumb-nav right hidden" aria-label="Seguintes"><i class="fas fa-chevron-right text-sm"></i></button>
+                <!-- Coluna direita: preço + contacto (sticky) -->
+                <div class="lg:col-span-2">
+                    <div class="lg:sticky lg:top-28 space-y-4">
+
+                        <!-- Preço -->
+                        <div class="bg-white/5 border border-white/10 rounded-[1.5rem] p-6 md:p-8 shadow-[0_0_40px_rgba(249,115,22,0.08)]">
+                            <p class="text-[10px] text-gray-500 uppercase font-black tracking-[0.2em] mb-1">Preço</p>
+                            <p id="preco-carro" class="text-5xl md:text-6xl font-black text-lime-500 tracking-tighter leading-none">15 900 €</p>
+                            <p id="iva-dedutivel-label" class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-2 hidden">
+                                <i class="fas fa-check mr-1"></i>IVA Dedutível
+                            </p>
+                            <div class="w-12 h-0.5 bg-orange-500/40 rounded-full mt-4"></div>
+                            <p class="text-gray-500 text-xs mt-3 leading-relaxed">Preço de venda ao público. Para mais informações contacte-nos.</p>
+                        </div>
+
+                        <!-- Botões contacto -->
+                        <a id="botao-ligar" href="tel:+351965083452"
+                            class="w-full flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-black py-4 px-6 rounded-2xl transition-all shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.5)] text-sm uppercase tracking-widest">
+                            <i class="fas fa-phone"></i> Ligar agora
+                        </a>
+
+
+
                     </div>
                 </div>
 
