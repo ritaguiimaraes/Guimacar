@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQXD05YKH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3HQXD05YKH');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guimacar | Brevemente Novidades</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        /* Efeito de Zoom Suave no Fundo */
+        .zoom-effect {
+            animation: bgZoom 20s ease-in-out infinite;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        @keyframes bgZoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Animação de Entrada do Card */
+        .fade-in-card {
+            animation: cardIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes cardIn {
+            0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Micro-animação do Botão Metálico (idêntico ao teu original) */
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+        .cta-btn:hover::after {
+            left: 160%;
+        }
+        .cta-btn:hover {
+            transform: scale(1.04) translateY(-1px);
+            box-shadow: 0 0 32px rgba(249,115,22,0.4);
+        }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-black font-sans text-gray-100 flex flex-col justify-between overflow-hidden selection:bg-orange-500 selection:text-white">
+
+    <div class="absolute inset-0 z-0 h-full w-full bg-slate-950">
+        <img src="img/inicio.jpg" alt="Guimacar" class="absolute inset-0 h-full w-full object-cover opacity-20 zoom-effect">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90"></div>
+    </div>
+
+    <div></div>
+
+    <main class="relative z-10 container mx-auto px-4 flex justify-center items-center">
+        <div class="fade-in-card text-center bg-black/40 backdrop-blur-md p-8 md:p-16 rounded-[2rem] border border-white/10 shadow-2xl max-w-2xl mx-auto">
+            
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/30 text-orange-500 mb-6 shadow-[0_0_30px_rgba(249,115,22,0.15)] animate-pulse">
+                <i class="fas fa-screwdriver-wrench text-2xl"></i>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-semibold text-white tracking-tight mb-4 uppercase italic">
+                GUIMA<span class="text-orange-500 font-black">CAR</span>
+            </h1>
+
+            <div class="h-1 w-16 bg-orange-500 mx-auto mb-6 rounded-full"></div>
+
+            <h2 class="text-xl md:text-2xl font-bold text-white mb-3">Estamos a melhorar o nosso site</h2>
+            <p class="text-gray-400 text-sm md:text-base font-light leading-relaxed mb-10">
+                O nosso espaço digital está temporariamente em manutenção para trazer até si uma experiência de navegação superior e o nosso stock de viaturas totalmente atualizado. Voltamos muito brevemente!
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
+                <a href="tel:965083452" class="cta-btn w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 shadow-lg">
+                    <i class="fas fa-phone text-xs"></i> Contactar Stand
+                </a>
+                <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer" class="cta-btn w-full sm:w-auto bg-white/5 border border-white/10 hover:border-gray-400 text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition-colors">
+                    <i class="fab fa-facebook-f text-xs text-orange-500"></i> Seguir no Facebook
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 w-full text-center pb-8 pt-4 px-4 border-t border-white/5 bg-black/20 backdrop-blur-sm">
+        <p class="text-zinc-500 text-[10px] md:text-[11px] uppercase tracking-widest leading-relaxed">
+            Avenida de Santa Comba, 1524, Fafe &bull; © 2026 <span class="text-white">GUIMACAR</span> &bull; Todos os direitos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>
