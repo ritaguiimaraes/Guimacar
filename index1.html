@@ -329,60 +329,37 @@
 
     <!-- SeÃ§Ã£o Principal -->
     <section class="relative h-screen w-full overflow-hidden bg-slate-950">
-        <!-- Imagem de fundo -->
         <img src="img/inicio.jpg" alt="Entrada do Stand Guimacar" class="absolute inset-0 w-full h-full object-cover zoom-effect opacity-95">
-        
-        <!-- Gradiente lateral esquerdo -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent z-10"></div>
-        <!-- Gradiente inferior -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
-
-        <!-- Conteúdo principal -->
-        <div class="relative z-20 flex flex-col justify-center h-full px-8 md:px-20 max-w-3xl">
-
-            <!-- Badge localização -->
-            <div class="flex items-center gap-2 mb-6">
-                <span class="w-6 h-px bg-orange-500"></span>
-                <span class="text-orange-500 text-[11px] font-black uppercase tracking-[0.25em]">Stand em Fornelos · Fafe</span>
-            </div>
-
-            <!-- Título -->
-            <h1 class="text-6xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter leading-none uppercase mb-4 drop-shadow-2xl">
-                GUIMA<span class="text-orange-500">CAR</span>
-            </h1>
-
-            <!-- Subtítulo -->
-            <p class="text-lg md:text-2xl text-gray-300 mb-10 font-light max-w-lg leading-relaxed">
-                Comércio de Automóveis Semi-novos e Usados<br>
+        <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+            
+            <div class="bg-black/20 backdrop-blur-[2px] p-6 md:p-16 rounded-[1.5rem] md:rounded-[3rem] border border-white/10 shadow-2xl mx-2">
                 
-            </p>
-
-            <!-- Botões -->
-            <div class="flex flex-wrap gap-4">
-                <a href="stock" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(249,115,22,0.4)] inline-flex items-center gap-2">
-                    Ver Viaturas <i class="fas fa-arrow-right text-xs"></i>
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white tracking-tighter mb-4 drop-shadow-2xl uppercase">
+                    GUIMA<span class="text-orange-500">CAR</span>
+                </h1>
+                
+                <p class="text-base md:text-2xl text-gray-200 mb-8 md:mb-12 max-w-2xl font-light drop-shadow-md">
+                    Comércio de Automóveis Semi-novos e Usados
+                </p>
+                
+                <a href="stock.html" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg inline-block">
+                    Viaturas Disponíveis<i class="fas fa-arrow-right ml-2 text-sm opacity-80"></i>
                 </a>
-                <a href="contacto" class="cta-btn bg-white/10 hover:bg-white/20 border border-white/30 hover:border-orange-500/60 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest backdrop-blur-sm inline-flex items-center gap-2">
-                    Contactar <i class="fas fa-phone text-xs text-orange-500"></i>
-                </a>
+                
             </div>
-
-            <!-- Redes sociais -->
-            <div class="flex items-center gap-4 mt-10">
-                <a href="https://www.facebook.com/guimacar" target="_blank" rel="noopener noreferrer"
-                   class="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-xs uppercase tracking-widest font-bold">
-                    <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-orange-500/20 border border-white/10 group-hover:border-orange-500/40 flex items-center justify-center transition-all">
-                        <i class="fab fa-facebook-f text-[10px]"></i>
-                    </span>
-                    Facebook
-                </a>
             </div>
-        </div>
+    
+        <!-- BotÃµes de contacto flutuantes -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-6 bg-black/20 backdrop-blur-[2px] p-4 rounded-[2rem] border border-white/10 shadow-2xl">
+    
+            <a href="contacto.html" class="group relative flex items-center justify-center w-14 h-14 bg-gray-500/20 rounded-2xl border border-gray-500/30 transition-all duration-300 hover:border-orange-500/60 hover:bg-gray-500/40 hover:-translate-y-2">
+                <i class="fas fa-phone text-white group-hover:text-white transition-colors"></i>
+            </a>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-            <span class="text-gray-400 text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
-            <div class="w-px h-10 bg-gradient-to-b from-orange-500 to-transparent animate-pulse"></div>
+            <a href="https://www.facebook.com/guimacar" target="_blank" class="group relative flex items-center justify-center w-14 h-14 bg-gray-500/20 rounded-2xl border border-gray-500/30 transition-all duration-300 hover:border-orange-500/60 hover:bg-gray-500/40 hover:-translate-y-2">
+                <i class="fab fa-facebook-f text-white group-hover:text-white transition-colors text-xl"></i>
+            </a>
+    
         </div>
     </section>
     <!-- Separador visual -->
