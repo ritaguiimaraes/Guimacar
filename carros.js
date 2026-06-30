@@ -255,5 +255,32 @@ const stockGuimacar = [
             "img/carro9/9.jpg",
             "img/carro9/10.jpg" 
         ]
+    },
+   {
+        id: 10,
+        marca: "Citroen C4 Van",
+        destaque: false,
+        modelo: "1.6 Hdi 2010",
+        preco: "Sob Consulta",
+        mes: "02/2010",
+        kms: "189.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1600",
+        potencia: "92",
+        extras: ["ac"], 
+        fotos: [
+            "img/carro10/1.jpg",
+            "img/carro10/2.jpg",
+            "img/carro10/3.jpg",
+            "img/carro10/4.jpg",
+            "img/carro10/5.jpg",
+            "img/carro10/6.jpg",
+            "img/carro10/7.jpg",
+            "img/carro10/8.jpg",
+            "img/carro10/9.jpg",
+            "img/carro10/10.jpg",
+            "img/carro10/11.jpg",
+            "img/carro10/12.jpg"
+        ]
     }
 ];
