@@ -42,7 +42,6 @@ const stockGuimacar = [
         combustivel: "Gasóleo",
         cilindrada: "1500",
         potencia: "110",
-        registos: "N/C",
         extras: ["gps","usb","bluetooth","farois led", "farois nevoeiro","cruise control","direcao assistida", "volante pele", "volante multifuncoes", "fecho central", "ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores frontais","sensores traseiros","abs","esp"],
         fotos: [
             "img/carro1/1.jpg",
@@ -56,6 +55,7 @@ const stockGuimacar = [
             "img/carro1/9.jpg" 
         ]
     },*/
+    /*
     {
         id: 2,
         marca: "Citroen C4 Van",
@@ -80,7 +80,7 @@ const stockGuimacar = [
             "img/carro2/9.jpg",
             "img/carro2/10.jpg" 
         ]
-    },
+    },*/
 /*
     {
         id: 3,
@@ -93,7 +93,6 @@ const stockGuimacar = [
         combustivel: "Gasolina",
         cilindrada: "1200",
         potencia: "",
-        registos: "N/C",
         extras: [],
         fotos: [
             "img/carro3/1.jpg",
@@ -124,7 +123,6 @@ const stockGuimacar = [
         combustivel: "Gasóleo",
         cilindrada: "1600",
         potencia: "75",
-        registos: "N/C",
         extras: ["usb","radio cd","bluetooth","cruise control","direcao assistida", "fecho central", "ac","sensores traseiros","abs","esp"],
         fotos: [
             "img/carro4/1.jpg",
@@ -154,7 +152,6 @@ const stockGuimacar = [
         combustivel: "Gasóleo",
         cilindrada: "1500",
         potencia: "130",
-        registos: "N/C",
         extras: [],
         fotos: [
             "img/carro5/1.jpg",
@@ -188,7 +185,6 @@ const stockGuimacar = [
         combustivel: "Gasóleo",
         cilindrada: "1500",
         potencia: "100",
-        registos: "N/C",
         extras:["gps","usb","bluetooth","jantes","farois led", "farois nevoeiro","cruise control","direcao assistida", "volante pele", "volante multifuncoes", "fecho central", "ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores traseiros","abs","esp"],
         fotos: [
             "img/carro6/1.jpg",
@@ -218,7 +214,6 @@ const stockGuimacar = [
         combustivel: "Gasóleo",
         cilindrada: "1500",
         potencia: "90",
-        registos: "N/C",
         extras:[],
         fotos: [
             "img/carro7/1.jpg",
@@ -233,4 +228,32 @@ const stockGuimacar = [
             "img/carro7/10.jpg"
         ]
     }
+    ,
+    /*
+    {
+        id: 8,
+        marca: "Opel Corsa",
+        destaque: false,
+        modelo: "1.2 2008",
+        preco: "Sob Consulta",
+        mes: "-----",
+        kms: "-----",
+        combustivel: "Gasolina",
+        cilindrada: "1200",
+        potencia: "-----",
+        extras:[],
+        fotos: [
+            "img/carro8/1.jpg",
+            "img/carro8/2.jpg",
+            "img/carro8/3.jpg",
+            "img/carro8/4.jpg",
+            "img/carro8/5.jpg",
+            "img/carro8/6.jpg",
+            "img/carro8/7.jpg",
+            "img/carro8/8.jpg",
+            "img/carro8/9.jpg",
+            "img/carro8/10.jpg",
+            "img/carro8/11.jpg"
+        ]
+    }*/
 ];
