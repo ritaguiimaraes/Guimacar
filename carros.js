@@ -336,5 +336,25 @@ const stockGuimacar = [
             "img/carro11/10.jpg",
             "img/carro11/11.jpg"
         ]
+    },
+    {
+        id: 12,
+        marca: "Opel Corsa",
+        destaque: false,
+        brevemente: true,
+        modelo: "1.2 Turbo",
+        preco: " €",
+        mes: "06/2021",
+        kms: "83.000",
+        combustivel: "Gasolina",
+        cilindrada: "1200",
+        potencia: "",
+        extras:[],
+        fotos: [
+            "img/carro12/1.jpg",
+            "img/carro12/2.jpg",
+            "img/carro12/3.jpg"
+ 
+        ]
     }
 ];

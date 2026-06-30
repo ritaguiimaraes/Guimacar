@@ -228,9 +228,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center gap-4 min-w-0">
-                    <button id="botao-voltar" type="button" onclick="voltarPagina()" class="inline-flex items-center gap-2 text-white font-bold transition text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20 shrink-0">
-                        <i class="fas fa-arrow-left text-xs"></i>
-                    </button>
+                    
                     <a href="./" class="text-2xl font-black tracking-tighter shrink-0">
                         <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
                     </a>
@@ -508,7 +506,7 @@
             
             carsToShow.forEach((carro, idx) => {
                 const card = document.createElement('div');
-                card.className = `bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group ${carro.brevemente ? 'cursor-default' : 'cursor-pointer'}`;
+                card.className = 'bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[520px] reveal-card group';
                 card.style.animation = 'none';
                 card.classList.add('card-fade-in');
                 card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
@@ -517,21 +515,15 @@
                     <div class="p-3">
                         ${carro.destaque ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
-                            ${!carro.brevemente ? `<span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>` : ''}
-                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover ${carro.brevemente ? 'brightness-[0.35]' : ''}" alt="${carro.marca} ${carro.modelo}" loading="lazy">
-                            ${carro.brevemente ? `
-                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                                <span class="text-white text-2xl font-black uppercase tracking-[0.2em]">Brevemente</span>
-                                <span class="w-10 h-0.5 bg-orange-500 rounded-full"></span>
-                                <span class="text-orange-500 text-[11px] font-bold uppercase tracking-widest">Em breve disponível</span>
-                            </div>` : `
+                            <span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>
+                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover" alt="${carro.marca} ${carro.modelo}" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
                                 <div class="absolute bottom-3 left-0 right-0 px-4 flex justify-between text-white text-[10px] font-bold uppercase tracking-wider">
                                     <span><i class="fas fa-calendar-alt mr-1 text-lime-500"></i>${extractYear(carro.mes)}</span>
                                     <span><i class="fas fa-gas-pump mr-1 text-lime-500"></i>${carro.combustivel}</span>
                                     <span><i class="fas fa-road mr-1 text-lime-500"></i>${carro.kms}</span>
                                 </div>
-                            </div>`}
+                            </div>
                         </div>
                     </div>
                     <div class="px-6 pt-2 pb-3 -mt-1">
@@ -539,12 +531,12 @@
                         <p class="text-slate-800 sm:text-slate-700 text-sm mb-4 font-medium">${carro.modelo}</p>
                         <div class="flex items-end justify-between border-t-2 border-orange-400/60 pt-2 -mt-1">
                             <div>
-                                ${carro.brevemente
-                                    ? `<p class="text-xl font-black text-slate-400 uppercase tracking-wider">Preço sob consulta</p>`
-                                    : `<p class="text-3xl font-black text-lime-500">${carro.preco}</p>`}
-                                ${carro.ivaDedutivel && !carro.brevemente ? `<p class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-0.5"><i class="fas fa-check mr-1"></i>IVA Dedutível</p>` : ''}
+                                <p class="text-3xl font-black text-lime-500">${carro.preco}</p>
+                                ${carro.ivaDedutivel ? `<p class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-0.5">
+                                    <i class="fas fa-check mr-1"></i>IVA Dedutível
+</p>` : ''}
                             </div>
-                            ${carro.reservado && !carro.brevemente ? `<span class="text-orange-500 text-lg font-black uppercase">Reservado</span>` : ''}
+                            
                         </div>
                     </div>
                 `;
@@ -583,8 +575,7 @@
                 }, { passive: true });
 
                 card.onclick = function() {
-                    if (carro.brevemente) return;
-                    window.location.href = `detalhes?id=${carro.id}`;
+                    window.location.href = `detalhes.html?id=${carro.id}`;
                 };
 
                 gridCarros.appendChild(card);
