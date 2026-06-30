@@ -54,6 +54,32 @@ const stockGuimacar = [
             "img/carro1/9.jpg" 
         ]
     },
+    {
+        id: 2,
+        marca: "Polo Go",
+        destaque: false,
+        modelo: "1.4 TDI",
+        preco: "5.750 €",
+        mes: "09/2006",
+        kms: "203.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1400",
+        potencia: "",
+        extras:[],
+        fotos: [
+            "img/carro11/1.jpg",
+            "img/carro11/2.jpg",
+            "img/carro11/3.jpg",
+            "img/carro11/4.jpg",
+            "img/carro11/5.jpg",
+            "img/carro11/6.jpg",
+            "img/carro11/7.jpg",
+            "img/carro11/8.jpg",
+            "img/carro11/9.jpg",
+            "img/carro11/10.jpg",
+            "img/carro11/11.jpg"
+        ]
+    },
 
     {
         id: 3,
@@ -284,7 +310,7 @@ const stockGuimacar = [
         ]
     },
    {
-        id: 10,
+        id: 11,
         marca: "Citroen C4 2011",
         destaque: false,
         modelo: "1.6 Hdi 2011",
@@ -308,33 +334,6 @@ const stockGuimacar = [
             "img/carro10/10.jpg",
             "img/carro10/11.jpg",
             "img/carro10/12.jpg"
-        ]
-    },
-
-    {
-        id: 11,
-        marca: "Polo Go",
-        destaque: false,
-        modelo: "1.4 TDI",
-        preco: "5.750 €",
-        mes: "09/2006",
-        kms: "203.000",
-        combustivel: "Gasóleo",
-        cilindrada: "1400",
-        potencia: "",
-        extras:[],
-        fotos: [
-            "img/carro11/1.jpg",
-            "img/carro11/2.jpg",
-            "img/carro11/3.jpg",
-            "img/carro11/4.jpg",
-            "img/carro11/5.jpg",
-            "img/carro11/6.jpg",
-            "img/carro11/7.jpg",
-            "img/carro11/8.jpg",
-            "img/carro11/9.jpg",
-            "img/carro11/10.jpg",
-            "img/carro11/11.jpg"
         ]
     },
     {
