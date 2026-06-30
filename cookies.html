@@ -45,10 +45,10 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="stock" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -77,11 +77,11 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="stock.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="stock" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Viaturas Disponíveis
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -217,7 +217,7 @@
                     <i class="fas fa-envelope"></i> Dúvidas?
                 </h2>
                 <p class="text-sm md:text-base">
-                    Se tiver alguma questão sobre a nossa política de cookies, pode contactar-nos através da nossa <a href="contacto.html" class="text-orange-500 hover:underline font-bold">página de contactos</a>.
+                    Se tiver alguma questão sobre a nossa política de cookies, pode contactar-nos através da nossa <a href="contacto" class="text-orange-500 hover:underline font-bold">página de contactos</a>.
                 </p>
             </div>
 
@@ -250,7 +250,11 @@
     </script>
      <script>
         function voltarPagina() {
-            window.location.href = './';
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = './';
+            }
         }
     </script>
 
