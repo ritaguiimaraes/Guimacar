@@ -209,9 +209,9 @@ const stockGuimacar = [
         modelo: "1.3 CDTi ecoFLEX ",
         preco: "Sob Consulta",
         mes: "03/2008",
-        kms: "107000",
-        combustivel: "Gasolina",
-        cilindrada: "1200",
+        kms: "107.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1300",
         potencia: "75",
         extras:[],
         fotos: [
