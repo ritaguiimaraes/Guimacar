@@ -1,9 +1,4 @@
-/**
- * Loader / Splash Screen — Guimacar
- * Ficheiro único usado em todas as páginas.
- * Para usar: coloca <script src="loader.js"></script> no body, exatamente
- * no sítio onde antes estava o <div id="loader">...</div>.
- */
+
 (function () {
     // Injeta o loader no DOM no momento exato em que este script é lido
     // (mesma posição onde estava o <div id="loader"> antigo).
@@ -12,8 +7,8 @@
             '<div class="text-center">' +
                 '<img src="img/favicon.svg" alt="Guimacar" class="w-14 h-14 md:w-20 md:h-20 mx-auto mb-6 animate-pulse drop-shadow-[0_0_25px_rgba(249,115,22,0.6)]">' +
                 '<div class="mb-8">' +
-                    '<h1 class="text-3xl sm:text-4xl md:text-7xl font-semibold text-white tracking-tight drop-shadow-2xl uppercase italic">' +
-                        'GUIMA<span class="text-orange-500 font-black">CAR</span>' +
+                    '<h1 class="text-3xl sm:text-4xl md:text-7xl font-black text-white tracking-tighter drop-shadow-2xl uppercase">' +
+                        'GUIMA<span class="text-orange-500">CAR</span>' +
                     '</h1>' +
                 '</div>' +
                 '<div class="flex justify-center space-x-2">' +
