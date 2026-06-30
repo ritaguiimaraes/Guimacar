@@ -30,19 +30,18 @@ gps: 'GPS',
             extras: ["gps","usb","radio cd","bluetooth","jante sespeciais", "camera traseira","cruise control","jantes","farois xenon","farois led", "farois nevoeiro", "volante multifuncoes", "volante pele","ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores frontais","sensores traseiros","abs","esp", "direcao assistida", "fecho central"],
 */
 const stockGuimacar = [
-    /*
     {
         id: 1,
         marca: "Renault Clio",
         destaque: true,
-        modelo: "1.5 Dci 110 CV 2018",
-        preco: "14.250 €",
-        mes: "05/2018",
-        kms: "123.700",
+        modelo: "1.5 Dci 75 CV 2017",
+        preco: "10.250 €",
+        mes: "12/2017",
+        kms: "117.000",
         combustivel: "Gasóleo",
         cilindrada: "1500",
-        potencia: "110",
-        extras: ["gps","usb","bluetooth","farois led", "farois nevoeiro","cruise control","direcao assistida", "volante pele", "volante multifuncoes", "fecho central", "ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores frontais","sensores traseiros","abs","esp"],
+        potencia: "75",
+        extras: [],
         fotos: [
             "img/carro1/1.jpg",
             "img/carro1/2.jpg",
@@ -54,21 +53,19 @@ const stockGuimacar = [
             "img/carro1/8.jpg",
             "img/carro1/9.jpg" 
         ]
-    },*/
-    
+    },
 
-/*
     {
         id: 3,
         marca: "Citroen C3",
         destaque: true,
         modelo: "1.2 2019",
         preco: "9.750 €",
-        mes: "-----",
-        kms: "-----",
-        combustivel: "---GASOLINA--",
+        mes: "10/2019",
+        kms: "104.300",
+        combustivel: "Gasolina",
         cilindrada: "1200",
-        potencia: "-----",
+        potencia: "75",
         extras: [],
         fotos: [
             "img/carro3/1.jpg",
@@ -87,7 +84,7 @@ const stockGuimacar = [
             "img/carro3/14.jpg"
 
         ]
-    },*/
+    },
     {
         id: 4,
         marca: "Peugeot Partner 1.6 Hdi",
@@ -205,11 +202,12 @@ const stockGuimacar = [
         ]
     }
     ,
+    /*
     {
         id: 8,
         marca: "Opel Corsa",
         destaque: false,
-        modelo: "1.2 2008",
+        modelo: "",
         preco: "Sob Consulta",
         mes: "-----",
         kms: "-----",
@@ -231,7 +229,7 @@ const stockGuimacar = [
             "img/carro8/11.jpg"
         ]
     },
-    
+    */
    {
         id: 9,
         marca: "Citroen C4 Van",
