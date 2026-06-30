@@ -270,6 +270,7 @@
                         <p id="iva-dedutivel-label" class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-2 hidden">
                             <i class="fas fa-check mr-1"></i>IVA Dedutível
                         </p>
+                        
                     </div>
 
                     <!-- Botão ligar -->
@@ -491,6 +492,40 @@
             fotoPrincipal.onclick = function() {
                 abrirModal(0);
             };
+
+            // Swipe na foto principal (mobile)
+            let swipeStartX = 0;
+            let swipeStartY = 0;
+            let isSwiping = false;
+
+            fotoPrincipal.addEventListener('touchstart', e => {
+                swipeStartX = e.changedTouches[0].clientX;
+                swipeStartY = e.changedTouches[0].clientY;
+                isSwiping = false;
+            }, { passive: true });
+
+            fotoPrincipal.addEventListener('touchmove', e => {
+                const dx = Math.abs(e.changedTouches[0].clientX - swipeStartX);
+                const dy = Math.abs(e.changedTouches[0].clientY - swipeStartY);
+                if (dx > dy && dx > 10) isSwiping = true;
+            }, { passive: true });
+
+            fotoPrincipal.addEventListener('touchend', e => {
+                if (!isSwiping) return;
+                const diff = swipeStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) < 40) return;
+                if (diff > 0) {
+                    // swipe esquerda → próxima
+                    fotoAtual = (fotoAtual + 1) % totalFotos;
+                } else {
+                    // swipe direita → anterior
+                    fotoAtual = (fotoAtual - 1 + totalFotos) % totalFotos;
+                }
+                fotoPrincipal.src = carro.fotos[fotoAtual];
+                atualizarMiniaturaAtiva();
+                const contador = document.getElementById('foto-contador-hero');
+                if (contador) contador.textContent = `${fotoAtual + 1} / ${totalFotos}`;
+            }, { passive: true });
 
             const contentorMiniaturas = document.getElementById('galeria-miniaturas');
             contentorMiniaturas.innerHTML = '';
