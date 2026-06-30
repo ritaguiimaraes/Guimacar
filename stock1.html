@@ -347,6 +347,8 @@
         }
 
         const gridCarros = document.getElementById('grid-carros');
+        const carsPerPage = 9;
+        let currentPage = 1;
         let filteredCars = [];
         
         // Ordenar carros por ID decrescente (mais recentes primeiro)
@@ -446,6 +448,7 @@
             });
 
             // Reset para primeira página
+            currentPage = 1;
             renderPage(1);
             updateResultsCount();
 
@@ -491,7 +494,9 @@
         });
 
         function renderPage(page) {
-            const carsToShow = filteredCars;
+            const startIndex = (page - 1) * carsPerPage;
+            const endIndex = startIndex + carsPerPage;
+            const carsToShow = filteredCars.slice(startIndex, endIndex);
             
             gridCarros.innerHTML = '';
 
@@ -582,10 +587,46 @@
         }
 
         function renderPagination() {
-            document.getElementById('pagination').innerHTML = '';
+            const totalPages = Math.ceil(filteredCars.length / carsPerPage);
+            const paginationContainer = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+            
+            let paginationHTML = '<div class="flex justify-center items-center space-x-2 mt-12">';
+            
+            // Botão Anterior
+            if (currentPage > 1) {
+                paginationHTML += `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">← Anterior</button>`;
+            }
+            
+            // Números das páginas
+            for (let i = 1; i <= totalPages; i++) {
+                const isActive = i === currentPage;
+                paginationHTML += `<button onclick="changePage(${i})" class="px-4 py-2.5 text-sm font-bold rounded-xl ${isActive ? 'bg-orange-500 text-white shadow-[0_0_18px_rgba(249,115,22,0.5)]' : 'bg-black/30 text-gray-300 hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] border border-white/10'} rounded-lg transition">${i}</button>`;
+            }
+            
+            // Botão Seguinte
+            if (currentPage < totalPages) {
+                paginationHTML += `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2.5 bg-black/30 text-white rounded-xl hover:bg-orange-500/20 hover:shadow-[0_0_16px_rgba(249,115,22,0.35)] transition border border-white/10 text-sm font-bold">Seguinte →</button>`;
+            }
+            
+            paginationHTML += '</div>';
+            paginationContainer.innerHTML = paginationHTML;
         }
 
-
+        function changePage(page) {
+            currentPage = page;
+            renderPage(page);
+            // Scroll até ao grid de carros
+            const grid = document.getElementById('grid-carros');
+            if (grid) {
+                const offset = grid.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
+        }
 
         // Renderizar primeira página
         renderPage(1);
