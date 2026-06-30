@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaturas Disponíveis | Guimacar — Stand em Fafe</title>
     <meta name="description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais. Preços justos e transparentes.">
-    <link rel="canonical" href="https://www.guimacar.com/stock.html">
+    <link rel="canonical" href="https://www.guimacar.com/stock">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.guimacar.com/stock.html">
+    <meta property="og:url" content="https://www.guimacar.com/stock">
     <meta property="og:title" content="Viaturas Disponíveis | Guimacar — Stand em Fafe">
     <meta property="og:description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais.">
     <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
@@ -210,7 +210,7 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -240,7 +240,7 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -343,7 +343,11 @@
     <script src="carros.js"></script>
     <script>
         function voltarPagina() {
-            window.location.href = './';
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = './';
+            }
         }
 
         const gridCarros = document.getElementById('grid-carros');
@@ -577,7 +581,7 @@
                 }, { passive: true });
 
                 card.onclick = function() {
-                    window.location.href = `detalhes.html?id=${carro.id}`;
+                    window.location.href = `detalhes?id=${carro.id}`;
                 };
 
                 gridCarros.appendChild(card);
