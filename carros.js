@@ -245,7 +245,16 @@ const stockGuimacar = [
         potencia: "92",
         extras: ["ac"], 
         fotos: [
-            "img/carro9/1.JPG"
+            "img/carro9/1.JPG",
+            "img/carro9/2.JPG",
+            "img/carro9/3.JPG",
+            "img/carro9/4.JPG",
+            "img/carro9/5.JPG",
+            "img/carro9/6.JPG",
+            "img/carro9/7.JPG",
+            "img/carro9/8.JPG",
+            "img/carro9/9.JPG",
+            "img/carro9/10.JPG"
         ]
     },
    {
