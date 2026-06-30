@@ -231,6 +231,7 @@ const stockGuimacar = [
             "img/carro8/11.jpg"
         ]
     },
+    
    {
         id: 9,
         marca: "Citroen C4 Van",
@@ -244,16 +245,7 @@ const stockGuimacar = [
         potencia: "92",
         extras: ["ac"], 
         fotos: [
-            "img/carro9/1.jpg",
-            "img/carro9/2.jpg",
-            "img/carro9/3.jpg",
-            "img/carro9/4.jpg",
-            "img/carro9/5.jpg",
-            "img/carro9/6.jpg",
-            "img/carro9/7.jpg",
-            "img/carro9/8.jpg",
-            "img/carro9/9.jpg",
-            "img/carro9/10.jpg" 
+            "img/carro9/1.JPG"
         ]
     },
    {
