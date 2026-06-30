@@ -56,11 +56,10 @@ const stockGuimacar = [
             "img/carro1/9.jpg" 
         ]
     },*/
-    /*
     {
         id: 2,
         marca: "Citroen C4 Van",
-        destaque: true,
+        destaque: false,
         modelo: "1.6 Hdi 2010",
         preco: "Sob Consulta",
         mes: "02/2010",
@@ -81,7 +80,7 @@ const stockGuimacar = [
             "img/carro2/9.jpg",
             "img/carro2/10.jpg" 
         ]
-    },*/
+    },
 /*
     {
         id: 3,
