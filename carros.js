@@ -33,7 +33,7 @@ const stockGuimacar = [
     /*
     {
         id: 1,
-        marca: "Renault Megane",
+        marca: "Renault Clio",
         destaque: true,
         modelo: "1.5 Dci 110 CV 2018",
         preco: "14.250 €",
@@ -56,14 +56,39 @@ const stockGuimacar = [
             "img/carro1/9.jpg" 
         ]
     },*/
-    /*
+    {
+        id: 2,
+        marca: "Citroen C4 Van",
+        destaque: false,
+        modelo: "1.6 Hdi 2010",
+        preco: "Sob Consulta",
+        mes: "02/2010",
+        kms: "189.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1600",
+        potencia: "92",
+        extras: ["ac"], 
+        fotos: [
+            "img/carro2/1.jpg",
+            "img/carro2/2.jpg",
+            "img/carro2/3.jpg",
+            "img/carro2/4.jpg",
+            "img/carro2/5.jpg",
+            "img/carro2/6.jpg",
+            "img/carro2/7.jpg",
+            "img/carro2/8.jpg",
+            "img/carro2/9.jpg",
+            "img/carro2/10.jpg" 
+        ]
+    },
+/*
     {
         id: 3,
         marca: "Citroen C3",
         destaque: true,
         modelo: "1.2 2019",
-        preco: "9.750 €",
-        mes: "10/2019",
+        preco: "------ €",
+        mes: "-----",
         kms: "88.000",
         combustivel: "Gasolina",
         cilindrada: "1200",
@@ -84,18 +109,15 @@ const stockGuimacar = [
             "img/carro3/11.jpg",
             "img/carro3/12.jpg",
             "img/carro3/13.jpg",
-            "img/carro3/14.jpg",
-            "img/carro3/15.jpg",
-            "img/carro3/16.jpg",
-            "img/carro3/17.jpg"
+            "img/carro3/14.jpg"
 
         ]
     },*/
     {
         id: 4,
-        marca: "Peugeot Partner",
+        marca: "Peugeot Partner 1.6 Hdi",
         destaque: true,
-        modelo: "1.6 Hdi AC 3L 2019",
+        modelo: "Iva Dedutivel AC 3L 2019 ",
         preco: "12.999 €",
         mes: "07/2019",
         kms: "147.200",
@@ -123,9 +145,9 @@ const stockGuimacar = [
     },
     {
         id: 5,
-        marca: "Peugeot",
+        marca: "Peugeot 308 Allure Hdi",
         destaque: true,
-        modelo: "308 SW 2018",
+        modelo: "SW 2018",
         preco: "13.750 €",
         mes: "05/2018",
         kms: "135.000",
@@ -157,9 +179,9 @@ const stockGuimacar = [
     },
     {
         id: 6,
-        marca: "Peugeot",
+        marca: "Peugeot 308 Hdi",
         destaque: true,
-        modelo: "308 Hdi 2019",
+        modelo: "1.5 Hdi 2019",
         preco: "13.750 €",
         mes: "07/2019",
         kms: "146.100",
@@ -187,9 +209,9 @@ const stockGuimacar = [
     },
     {
         id: 7,
-        marca: "Renault",
+        marca: "Renault Captur",
         destaque: true,
-        modelo: " Captur 1.5 2016",
+        modelo: "1.5 DCI 2016",
         preco: "10.250 €",
         mes: "10/2016",
         kms: "163.000",
