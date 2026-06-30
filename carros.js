@@ -55,7 +55,7 @@ const stockGuimacar = [
             "img/carro1/9.jpg" 
         ]
     },*/
-    /*
+    
     {
         id: 2,
         marca: "Citroen C4 Van",
@@ -80,7 +80,7 @@ const stockGuimacar = [
             "img/carro2/9.jpg",
             "img/carro2/10.jpg" 
         ]
-    },*/
+    },
 /*
     {
         id: 3,
