@@ -336,13 +336,14 @@ const stockGuimacar = [
             "img/carro10/12.jpg"
         ]
     },
+
     {
         id: 12,
         marca: "Opel Corsa",
         destaque: false,
         brevemente: true,
         modelo: "1.2 Turbo",
-        preco: " €",
+        preco: "Sob Consulta",
         mes: "06/2021",
         kms: "83.000",
         combustivel: "Gasolina",
@@ -354,6 +355,30 @@ const stockGuimacar = [
             "img/carro12/2.jpg",
             "img/carro12/3.jpg"
  
+        ]
+    }
+    ,
+    {
+        id: 13,
+        marca: "Renault Clio",
+        destaque: false,
+        modelo: "1.5 Dci 75 CV 2018",
+        preco: "Sob Consulta",
+        mes: "07/2018",
+        kms: "149.350",
+        combustivel: "Gasóleo",
+        cilindrada: "1500",
+        potencia: "75",
+        extras: [],
+        fotos: [
+            "img/carro13/1.jpg",
+            "img/carro13/2.jpg",
+            "img/carro13/3.jpg",
+            "img/carro13/4.jpg",
+            "img/carro13/5.jpg",
+            "img/carro13/6.jpg",
+            "img/carro13/7.jpg",
+            "img/carro13/8.jpg"
         ]
     }
 ];
