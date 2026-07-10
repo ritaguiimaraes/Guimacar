@@ -1,8 +1,8 @@
 /*
-gps: 'GPS',
-            usb: 'USB',
-            'radio cd': 'Rádio CD',
-            bluetooth: 'Bluetooth',
+gps: 'GPS', 
+            usb: 'USB', 
+            'radio cd': 'Rádio CD', 
+            bluetooth: 'Bluetooth', 
             'jante sespeciais': 'Jantes especiais',
             'camera traseira': 'Câmara traseira',
             'cruise control': 'Cruise control',
@@ -234,7 +234,7 @@ const stockGuimacar = [
         marca: "Opel Corsa D",
         destaque: false,
         modelo: "1.3 CDTi ecoFLEX ",
-        preco: "Sob Consulta",
+        preco: "5.750 €",
         mes: "03/2008",
         kms: "107.000",
         combustivel: "Gasóleo",
@@ -363,7 +363,7 @@ const stockGuimacar = [
         marca: "Renault Clio",
         destaque: false,
         modelo: "1.5 Dci 75 CV 2018",
-        preco: "Sob Consulta",
+        preco: "10.250 €",
         mes: "07/2018",
         kms: "149.350",
         combustivel: "Gasóleo",
@@ -379,6 +379,54 @@ const stockGuimacar = [
             "img/carro13/6.jpg",
             "img/carro13/7.jpg",
             "img/carro13/8.jpg"
+        ]
+    },
+    {
+        id: 14,
+        marca: "Peugeot 208",
+        destaque: false,
+        modelo: "Signature 1.2 PureTech 82 CV 2019",
+        preco: "9.750 €",
+        mes: "03/2019",
+        kms: "99.600",
+        combustivel: "Gasolina",
+        cilindrada: "1200",
+        potencia: "82",
+        extras: [],
+        fotos: [
+            "img/carro14/1.jpg",
+            "img/carro14/2.jpg",
+            "img/carro14/3.jpg",
+            "img/carro14/4.jpg",
+            "img/carro14/5.jpg",
+            "img/carro14/6.jpg",
+            "img/carro14/7.jpg",
+            "img/carro14/8.jpg"
+        ]
+    },
+    {
+        id: 15,
+        marca: "Renault Kadjar",
+        destaque: false,
+        modelo: "dCi 130 CV Energy Intens 2016",
+        preco: "13.500 €",
+        mes: "05/2016",
+        kms: "153.500",
+        combustivel: "Gasolina",
+        cilindrada: "1600",
+        potencia: "130",
+        extras: [],
+        fotos: [
+            "img/carro15/1.jpg",
+            "img/carro15/2.jpg",
+            "img/carro15/3.jpg",
+            "img/carro15/4.jpg",
+            "img/carro15/5.jpg",
+            "img/carro15/6.jpg",
+            "img/carro15/7.jpg",
+            "img/carro15/8.jpg",
+            "img/carro15/9.jpg",
+            "img/carro15/10.jpg"
         ]
     }
 ];
