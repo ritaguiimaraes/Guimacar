@@ -412,7 +412,7 @@ const stockGuimacar = [
         preco: "13.500 €",
         mes: "05/2016",
         kms: "153.500",
-        combustivel: "Gasolina",
+        combustivel: "Gasóleo",
         cilindrada: "1600",
         potencia: "130",
         extras: [],
