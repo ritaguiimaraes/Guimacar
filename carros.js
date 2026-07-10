@@ -254,6 +254,29 @@ const stockGuimacar = [
     ,
     {
         id: 9,
+        marca: "Dacia Duster",
+        destaque: false,
+        modelo: "1.5 DCI 4x4",
+        preco: "12.500 €",
+        mes: "12/2017",
+        kms: "181.100",
+        combustivel: "Gasóleo",
+        cilindrada: "1500",
+        potencia: "110",
+        extras:[],
+        fotos: [
+            "img/Duster/1.jpg",
+            "img/Duster/2.jpg",
+            "img/Duster/3.png",
+            "img/Duster/4.jpg",
+            "img/Duster/5.jpg",
+            "img/Duster/6.jpg",
+            "img/Duster/7.jpg"
+        ]
+    }
+    ,
+    {
+        id: 10,
         marca: "Opel Corsa D",
         destaque: false,
         modelo: "1.3 CDTi ecoFLEX ",
@@ -279,7 +302,7 @@ const stockGuimacar = [
         ]
     },
    {
-        id: 10,
+        id: 11,
         marca: "Citroën C4 Van",
         destaque: false,
         modelo: "1.6 Hdi 2010",
@@ -304,7 +327,7 @@ const stockGuimacar = [
         ]
     },
    {
-        id: 11,
+        id: 12,
         marca: "Citroën C4",
         destaque: false,
         modelo: "1.6 Hdi 2011",
@@ -332,7 +355,7 @@ const stockGuimacar = [
     },
 
     {
-        id: 12,
+        id: 13,
         marca: "Opel Corsa",
         destaque: false,
         brevemente: true,
@@ -353,7 +376,7 @@ const stockGuimacar = [
     }
     ,
     {
-        id: 13,
+        id: 14,
         marca: "Renault Clio",
         destaque: false,
         modelo: "1.5 Dci 75 CV 2018",
@@ -376,7 +399,7 @@ const stockGuimacar = [
         ]
     },
     {
-        id: 14,
+        id: 15,
         marca: "Peugeot 208",
         destaque: false,
         modelo: "Signature 1.2 PureTech 82 CV 2019",
@@ -399,7 +422,7 @@ const stockGuimacar = [
         ]
     },
     {
-        id: 15,
+        id: 16,
         marca: "Renault Kadjar",
         destaque: false,
         modelo: "dCi 130 CV Energy Intens 2016",
@@ -424,7 +447,7 @@ const stockGuimacar = [
         ]
     },
     {
-        id: 16,
+        id: 17,
         marca: "Fiat Tipo",
         destaque: false,
         modelo: "1.3 CDTI 95 CV 2019",
