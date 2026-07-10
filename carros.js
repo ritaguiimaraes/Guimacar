@@ -140,19 +140,19 @@ const stockGuimacar = [
             "img/Partner2019Branca/13.jpg",
             "img/Partner2019Branca/14.jpg"
         ]
-    },/** 
+    },
     {
         id: 5,
         marca: "Citroën Berlingo",
         destaque: false,
-        ivaDedutivel: false,  //CONFIRMAR IVA DEDUTIVEL
-        modelo: "----- ",
-        preco: "---- €",
-        mes: "--/----",
-        kms: "----",
-        combustivel: "-----",
-        cilindrada: "----",
-        potencia: "---",
+        ivaDedutivel: true,
+        modelo: "1.6 HDI 75 CV 2018",
+        preco: "9.500 €",
+        mes: "03/2018",
+        kms: "156.150",
+        combustivel: "Gasóleo",
+        cilindrada: "1600",
+        potencia: "75",
         extras: [],
         fotos: [
             "img/Berlingo/1.jpg",
@@ -163,7 +163,7 @@ const stockGuimacar = [
             "img/Berlingo/6.jpg",
             "img/Berlingo/7.jpg"
         ]
-    },**/
+    },
     {
         id: 6,
         marca: "Peugeot 308 Allure Hdi",
