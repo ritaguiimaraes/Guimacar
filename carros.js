@@ -428,5 +428,30 @@ const stockGuimacar = [
             "img/carro15/9.jpg",
             "img/carro15/10.jpg"
         ]
+    },
+    {
+        id: 16,
+        marca: "Fiat Tipo",
+        destaque: false,
+        modelo: "1.3 CDTI 95 CV 2019",
+        preco: "7.750 €",
+        mes: "12/2019",
+        kms: "186.350",
+        combustivel: "Gasóleo",
+        cilindrada: "1300",
+        potencia: "95",
+        extras: [],
+        fotos: [
+            "img/carro16/1.jpg",
+            "img/carro16/2.jpg",
+            "img/carro16/3.jpg",
+            "img/carro16/4.jpg",
+            "img/carro16/5.jpg",
+            "img/carro16/6.jpg",
+            "img/carro16/7.jpg",
+            "img/carro16/8.jpg",
+            "img/carro16/9.jpg",
+            "img/carro16/10.jpg"
+        ]
     }
 ];
