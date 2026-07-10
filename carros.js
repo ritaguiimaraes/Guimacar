@@ -83,7 +83,7 @@ const stockGuimacar = [
 
     {
         id: 3,
-        marca: "Citroen C3",
+        marca: "Citroën C3",
         destaque: true,
         modelo: "1.2 2019",
         preco: "9.750 €",
@@ -140,9 +140,32 @@ const stockGuimacar = [
             "img/Partner2019Branca/13.jpg",
             "img/Partner2019Branca/14.jpg"
         ]
-    },
+    },/** 
     {
         id: 5,
+        marca: "Citroën Berlingo",
+        destaque: false,
+        ivaDedutivel: false,  //CONFIRMAR IVA DEDUTIVEL
+        modelo: "----- ",
+        preco: "---- €",
+        mes: "--/----",
+        kms: "----",
+        combustivel: "-----",
+        cilindrada: "----",
+        potencia: "---",
+        extras: [],
+        fotos: [
+            "img/Berlingo/1.jpg",
+            "img/Berlingo/2.jpg",
+            "img/Berlingo/3.jpg",
+            "img/Berlingo/4.jpg",
+            "img/Berlingo/5.jpg",
+            "img/Berlingo/6.jpg",
+            "img/Berlingo/7.jpg"
+        ]
+    },**/
+    {
+        id: 6,
         marca: "Peugeot 308 Allure Hdi",
         destaque: true,
         modelo: "SW 2018",
@@ -175,7 +198,7 @@ const stockGuimacar = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         marca: "Peugeot 308",
         destaque: true,
         modelo: "1.5 Hdi 2019",
@@ -204,7 +227,7 @@ const stockGuimacar = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         marca: "Renault Captur",
         destaque: true,
         modelo: "1.5 DCI 2016",
@@ -230,7 +253,7 @@ const stockGuimacar = [
     }
     ,
     {
-        id: 8,
+        id: 9,
         marca: "Opel Corsa D",
         destaque: false,
         modelo: "1.3 CDTi ecoFLEX ",
@@ -256,8 +279,8 @@ const stockGuimacar = [
         ]
     },
    {
-        id: 9,
-        marca: "Citroen C4 Van",
+        id: 10,
+        marca: "Citroën C4 Van",
         destaque: false,
         modelo: "1.6 Hdi 2010",
         preco: "4.500 €",
@@ -282,7 +305,7 @@ const stockGuimacar = [
     },
    {
         id: 11,
-        marca: "Citroen C4",
+        marca: "Citroën C4",
         destaque: false,
         modelo: "1.6 Hdi 2011",
         preco: "8.250 €",
