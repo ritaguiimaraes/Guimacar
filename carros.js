@@ -43,22 +43,22 @@ const stockGuimacar = [
         potencia: "75",
         extras: [],
         fotos: [
-            "img/carro1/1.jpg",
-            "img/carro1/2.jpg",
-            "img/carro1/3.jpg",
-            "img/carro1/4.jpg",
-            "img/carro1/5.jpg",
-            "img/carro1/6.jpg",
-            "img/carro1/7.jpg",
-            "img/carro1/8.jpg",
-            "img/carro1/9.jpg" 
+            "img/RenaultClio17/1.jpg",
+            "img/RenaultClio17/2.jpg",
+            "img/RenaultClio17/3.jpg",
+            "img/RenaultClio17/4.jpg",
+            "img/RenaultClio17/5.jpg",
+            "img/RenaultClio17/6.jpg",
+            "img/RenaultClio17/7.jpg",
+            "img/RenaultClio17/8.jpg",
+            "img/RenaultClio17/9.jpg" 
         ]
     },
     {
         id: 2,
         marca: "Polo Go",
         destaque: false,
-        modelo: "1.4 TDI",
+        modelo: "1.4 TDI ",
         preco: "5.750 €",
         mes: "09/2006",
         kms: "203.000",
@@ -67,17 +67,17 @@ const stockGuimacar = [
         potencia: "",
         extras:[],
         fotos: [
-            "img/carro11/1.jpg",
-            "img/carro11/2.jpg",
-            "img/carro11/3.jpg",
-            "img/carro11/4.jpg",
-            "img/carro11/5.jpg",
-            "img/carro11/6.jpg",
-            "img/carro11/7.jpg",
-            "img/carro11/8.jpg",
-            "img/carro11/9.jpg",
-            "img/carro11/10.jpg",
-            "img/carro11/11.jpg"
+            "img/PoloGo/1.jpg",
+            "img/PoloGo/2.jpg",
+            "img/PoloGo/3.jpg",
+            "img/PoloGo/4.jpg",
+            "img/PoloGo/5.jpg",
+            "img/PoloGo/6.jpg",
+            "img/PoloGo/7.jpg",
+            "img/PoloGo/8.jpg",
+            "img/PoloGo/9.jpg",
+            "img/PoloGo/10.jpg",
+            "img/PoloGo/11.jpg"
         ]
     },
 
@@ -94,20 +94,20 @@ const stockGuimacar = [
         potencia: "75",
         extras: [],
         fotos: [
-            "img/carro3/1.jpg",
-            "img/carro3/2.jpg",
-            "img/carro3/3.jpg",
-            "img/carro3/4.jpg",
-            "img/carro3/5.jpg",
-            "img/carro3/6.jpg",
-            "img/carro3/7.jpg",
-            "img/carro3/8.jpg",
-            "img/carro3/9.jpg",
-            "img/carro3/10.jpg",
-            "img/carro3/11.jpg",
-            "img/carro3/12.jpg",
-            "img/carro3/13.jpg",
-            "img/carro3/14.jpg"
+            "img/CitroenC3/1.jpg",
+            "img/CitroenC3/2.jpg",
+            "img/CitroenC3/3.jpg",
+            "img/CitroenC3/4.jpg",
+            "img/CitroenC3/5.jpg",
+            "img/CitroenC3/6.jpg",
+            "img/CitroenC3/7.jpg",
+            "img/CitroenC3/8.jpg",
+            "img/CitroenC3/9.jpg",
+            "img/CitroenC3/10.jpg",
+            "img/CitroenC3/11.jpg",
+            "img/CitroenC3/12.jpg",
+            "img/CitroenC3/13.jpg",
+            "img/CitroenC3/14.jpg"
 
         ]
     },
@@ -125,20 +125,20 @@ const stockGuimacar = [
         potencia: "75",
         extras: ["usb","radio cd","bluetooth","cruise control","direcao assistida", "fecho central", "ac","sensores traseiros","abs","esp"],
         fotos: [
-            "img/carro4/1.jpg",
-            "img/carro4/2.jpg",
-            "img/carro4/3.jpg",
-            "img/carro4/4.jpg",
-            "img/carro4/5.jpg",
-            "img/carro4/6.jpg",
-            "img/carro4/7.jpg",
-            "img/carro4/8.jpg",
-            "img/carro4/9.jpg",
-            "img/carro4/10.jpg",
-            "img/carro4/11.jpg",
-            "img/carro4/12.jpg",
-            "img/carro4/13.jpg",
-            "img/carro4/14.jpg"
+            "img/Partner2019Branca/1.jpg",
+            "img/Partner2019Branca/2.jpg",
+            "img/Partner2019Branca/3.jpg",
+            "img/Partner2019Branca/4.jpg",
+            "img/Partner2019Branca/5.jpg",
+            "img/Partner2019Branca/6.jpg",
+            "img/Partner2019Branca/7.jpg",
+            "img/Partner2019Branca/8.jpg",
+            "img/Partner2019Branca/9.jpg",
+            "img/Partner2019Branca/10.jpg",
+            "img/Partner2019Branca/11.jpg",
+            "img/Partner2019Branca/12.jpg",
+            "img/Partner2019Branca/13.jpg",
+            "img/Partner2019Branca/14.jpg"
         ]
     },
     {
@@ -154,29 +154,29 @@ const stockGuimacar = [
         potencia: "130",
         extras: [],
         fotos: [
-            "img/carro5/1.jpg",
-            "img/carro5/2.jpg",
-            "img/carro5/3.jpg",
-            "img/carro5/4.jpg",
-            "img/carro5/5.jpg",
-            "img/carro5/6.jpg",
-            "img/carro5/7.jpg",
-            "img/carro5/8.jpg",
-            "img/carro5/9.jpg",
-            "img/carro5/10.jpg",
-            "img/carro5/11.jpg",
-            "img/carro5/12.jpg",
-            "img/carro5/13.jpg",
-            "img/carro5/14.jpg",
-            "img/carro5/15.jpg",
-            "img/carro5/16.jpg",
-            "img/carro5/17.jpg",
-            "img/carro5/18.jpg"
+            "img/PeugeotAllure/1.jpg",
+            "img/PeugeotAllure/2.jpg",
+            "img/PeugeotAllure/3.jpg",
+            "img/PeugeotAllure/4.jpg",
+            "img/PeugeotAllure/5.jpg",
+            "img/PeugeotAllure/6.jpg",
+            "img/PeugeotAllure/7.jpg",
+            "img/PeugeotAllure/8.jpg",
+            "img/PeugeotAllure/9.jpg",
+            "img/PeugeotAllure/10.jpg",
+            "img/PeugeotAllure/11.jpg",
+            "img/PeugeotAllure/12.jpg",
+            "img/PeugeotAllure/13.jpg",
+            "img/PeugeotAllure/14.jpg",
+            "img/PeugeotAllure/15.jpg",
+            "img/PeugeotAllure/16.jpg",
+            "img/PeugeotAllure/17.jpg",
+            "img/PeugeotAllure/18.jpg"
         ]
     },
     {
         id: 6,
-        marca: "Peugeot 308 Hdi",
+        marca: "Peugeot 308",
         destaque: true,
         modelo: "1.5 Hdi 2019",
         preco: "13.750 €",
@@ -187,20 +187,20 @@ const stockGuimacar = [
         potencia: "100",
         extras:["gps","usb","bluetooth","jantes","farois led", "farois nevoeiro","cruise control","direcao assistida", "volante pele", "volante multifuncoes", "fecho central", "ac", "climatizacao auto","climatizacao bi-zona","sensores de luz","sensores chuva","sensores traseiros","abs","esp"],
         fotos: [
-            "img/carro6/1.jpg",
-            "img/carro6/2.jpg",
-            "img/carro6/3.jpg",
-            "img/carro6/4.jpg",
-            "img/carro6/5.jpg",
-            "img/carro6/6.jpg",
-            "img/carro6/7.jpg",
-            "img/carro6/8.jpg",
-            "img/carro6/9.jpg",
-            "img/carro6/10.jpg",
-            "img/carro6/11.jpg",
-            "img/carro6/12.jpg",
-            "img/carro6/13.jpg",
-            "img/carro6/14.jpg"
+            "img/Peugeot308/1.jpg",
+            "img/Peugeot308/2.jpg",
+            "img/Peugeot308/3.jpg",
+            "img/Peugeot308/4.jpg",
+            "img/Peugeot308/5.jpg",
+            "img/Peugeot308/6.jpg",
+            "img/Peugeot308/7.jpg",
+            "img/Peugeot308/8.jpg",
+            "img/Peugeot308/9.jpg",
+            "img/Peugeot308/10.jpg",
+            "img/Peugeot308/11.jpg",
+            "img/Peugeot308/12.jpg",
+            "img/Peugeot308/13.jpg",
+            "img/Peugeot308/14.jpg"
         ]
     },
     {
@@ -216,16 +216,16 @@ const stockGuimacar = [
         potencia: "90",
         extras:[],
         fotos: [
-            "img/carro7/1.jpg",
-            "img/carro7/2.jpg",
-            "img/carro7/3.jpg",
-            "img/carro7/4.jpg",
-            "img/carro7/5.jpg",
-            "img/carro7/6.jpg",
-            "img/carro7/7.jpg",
-            "img/carro7/8.jpg",
-            "img/carro7/9.jpg",
-            "img/carro7/10.jpg"
+            "img/RenaultCaptur/1.jpg",
+            "img/RenaultCaptur/2.jpg",
+            "img/RenaultCaptur/3.jpg",
+            "img/RenaultCaptur/4.jpg",
+            "img/RenaultCaptur/5.jpg",
+            "img/RenaultCaptur/6.jpg",
+            "img/RenaultCaptur/7.jpg",
+            "img/RenaultCaptur/8.jpg",
+            "img/RenaultCaptur/9.jpg",
+            "img/RenaultCaptur/10.jpg"
         ]
     }
     ,
@@ -242,48 +242,19 @@ const stockGuimacar = [
         potencia: "75",
         extras:[],
         fotos: [
-            "img/carro8/1.jpg",
-            "img/carro8/2.jpg",
-            "img/carro8/3.jpg",
-            "img/carro8/4.jpg",
-            "img/carro8/5.jpg",
-            "img/carro8/6.jpg",
-            "img/carro8/7.jpg",
-            "img/carro8/8.jpg",
-            "img/carro8/9.jpg",
-            "img/carro8/10.jpg",
-            "img/carro8/11.jpg"
+            "img/CorsaD/1.jpg",
+            "img/CorsaD/2.jpg",
+            "img/CorsaD/3.jpg",
+            "img/CorsaD/4.jpg",
+            "img/CorsaD/5.jpg",
+            "img/CorsaD/6.jpg",
+            "img/CorsaD/7.jpg",
+            "img/CorsaD/8.jpg",
+            "img/CorsaD/9.jpg",
+            "img/CorsaD/10.jpg",
+            "img/CorsaD/11.jpg"
         ]
     },
-    /*
-    {
-        id: 8,
-        marca: "Opel Corsa d",
-        destaque: false,
-        modelo: "1.2 CDTI ECO FLEX ",
-        preco: "Sob Consulta",
-        mes: "03/2008",
-        kms: "107000",
-        combustivel: "Gasolina",
-        cilindrada: "1200",
-        potencia: "75",
-        extras:[],
-        fotos: [
-            "img/carro8/1.jpg",
-            "img/carro8/2.jpg",
-            "img/carro8/3.jpg",
-            "img/carro8/4.jpg",
-            "img/carro8/5.jpg",
-            "img/carro8/6.jpg",
-            "img/carro8/7.jpg",
-            "img/carro8/8.jpg",
-            "img/carro8/9.jpg",
-            "img/carro8/10.jpg",
-            "img/carro8/11.jpg"
-        ]
-    },
-    */
-
    {
         id: 9,
         marca: "Citroen C4 Van",
@@ -297,21 +268,21 @@ const stockGuimacar = [
         potencia: "92",
         extras: ["ac"], 
         fotos: [
-            "img/carro9/1.JPG",
-            "img/carro9/2.JPG",
-            "img/carro9/3.JPG",
-            "img/carro9/4.JPG",
-            "img/carro9/5.JPG",
-            "img/carro9/6.JPG",
-            "img/carro9/7.JPG",
-            "img/carro9/8.JPG",
-            "img/carro9/9.JPG",
-            "img/carro9/10.JPG"
+            "img/CitroenC4Van/1.JPG",
+            "img/CitroenC4Van/2.JPG",
+            "img/CitroenC4Van/3.JPG",
+            "img/CitroenC4Van/4.JPG",
+            "img/CitroenC4Van/5.JPG",
+            "img/CitroenC4Van/6.JPG",
+            "img/CitroenC4Van/7.JPG",
+            "img/CitroenC4Van/8.JPG",
+            "img/CitroenC4Van/9.JPG",
+            "img/CitroenC4Van/10.JPG"
         ]
     },
    {
         id: 11,
-        marca: "Citroen C4 2011",
+        marca: "Citroen C4",
         destaque: false,
         modelo: "1.6 Hdi 2011",
         preco: "8.250 €",
@@ -322,18 +293,18 @@ const stockGuimacar = [
         potencia: "90",
         extras: [], 
         fotos: [
-            "img/carro10/1.jpg",
-            "img/carro10/2.jpg",
-            "img/carro10/3.jpg",
-            "img/carro10/4.jpg",
-            "img/carro10/5.jpg",
-            "img/carro10/6.jpg",
-            "img/carro10/7.jpg",
-            "img/carro10/8.jpg",
-            "img/carro10/9.jpg",
-            "img/carro10/10.jpg",
-            "img/carro10/11.jpg",
-            "img/carro10/12.jpg"
+            "img/CitroenC4/1.jpg",
+            "img/CitroenC4/2.jpg",
+            "img/CitroenC4/3.jpg",
+            "img/CitroenC4/4.jpg",
+            "img/CitroenC4/5.jpg",
+            "img/CitroenC4/6.jpg",
+            "img/CitroenC4/7.jpg",
+            "img/CitroenC4/8.jpg",
+            "img/CitroenC4/9.jpg",
+            "img/CitroenC4/10.jpg",
+            "img/CitroenC4/11.jpg",
+            "img/CitroenC4/12.jpg"
         ]
     },
 
@@ -351,9 +322,9 @@ const stockGuimacar = [
         potencia: "",
         extras:[],
         fotos: [
-            "img/carro12/1.jpg",
-            "img/carro12/2.jpg",
-            "img/carro12/3.jpg"
+            "img/Corsa2021/1.jpg",
+            "img/Corsa2021/2.jpg",
+            "img/Corsa2021/3.jpg"
  
         ]
     }
@@ -371,14 +342,14 @@ const stockGuimacar = [
         potencia: "75",
         extras: [],
         fotos: [
-            "img/carro13/1.jpg",
-            "img/carro13/2.jpg",
-            "img/carro13/3.jpg",
-            "img/carro13/4.jpg",
-            "img/carro13/5.jpg",
-            "img/carro13/6.jpg",
-            "img/carro13/7.jpg",
-            "img/carro13/8.jpg"
+            "img/RenaultClio18/1.jpg",
+            "img/RenaultClio18/2.jpg",
+            "img/RenaultClio18/3.jpg",
+            "img/RenaultClio18/4.jpg",
+            "img/RenaultClio18/5.jpg",
+            "img/RenaultClio18/6.jpg",
+            "img/RenaultClio18/7.jpg",
+            "img/RenaultClio18/8.jpg"
         ]
     },
     {
@@ -394,14 +365,14 @@ const stockGuimacar = [
         potencia: "82",
         extras: [],
         fotos: [
-            "img/carro14/1.jpg",
-            "img/carro14/2.jpg",
-            "img/carro14/3.jpg",
-            "img/carro14/4.jpg",
-            "img/carro14/5.jpg",
-            "img/carro14/6.jpg",
-            "img/carro14/7.jpg",
-            "img/carro14/8.jpg"
+            "img/Peugeot208/1.jpg",
+            "img/Peugeot208/2.jpg",
+            "img/Peugeot208/3.jpg",
+            "img/Peugeot208/4.jpg",
+            "img/Peugeot208/5.jpg",
+            "img/Peugeot208/6.jpg",
+            "img/Peugeot208/7.jpg",
+            "img/Peugeot208/8.jpg"
         ]
     },
     {
@@ -417,16 +388,16 @@ const stockGuimacar = [
         potencia: "130",
         extras: [],
         fotos: [
-            "img/carro15/1.jpg",
-            "img/carro15/2.jpg",
-            "img/carro15/3.jpg",
-            "img/carro15/4.jpg",
-            "img/carro15/5.jpg",
-            "img/carro15/6.jpg",
-            "img/carro15/7.jpg",
-            "img/carro15/8.jpg",
-            "img/carro15/9.jpg",
-            "img/carro15/10.jpg"
+            "img/Kadjar/1.jpg",
+            "img/Kadjar/2.jpg",
+            "img/Kadjar/3.jpg",
+            "img/Kadjar/4.jpg",
+            "img/Kadjar/5.jpg",
+            "img/Kadjar/6.jpg",
+            "img/Kadjar/7.jpg",
+            "img/Kadjar/8.jpg",
+            "img/Kadjar/9.jpg",
+            "img/Kadjar/10.jpg"
         ]
     },
     {
@@ -442,16 +413,16 @@ const stockGuimacar = [
         potencia: "95",
         extras: [],
         fotos: [
-            "img/carro16/1.jpg",
-            "img/carro16/2.jpg",
-            "img/carro16/3.jpg",
-            "img/carro16/4.jpg",
-            "img/carro16/5.jpg",
-            "img/carro16/6.jpg",
-            "img/carro16/7.jpg",
-            "img/carro16/8.jpg",
-            "img/carro16/9.jpg",
-            "img/carro16/10.jpg"
+            "img/FiatTipo/1.jpg",
+            "img/FiatTipo/2.jpg",
+            "img/FiatTipo/3.jpg",
+            "img/FiatTipo/4.jpg",
+            "img/FiatTipo/5.jpg",
+            "img/FiatTipo/6.jpg",
+            "img/FiatTipo/7.jpg",
+            "img/FiatTipo/8.jpg",
+            "img/FiatTipo/9.jpg",
+            "img/FiatTipo/10.jpg"
         ]
     }
 ];
