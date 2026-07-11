@@ -255,7 +255,7 @@
                     <p class="text-white font-black text-lg uppercase tracking-wider mb-4">Privacidade & Cookies</p>
                     <p class="text-zinc-400 text-xs leading-relaxed mb-4">
                         Usamos cookies do Google Analytics para melhorar a experiência no site. Pode aceitar ou recusar a qualquer momento.
-                        <a href="cookies.html" class="text-orange-500 font-semibold hover:underline ml-1">Saber mais</a>
+                        <a href="cookies" class="text-orange-500 font-semibold hover:underline ml-1">Saber mais</a>
                     </p>
                     <div class="flex gap-2 flex-wrap">
                         <button onclick="acceptCookies()" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-[11px] font-black py-2 px-4 rounded-xl transition uppercase tracking-wider">
@@ -281,10 +281,10 @@
                 </button>
             </div>
             <nav class="flex flex-col gap-6">
-                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="stock" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -308,11 +308,11 @@
                     <span class="text-white">GUIMA</span><span class="text-orange-500">CAR</span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="stock.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="stock" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Viaturas Disponíveis
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -360,10 +360,10 @@
 
             <!-- Botões -->
             <div class="flex flex-wrap gap-4">
-                <a href="stock.html" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(249,115,22,0.4)] inline-flex items-center gap-2">
+                <a href="stock" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(249,115,22,0.4)] inline-flex items-center gap-2">
                     Ver Viaturas <i class="fas fa-arrow-right text-xs"></i>
                 </a>
-                <a href="contacto.html" class="cta-btn bg-white/10 hover:bg-white/20 border border-white/30 hover:border-orange-500/60 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest backdrop-blur-sm inline-flex items-center gap-2">
+                <a href="contacto" class="cta-btn bg-white/10 hover:bg-white/20 border border-white/30 hover:border-orange-500/60 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest backdrop-blur-sm inline-flex items-center gap-2">
                     Contactar <i class="fas fa-phone text-xs text-orange-500"></i>
                 </a>
             </div>
@@ -435,7 +435,7 @@
 
         <div class="text-center mt-10">
             <p class="text-gray-400 text-sm mb-4">Temos mais viaturas disponíveis</p>
-            <a href="stock.html" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(249,115,22,0.35)] inline-flex items-center gap-2">
+            <a href="stock" class="cta-btn bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-[0_0_30px_rgba(249,115,22,0.35)] inline-flex items-center gap-2">
                 Ver todas as viaturas <i class="fas fa-arrow-right text-xs"></i>
             </a>
         </div>
@@ -521,7 +521,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
             .catch(err => console.error('Erro ao carregar o footer:', err));
@@ -559,7 +559,7 @@
                 const featuredCars = stockGuimacar.filter(car => car.destaque);
                 if (featuredCars.length) {
                     track.innerHTML = featuredCars.map((car, index) => `
-                        <a href="detalhes.html?id=${car.id}" class="flex-shrink-0 bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 car-card group block" style="animation-delay: ${0.05 + index * 0.08}s;">
+                        <a href="detalhes?id=${car.id}" class="flex-shrink-0 bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 car-card group block" style="animation-delay: ${0.05 + index * 0.08}s;">
                             <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
                             <div class="p-3">
                                 <div class="relative h-56 w-full overflow-hidden rounded-2xl shadow-sm">
@@ -789,7 +789,7 @@
     <script>
         (function() {
             if (typeof stockGuimacar === "undefined") return;
-            const cards = document.querySelectorAll('#carousel a[href^="detalhes.html?id="]');
+            const cards = document.querySelectorAll('#carousel a[href^="detalhes?id="]');
             cards.forEach(card => {
                 const href = card.getAttribute('href') || "";
                 const match = href.match(/id=(\d+)/);

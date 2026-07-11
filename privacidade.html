@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade | Guimacar</title>
     <meta name="description" content="Política de Privacidade da Guimacar — Comercio de Automoveis Unipessoal Lda. Saiba como tratamos os seus dados pessoais.">
-    <link rel="canonical" href="https://www.guimacar.com/privacidade.html">
+    <link rel="canonical" href="https://www.guimacar.com/privacidade">
     <meta name="robots" content="noindex, follow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -45,10 +45,10 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="stock" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -80,11 +80,11 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="stock.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="stock" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Viaturas Disponíveis
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -231,10 +231,10 @@
 
             <!-- Links -->
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href="cookies.html" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
+                <a href="cookies" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
                     <i class="fas fa-cookie-bite text-orange-500"></i> Política de Cookies
                 </a>
-                <a href="contacto.html" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
+                <a href="contacto" class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/40 rounded-2xl px-5 py-4 font-bold text-sm transition">
                     <i class="fas fa-envelope text-orange-500"></i> Contactar-nos
                 </a>
             </div>
@@ -248,7 +248,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
             .catch(err => console.error('Erro ao carregar o footer:', err));

@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Viatura | Guimacar — Stand em Fafe</title>
     <meta name="description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe — carros usados de qualidade.">
-    <link rel="canonical" href="https://www.guimacar.com/detalhes.html">
+    <link rel="canonical" href="https://www.guimacar.com/detalhes">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.guimacar.com/detalhes.html">
+    <meta property="og:url" content="https://www.guimacar.com/detalhes">
     <meta property="og:title" content="Detalhes da Viatura | Guimacar">
     <meta property="og:description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe.">
     <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
@@ -130,10 +130,10 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="stock" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -162,7 +162,7 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -554,7 +554,7 @@
                     <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>
                     <h2 class="text-3xl font-black text-white mb-3">Viatura não encontrada</h2>
                     <p class="text-gray-400 mb-8">Esta viatura pode já não estar disponível.</p>
-                    <a href="stock.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition">
+                    <a href="stock" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition">
                         Ver todas as viaturas
                     </a>
                 </div>
@@ -630,7 +630,7 @@
         }
 
         function voltarPagina() {
-            window.location.href = 'stock.html';
+            window.location.href = 'stock';
         }
 
         document.addEventListener('keydown', function(e) {
@@ -698,7 +698,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
             .catch(err => console.error('Erro ao carregar o footer:', err));
