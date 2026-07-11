@@ -580,14 +580,53 @@
                     }
                 });
 
-                // Touch: tap na imagem para ver próxima foto (mobile)
+                // Touch: arrastar o dedo sobre a foto para trocar (mobile)
                 let touchPhotoIndex = 0;
-                imgEl && imgEl.addEventListener('touchend', (e) => {
-                    if (!carro.fotos || carro.fotos.length < 2) return;
-                    e.stopPropagation();
-                    touchPhotoIndex = (touchPhotoIndex + 1) % carro.fotos.length;
-                    imgEl.src = carro.fotos[touchPhotoIndex];
-                }, { passive: true });
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let isDraggingPhoto = false;
+
+                if (imgEl) {
+                    imgEl.addEventListener('touchstart', (e) => {
+                        if (!carro.fotos || carro.fotos.length < 2) return;
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                        isDraggingPhoto = false;
+                    }, { passive: true });
+
+                    imgEl.addEventListener('touchmove', (e) => {
+                        if (!carro.fotos || carro.fotos.length < 2) return;
+                        const touch = e.touches[0];
+                        const dx = touch.clientX - touchStartX;
+                        const dy = touch.clientY - touchStartY;
+
+                        if (!isDraggingPhoto) {
+                            if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+                            if (Math.abs(dy) > Math.abs(dx)) return; // é scroll vertical da página, ignora
+                            isDraggingPhoto = true;
+                        }
+
+                        e.preventDefault();
+                        const rect = imgEl.getBoundingClientRect();
+                        const relativeX = Math.min(Math.max(touch.clientX - rect.left, 0), rect.width);
+                        const idx = Math.min(
+                            carro.fotos.length - 1,
+                            Math.floor((relativeX / rect.width) * carro.fotos.length)
+                        );
+                        if (idx !== touchPhotoIndex) {
+                            touchPhotoIndex = idx;
+                            imgEl.src = carro.fotos[idx];
+                        }
+                    }, { passive: false });
+
+                    imgEl.addEventListener('touchend', () => {
+                        if (isDraggingPhoto) {
+                            touchPhotoIndex = 0;
+                            imgEl.src = carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg';
+                        }
+                        isDraggingPhoto = false;
+                    }, { passive: true });
+                }
 
                 card.onclick = function() {
                     if (carro.brevemente) return;
