@@ -544,20 +544,6 @@
                     .replace(/"/g, '&quot;');
             }
 
-            function slugify(texto) {
-                return String(texto ?? '')
-                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/^-+|-+$/g, '');
-            }
-
-            function linkDetalhes(car) {
-                const slug = slugify(`${car.marca || ''} ${car.modelo || ''}`);
-                return `detalhes?id=${car.id}${slug ? '-' + slug : ''}`;
-            }
-
             function formatYearLabel(value) {
                 const text = String(value ?? '').trim();
                 if (!text) return '-';
@@ -575,7 +561,7 @@
                 const featuredCars = stockGuimacar.filter(car => car.destaque);
                 if (featuredCars.length) {
                     track.innerHTML = featuredCars.map((car, index) => `
-                        <a href="${linkDetalhes(car)}" class="flex-shrink-0 bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 car-card group block" style="animation-delay: ${0.05 + index * 0.08}s;">
+                        <a href="detalhes?id=${car.id}" class="flex-shrink-0 bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 car-card group block" style="animation-delay: ${0.05 + index * 0.08}s;">
                             <span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>
                             <div class="p-3">
                                 <div class="relative h-56 w-full overflow-hidden rounded-2xl shadow-sm">

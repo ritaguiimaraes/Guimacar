@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Viatura | Guimacar — Stand em Fafe</title>
     <meta name="description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe — carros usados de qualidade.">
-    <link rel="canonical" href="https://www.guimacar.com/detalhes.html">
+    <link rel="canonical" href="https://www.guimacar.com/detalhes">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.guimacar.com/detalhes.html">
+    <meta property="og:url" content="https://www.guimacar.com/detalhes">
     <meta property="og:title" content="Detalhes da Viatura | Guimacar">
     <meta property="og:description" content="Ficha completa da viatura: fotos, equipamentos, quilometragem e preço. Stand Guimacar em Fafe.">
     <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
@@ -27,7 +27,10 @@
     <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96.png">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
     <style>
         html {
             scroll-behavior: smooth;
@@ -130,10 +133,10 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="stock.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="stock" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-car text-orange-500 w-5"></i> Viaturas Disponíveis
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -162,7 +165,7 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -286,9 +289,9 @@
                     <div class="relative bg-zinc-900 rounded-2xl overflow-hidden flex items-center justify-center" style="height: 420px;">
                         <img id="foto-principal" src="img/carro1/1.jpeg"
                             class="max-h-full max-w-full object-contain cursor-pointer"
-                            alt="Carro" onclick="abrirModal(0)">
+                            alt="Carro" onclick="abrirModal(fotoAtual)">
                         <span id="foto-contador-hero" class="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider"></span>
-                        <button onclick="abrirModal(0)" class="absolute bottom-3 left-3 bg-black/70 hover:bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider transition-colors flex items-center gap-1">
+                        <button onclick="abrirModal(fotoAtual)" class="absolute bottom-3 left-3 bg-black/70 hover:bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm tracking-wider transition-colors flex items-center gap-1">
                             <i class="fas fa-expand text-[9px]"></i> Ampliar
                         </button>
                     </div>
@@ -304,23 +307,23 @@
     </main>
 
     <div id="modal-fotos" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4">
-        <div class="relative max-w-6xl max-h-[90vh] flex items-center">
-            <button onclick="fecharModal()" class="absolute -top-12 right-0 text-white hover:text-orange-500 transition text-3xl">
-                <i class="fas fa-times"></i>
-            </button>
+        <button onclick="fecharModal()" class="fixed top-4 right-4 text-white hover:text-orange-500 transition text-3xl z-[10000]">
+            <i class="fas fa-times"></i>
+        </button>
 
+        <button onclick="fotoAnterior()" class="fixed left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition z-[10000]">
+            <i class="fas fa-chevron-left text-xl"></i>
+        </button>
+        <button onclick="proximaFoto()" class="fixed right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition z-[10000]">
+            <i class="fas fa-chevron-right text-xl"></i>
+        </button>
+
+        <div class="relative max-w-6xl max-h-[90vh] flex items-center justify-center">
             <img id="foto-modal" src="" class="max-w-full max-h-[80vh] object-contain rounded-2xl" alt="Foto ampliada">
+        </div>
 
-            <button onclick="fotoAnterior()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
-                <i class="fas fa-chevron-left text-xl"></i>
-            </button>
-            <button onclick="proximaFoto()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition">
-                <i class="fas fa-chevron-right text-xl"></i>
-            </button>
-
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
-                <span id="contador-fotos">1 / 5</span>
-            </div>
+        <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm z-[10000]">
+            <span id="contador-fotos">1 / 5</span>
         </div>
     </div>
 
@@ -490,7 +493,7 @@
 
             fotoPrincipal.style.cursor = 'pointer';
             fotoPrincipal.onclick = function() {
-                abrirModal(0);
+                abrirModal(fotoAtual);
             };
 
             // Swipe na foto principal (mobile)
@@ -554,7 +557,7 @@
                     <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>
                     <h2 class="text-3xl font-black text-white mb-3">Viatura não encontrada</h2>
                     <p class="text-gray-400 mb-8">Esta viatura pode já não estar disponível.</p>
-                    <a href="stock.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition">
+                    <a href="stock" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition">
                         Ver todas as viaturas
                     </a>
                 </div>
@@ -630,7 +633,7 @@
         }
 
         function voltarPagina() {
-            window.location.href = 'stock.html';
+            window.location.href = 'stock';
         }
 
         document.addEventListener('keydown', function(e) {
@@ -698,7 +701,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
             .catch(err => console.error('Erro ao carregar o footer:', err));
