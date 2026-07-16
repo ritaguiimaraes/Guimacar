@@ -33,7 +33,7 @@ const stockGuimacar = [
     {
         id: 1,
         marca: "Renault Clio",
-        destaque: true,
+        destaque: false,
         modelo: "1.5 Dci 75 CV 12/2017",
         preco: "10.250 €",
         mes: "12/2017",
@@ -84,7 +84,7 @@ const stockGuimacar = [
     {
         id: 3,
         marca: "Citroën C3",
-        destaque: true,
+        destaque: false,
         modelo: "1.2 2019",
         preco: "9.750 €",
         mes: "10/2019",
@@ -167,7 +167,7 @@ const stockGuimacar = [
     {
         id: 6,
         marca: "Peugeot 308 Allure Hdi",
-        destaque: true,
+        destaque: false,
         modelo: "SW 2018",
         preco: "13.750 €",
         mes: "05/2018",
@@ -229,7 +229,7 @@ const stockGuimacar = [
     {
         id: 8,
         marca: "Renault Captur",
-        destaque: true,
+        destaque: false,
         modelo: "1.5 DCI 2016",
         preco: "10.250 €",
         mes: "10/2016",
@@ -355,30 +355,9 @@ const stockGuimacar = [
     },
 
     {
-        id: 13,
-        marca: "Opel Corsa",
-        destaque: false,
-        brevemente: true,
-        modelo: "1.2 Turbo",
-        preco: "Sob Consulta",
-        mes: "06/2021",
-        kms: "83.000",
-        combustivel: "Gasolina",
-        cilindrada: "1200",
-        potencia: "",
-        extras:[],
-        fotos: [
-            "img/Corsa2021/1.jpg",
-            "img/Corsa2021/2.jpg",
-            "img/Corsa2021/3.jpg"
- 
-        ]
-    }
-    ,
-    {
         id: 14,
         marca: "Renault Clio",
-        destaque: false,
+        destaque: true,
         modelo: "1.5 Dci 75 CV 2018",
         preco: "10.250 €",
         mes: "07/2018",
@@ -401,7 +380,7 @@ const stockGuimacar = [
     {
         id: 15,
         marca: "Peugeot 208",
-        destaque: false,
+        destaque: true,
         modelo: "Signature 1.2 PureTech 82 CV 2019",
         preco: "9.750 €",
         mes: "03/2019",
@@ -424,7 +403,7 @@ const stockGuimacar = [
     {
         id: 16,
         marca: "Renault Kadjar",
-        destaque: false,
+        destaque: true,
         modelo: "DCI 130 CV Energy Intens 2016",
         preco: "13.500 €",
         mes: "05/2016",
@@ -469,6 +448,31 @@ const stockGuimacar = [
             "img/FiatTipo/8.jpg",
             "img/FiatTipo/9.jpg",
             "img/FiatTipo/10.jpg"
+        ]
+    },
+    {
+        id: 18,
+        marca: "Opel Corsa",
+        destaque: true,
+        modelo: "1.2 Turbo 100 CV BVM6 Edition",
+        preco: "12.500 €",
+        mes: "06/2021",
+        kms: "83.200",
+        combustivel: "Gasolina",
+        cilindrada: "1200",
+        potencia: "100",
+        extras: [],
+        fotos: [
+            "img/OpelCorsa2021/1.jpg",
+            "img/OpelCorsa2021/2.jpg",
+            "img/OpelCorsa2021/3.jpg",
+            "img/OpelCorsa2021/4.jpg",
+            "img/OpelCorsa2021/5.jpg",
+            "img/OpelCorsa2021/6.jpg",
+            "img/OpelCorsa2021/7.jpg",
+            "img/OpelCorsa2021/8.jpg",
+            "img/OpelCorsa2021/9.jpg",
+            "img/OpelCorsa2021/10.jpg"
         ]
     }
 ];
