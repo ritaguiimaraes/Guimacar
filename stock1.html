@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaturas Disponíveis | Guimacar — Stand em Fafe</title>
     <meta name="description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais. Preços justos e transparentes.">
-    <link rel="canonical" href="https://www.guimacar.com/stock.html">
+    <link rel="canonical" href="https://www.guimacar.com/stock">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.guimacar.com/stock.html">
+    <meta property="og:url" content="https://www.guimacar.com/stock">
     <meta property="og:title" content="Viaturas Disponíveis | Guimacar — Stand em Fafe">
     <meta property="og:description" content="Veja o stock atual de viaturas usadas da Guimacar em Fafe. Carros revisados de marcas como Renault, Citroën, Peugeot e mais.">
     <meta property="og:image" content="https://www.guimacar.com/img/inicio.jpg">
@@ -27,7 +27,10 @@
     <meta name="twitter:image" content="https://www.guimacar.com/img/inicio.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96.png">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
     <style>
         html {
             scroll-behavior: smooth;
@@ -210,7 +213,7 @@
                 <a href="./" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-home text-orange-500 w-5"></i> Página Inicial
                 </a>
-                <a href="contacto.html" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
+                <a href="contacto" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
                     <i class="fas fa-phone text-orange-500 w-5"></i> Contactos
                 </a>
                 <a href="https://www.facebook.com/guimacar" target="_blank" class="text-white text-xl font-bold hover:text-orange-500 transition flex items-center gap-3">
@@ -238,7 +241,7 @@
                         Página Inicial
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="contacto.html" class="text-white hover:text-orange-500 font-semibold transition relative group">
+                    <a href="contacto" class="text-white hover:text-orange-500 font-semibold transition relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -580,18 +583,57 @@
                     }
                 });
 
-                // Touch: tap na imagem para ver próxima foto (mobile)
+                // Touch: arrastar o dedo sobre a foto para trocar (mobile)
                 let touchPhotoIndex = 0;
-                imgEl && imgEl.addEventListener('touchend', (e) => {
-                    if (!carro.fotos || carro.fotos.length < 2) return;
-                    e.stopPropagation();
-                    touchPhotoIndex = (touchPhotoIndex + 1) % carro.fotos.length;
-                    imgEl.src = carro.fotos[touchPhotoIndex];
-                }, { passive: true });
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let isDraggingPhoto = false;
+
+                if (imgEl) {
+                    imgEl.addEventListener('touchstart', (e) => {
+                        if (!carro.fotos || carro.fotos.length < 2) return;
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                        isDraggingPhoto = false;
+                    }, { passive: true });
+
+                    imgEl.addEventListener('touchmove', (e) => {
+                        if (!carro.fotos || carro.fotos.length < 2) return;
+                        const touch = e.touches[0];
+                        const dx = touch.clientX - touchStartX;
+                        const dy = touch.clientY - touchStartY;
+
+                        if (!isDraggingPhoto) {
+                            if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+                            if (Math.abs(dy) > Math.abs(dx)) return; // é scroll vertical da página, ignora
+                            isDraggingPhoto = true;
+                        }
+
+                        e.preventDefault();
+                        const rect = imgEl.getBoundingClientRect();
+                        const relativeX = Math.min(Math.max(touch.clientX - rect.left, 0), rect.width);
+                        const idx = Math.min(
+                            carro.fotos.length - 1,
+                            Math.floor((relativeX / rect.width) * carro.fotos.length)
+                        );
+                        if (idx !== touchPhotoIndex) {
+                            touchPhotoIndex = idx;
+                            imgEl.src = carro.fotos[idx];
+                        }
+                    }, { passive: false });
+
+                    imgEl.addEventListener('touchend', () => {
+                        if (isDraggingPhoto) {
+                            touchPhotoIndex = 0;
+                            imgEl.src = carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg';
+                        }
+                        isDraggingPhoto = false;
+                    }, { passive: true });
+                }
 
                 card.onclick = function() {
                     if (carro.brevemente) return;
-                    window.location.href = `detalhes.html?id=${carro.id}`;
+                    window.location.href = `detalhes?id=${carro.id}`;
                 };
 
                 gridCarros.appendChild(card);
@@ -713,7 +755,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
             .catch(err => console.error('Erro ao carregar o footer:', err));

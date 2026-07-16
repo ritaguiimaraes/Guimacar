@@ -356,8 +356,18 @@
     <script src="carros.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const idCarro = urlParams.get('id');
+        const idParamBruto = urlParams.get('id') || '';
+        const idCarro = (idParamBruto.match(/^\d+/) || [null])[0];
         const carro = stockGuimacar.find(c => c.id == idCarro);
+
+        function slugify(texto) {
+            return String(texto ?? '')
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
         const numeroTelefoneVisual = '965 083 452';
         const numeroTelefoneLink = '+351965083452';
         const extrasLabels = {
@@ -476,7 +486,47 @@
             preencherCampoOpcional('bloco-registos', 'detalhe-registos', carro.registos);
             renderizarExtras(carro.extras);
 
-            document.title = `${carro.marca} ${carro.modelo} | Guimacar`;
+            const nomeCompleto = `${carro.marca} ${carro.modelo}`.trim();
+            document.title = `${nomeCompleto} | Guimacar`;
+
+            const descricaoCarro = `${nomeCompleto}${carro.mes ? ' - ' + carro.mes : ''}${carro.kms ? ' - ' + carro.kms + ' km' : ''}. Ficha completa com fotos, equipamentos e preço. Stand Guimacar em Fafe.`;
+            const metaDescricao = document.querySelector('meta[name="description"]');
+            if (metaDescricao) metaDescricao.setAttribute('content', descricaoCarro);
+
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', `${nomeCompleto} | Guimacar`);
+
+            const ogDescricao = document.querySelector('meta[property="og:description"]');
+            if (ogDescricao) ogDescricao.setAttribute('content', descricaoCarro);
+
+            const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twitterTitle) twitterTitle.setAttribute('content', `${nomeCompleto} | Guimacar`);
+
+            const twitterDescricao = document.querySelector('meta[name="twitter:description"]');
+            if (twitterDescricao) twitterDescricao.setAttribute('content', descricaoCarro);
+
+            if (carro.fotos && carro.fotos[0]) {
+                const ogImagem = document.querySelector('meta[property="og:image"]');
+                if (ogImagem) ogImagem.setAttribute('content', new URL(carro.fotos[0], window.location.href).href);
+                const twitterImagem = document.querySelector('meta[name="twitter:image"]');
+                if (twitterImagem) twitterImagem.setAttribute('content', new URL(carro.fotos[0], window.location.href).href);
+            }
+
+            // Garante que o URL visível (e o canonical) inclui a marca/modelo do carro,
+            // para aparecer melhor no Google quando alguém pesquisa por ex. "Renault Captur"
+            const slugCarro = slugify(nomeCompleto);
+            const idComSlug = slugCarro ? `${carro.id}-${slugCarro}` : String(carro.id);
+            const urlComSlug = `${window.location.origin}${window.location.pathname}?id=${idComSlug}`;
+
+            const canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.setAttribute('href', urlComSlug);
+
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.setAttribute('content', urlComSlug);
+
+            if (idParamBruto !== idComSlug) {
+                window.history.replaceState(null, '', `${window.location.pathname}?id=${idComSlug}`);
+            }
 
             const fotoPrincipal = document.getElementById('foto-principal');
             fotoPrincipal.src = carro.fotos[0];

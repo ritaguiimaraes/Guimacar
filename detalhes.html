@@ -360,6 +360,12 @@
         const idCarro = (idParamBruto.match(/^\d+/) || [null])[0];
         const carro = stockGuimacar.find(c => c.id == idCarro);
 
+        // Não faz sentido esta página existir sem um carro especificado
+        // (ex: alguém acede a /detalhes sozinho) - manda para o stock.
+        if (!idParamBruto) {
+            window.location.replace('stock');
+        }
+
         function slugify(texto) {
             return String(texto ?? '')
                 .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -602,6 +608,11 @@
             atualizarMiniaturaAtiva();
             atualizarBotoesMiniaturas();
         } else {
+            const metaRobots = document.createElement('meta');
+            metaRobots.name = 'robots';
+            metaRobots.content = 'noindex';
+            document.head.appendChild(metaRobots);
+
             document.querySelector('main').innerHTML = `
                 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-6">
                     <i class="fas fa-car text-orange-500/30 text-6xl mb-6"></i>

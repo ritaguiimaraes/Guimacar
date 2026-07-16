@@ -349,6 +349,20 @@
             window.location.href = './';
         }
 
+        function slugify(texto) {
+            return String(texto ?? '')
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        function linkDetalhes(carro) {
+            const slug = slugify(`${carro.marca || ''} ${carro.modelo || ''}`);
+            return `detalhes?id=${carro.id}${slug ? '-' + slug : ''}`;
+        }
+
         const gridCarros = document.getElementById('grid-carros');
         let filteredCars = [];
         
@@ -519,8 +533,11 @@
             }
             
             carsToShow.forEach((carro, idx) => {
-                const card = document.createElement('div');
-                card.className = `bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[400px] card-fade-in group ${carro.brevemente ? 'cursor-default' : 'cursor-pointer'}`;
+                const card = document.createElement(carro.brevemente ? 'div' : 'a');
+                if (!carro.brevemente) {
+                    card.href = linkDetalhes(carro);
+                }
+                card.className = `bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 w-full max-w-[400px] card-fade-in group block ${carro.brevemente ? 'cursor-default' : 'cursor-pointer'}`;
                 card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
                 
                 card.innerHTML = `
@@ -630,11 +647,6 @@
                         isDraggingPhoto = false;
                     }, { passive: true });
                 }
-
-                card.onclick = function() {
-                    if (carro.brevemente) return;
-                    window.location.href = `detalhes?id=${carro.id}`;
-                };
 
                 gridCarros.appendChild(card);
             });
