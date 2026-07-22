@@ -483,7 +483,7 @@ const stockGuimacar = [
     },
     {
         id: 19,
-        marca: "Audi Etron",
+        marca: "Audi e-tron",
         destaque: true,
         ordemDestaque: 1,
         modelo: "55 Quattro S Line",
