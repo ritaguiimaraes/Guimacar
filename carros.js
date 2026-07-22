@@ -119,7 +119,7 @@ const stockGuimacar = [
         ivaDedutivel: true,
         modelo: "AC 3L 2019 ",
         preco: "12.500 €",
-        mes: "07/2019",
+        mes: " 06/2019",
         kms: "147.200",
         combustivel: "Gasóleo",
         cilindrada: "1600",
