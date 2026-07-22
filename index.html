@@ -574,7 +574,16 @@
             }
 
             if (typeof stockGuimacar !== 'undefined') {
-                const featuredCars = stockGuimacar.filter(car => car.destaque);
+                const featuredCars = stockGuimacar
+                    .filter(car => car.destaque)
+                    .sort((a, b) => {
+                        const temA = typeof a.ordemDestaque === 'number';
+                        const temB = typeof b.ordemDestaque === 'number';
+                        if (temA && temB) return a.ordemDestaque - b.ordemDestaque;
+                        if (temA) return -1;
+                        if (temB) return 1;
+                        return 0;
+                    });
                 if (featuredCars.length) {
                     track.innerHTML = featuredCars.map((car, index) => `
                         <a href="${linkDetalhes(car)}" class="flex-shrink-0 bg-white rounded-[2rem] overflow-hidden origin-center shadow-[0_35px_90px_-35px_rgba(249,115,22,0.55)] relative transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-[0_55px_140px_-40px_rgba(249,115,22,0.6)] border border-gray-200 car-card group block" style="animation-delay: ${0.05 + index * 0.08}s;">
