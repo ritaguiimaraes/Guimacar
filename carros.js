@@ -528,8 +528,7 @@ const stockGuimacar = [
             "img/Peugeot2008/6.jpg",
             "img/Peugeot2008/7.jpg",
             "img/Peugeot2008/8.jpg",
-            "img/Peugeot2008/9.jpg",
-            "img/Peugeot2008/10.jpg"
+            "img/Peugeot2008/9.jpg"
         ]
     }
 ];
