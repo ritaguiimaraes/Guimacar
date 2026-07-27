@@ -506,5 +506,30 @@ const stockGuimacar = [
             "img/AudiEtron/9.webp",
             "img/AudiEtron/10.webp"
         ]
+    },
+    {
+        id: 20,
+        marca: "Peugeot 2008",
+        destaque: false,
+        modelo: "1.6 HDI 120 CV BVM6 Allure",
+        preco: "Sob Consulta",
+        mes: "09/2017",
+        kms: "143.500",
+        combustivel: "Gasóleo",
+        cilindrada: "1600",
+        potencia: "120 Cv",
+        extras: [],
+        fotos: [
+            "img/Peugeot2008/1.jpg",
+            "img/Peugeot2008/2.jpg",
+            "img/Peugeot2008/3.jpg",
+            "img/Peugeot2008/4.jpg",
+            "img/Peugeot2008/5.jpg",
+            "img/Peugeot2008/6.jpg",
+            "img/Peugeot2008/7.jpg",
+            "img/Peugeot2008/8.jpg",
+            "img/Peugeot2008/9.jpg",
+            "img/Peugeot2008/10.jpg"
+        ]
     }
 ];
