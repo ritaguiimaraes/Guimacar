@@ -552,7 +552,8 @@ const stockGuimacar = [
             "img/PoloMatch/6.jpg",
             "img/PoloMatch/7.jpg",
             "img/PoloMatch/8.jpg",
-            "img/PoloMatch/9.jpg"
+            "img/PoloMatch/9.jpg",
+            "img/PoloMatch/10.jpg"
         ]
     }
 ];
