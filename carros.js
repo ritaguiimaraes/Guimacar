@@ -487,7 +487,7 @@ const stockGuimacar = [
         destaque: true,
         ordemDestaque: 1,
         modelo: "55 Quattro S Line",
-        preco: "Sob Consulta",
+        preco: "39.500 €",
         mes: "12/2022",
         kms: "107.000",
         combustivel: "Elétrico",
