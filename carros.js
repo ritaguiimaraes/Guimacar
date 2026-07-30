@@ -56,7 +56,7 @@ const stockGuimacar = [
     },
     {
         id: 2,
-        marca: "Polo Go",
+        marca: "Volkswagen Polo Go",
         destaque: false,
         modelo: "1.4 TDI ",
         preco: "5.750 €",
@@ -529,6 +529,30 @@ const stockGuimacar = [
             "img/Peugeot2008/7.jpg",
             "img/Peugeot2008/8.jpg",
             "img/Peugeot2008/9.jpg"
+        ]
+    },
+    {
+        id: 21,
+        marca: "Volkswagen Polo",
+        destaque: false,
+        modelo: "1.2 TDI Match",
+        preco: "8.250 €",
+        mes: "05/2013",
+        kms: "151.000",
+        combustivel: "Gasóleo",
+        cilindrada: "1200",
+        potencia: "75 Cv",
+        extras: [],
+        fotos: [
+            "img/PoloMatch/1.jpg",
+            "img/PoloMatch/2.jpg",
+            "img/PoloMatch/3.jpg",
+            "img/PoloMatch/4.jpg",
+            "img/PoloMatch/5.jpg",
+            "img/PoloMatch/6.jpg",
+            "img/PoloMatch/7.jpg",
+            "img/PoloMatch/8.jpg",
+            "img/PoloMatch/9.jpg"
         ]
     }
 ];
