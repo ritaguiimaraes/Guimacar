@@ -569,7 +569,7 @@ const stockGuimacar = [
         mes: "03/2016",
         kms: "86.880",
         combustivel: "Gasóleo",
-        cilindrada: "1.6",
+        cilindrada: "1600",
         potencia: "110 Cv",
         extras: [],
         fotos: [
