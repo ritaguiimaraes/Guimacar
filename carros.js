@@ -583,5 +583,29 @@ const stockGuimacar = [
             "img/Meriva/8.jpg",
             "img/Meriva/9.jpg"
         ]
-    }
+    },
+    {
+        id: 23,
+        marca: "Renault Captur",
+        destaque: false,
+        modelo: "Energy Intens 1.5 dCi",
+        preco: "12.750 €",
+        mes: "07/2016",
+        kms: "149.800",
+        combustivel: "Gasóleo",
+        cilindrada: "1500",
+        potencia: "110 Cv",
+        extras: ["camera traseira"],
+        fotos: [
+            "img/CapturNovo/1.jpg",
+            "img/CapturNovo/2.jpg",
+            "img/CapturNovo/3.jpg",
+            "img/CapturNovo/4.jpg",
+            "img/CapturNovo/5.jpg",
+            "img/CapturNovo/6.jpg",
+            "img/CapturNovo/7.jpg",
+            "img/CapturNovo/8.jpg",
+            "img/CapturNovo/9.jpg"
+        ]
+    },
 ];
