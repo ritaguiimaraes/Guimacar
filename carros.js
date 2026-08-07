@@ -334,7 +334,7 @@ const stockGuimacar = [
         destaque: false,
         vendido: true,
         modelo: "1.6 Hdi 2011",
-        preco: "8.250 €",
+        preco: "Sob Consulta",
         mes: "03/2011",
         kms: "190.000",
         combustivel: "Gasóleo",
