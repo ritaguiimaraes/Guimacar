@@ -267,13 +267,18 @@
                     </section>
 
                     <!-- Preço -->
+                    
                     <div class="bg-white/5 border border-white/10 rounded-2xl p-4 shadow-[0_0_40px_rgba(249,115,22,0.08)]">
                         <p class="text-[10px] text-gray-500 uppercase font-black tracking-[0.2em] mb-1">Preço</p>
-                        <p id="preco-carro" class="text-4xl font-black text-lime-500 tracking-tighter leading-none">15 900 €</p>
+                        <div class="flex items-center justify-between gap-3">
+                            <p id="preco-carro" class="text-4xl font-black text-lime-500 tracking-tighter leading-none">15 900 €</p>
+                            <span id="badge-preco-vendido" class="hidden text-orange-500 text-3xl font-black uppercase tracking-tighter">
+                                Vendido
+                            </span>
+                        </div>
                         <p id="iva-dedutivel-label" class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-2 hidden">
                             <i class="fas fa-check mr-1"></i>IVA Dedutível
                         </p>
-                        
                     </div>
 
                     <!-- Botão ligar -->
@@ -483,6 +488,12 @@
             document.getElementById('nome-carro').innerText = carro.marca;
             document.getElementById('sub-nome').innerText = carro.modelo;
             document.getElementById('preco-carro').innerText = carro.preco;
+
+           // Badge "Vendido"
+    
+            if (carro.vendido) {
+                document.getElementById('badge-preco-vendido')?.classList.remove('hidden');
+            }
             document.getElementById('detalhe-ano').innerText = carro.mes || '-';
             document.getElementById('detalhe-kms').innerText = carro.kms ? `${carro.kms} km` : '-';
             document.getElementById('detalhe-combustivel').innerText = carro.combustivel || '-';

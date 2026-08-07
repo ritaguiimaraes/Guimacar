@@ -196,6 +196,32 @@
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
+        /* Badge "Vendido" */
+        .badge-vendido {
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .badge-vendido span {
+            border: 2px solid rgba(249, 115, 22, 0.9);
+            color: #f97316;
+            font-weight: 900; /* Equivalente ao font-black */
+            text-transform: uppercase;
+            letter-spacing: -0.05em; /* Equivalente ao tracking-tighter */
+            font-size: 20px;
+            padding: 7px 22px;
+            transform: rotate(-10deg);
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(2px);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.45), 0 0 20px rgba(249, 115, 22, 0.25);
+        }
+
     </style>
 </head>
 <body class="bg-black font-sans text-gray-100 overflow-hidden overflow-x-hidden selection:bg-orange-500 selection:text-white">
@@ -542,10 +568,13 @@
                 
                 card.innerHTML = `
                     <div class="p-3">
-                        ${carro.destaque ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
+
+                        
+                        ${carro.destaque && !carro.vendido ? `<span class="absolute top-4 left-4 z-10 bg-lime-500 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full">Destaque</span>` : ''}
                         <div class="relative h-60 w-full overflow-hidden origin-center rounded-2xl shadow-sm">
-                            ${!carro.brevemente ? `<span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>` : ''}
-                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover ${carro.brevemente ? 'brightness-[0.35]' : ''}" alt="${carro.marca} ${carro.modelo}" loading="lazy">
+                            ${!carro.brevemente && !carro.vendido ? `<span class="absolute top-4 right-4 z-10 bg-black/70 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 transition-opacity duration-200 card-tip group-hover:opacity-100">Ver detalhes</span>` : ''}
+                            <img src="${carro.fotos && carro.fotos.length > 0 ? carro.fotos[0] : 'img/inicio.jpg'}" class="w-full h-full object-cover ${carro.brevemente ? 'brightness-[0.35]' : (carro.vendido ? 'brightness-[0.5]' : '')}" alt="${carro.marca} ${carro.modelo}" loading="lazy">
+                            ${carro.vendido ? `<div class="badge-vendido"><span>Vendido</span></div>` : ''}
                             ${carro.brevemente ? `
                             <div class="absolute inset-0 flex flex-col items-center justify-center gap-2">
                                 <span class="text-white text-2xl font-black uppercase tracking-[0.2em]">Brevemente</span>
@@ -571,7 +600,7 @@
                                     : `<p class="text-3xl font-black text-lime-500">${carro.preco}</p>`}
                                 ${carro.ivaDedutivel && !carro.brevemente ? `<p class="text-orange-500 text-[11px] font-bold uppercase tracking-wider mt-0.5"><i class="fas fa-check mr-1"></i>IVA Dedutível</p>` : ''}
                             </div>
-                            ${carro.reservado && !carro.brevemente ? `<span class="text-orange-500 text-lg font-black uppercase">Reservado</span>` : ''}
+                            ${carro.reservado && !carro.brevemente && !carro.vendido ? `<span class="text-orange-500 text-lg font-black uppercase">Reservado</span>` : ''}
                         </div>
                     </div>
                 `;
