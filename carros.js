@@ -559,4 +559,29 @@ const stockGuimacar = [
             "img/PoloMatch/10.jpg"
         ]
     }
+    ,
+    {
+        id: 22,
+        marca: "Opel Meriva",
+        destaque: false,
+        modelo: "1.6 CDTi ecoFLEX 2016 ",
+        preco: "7.750 €",
+        mes: "03/2016",
+        kms: "86.880",
+        combustivel: "Gasóleo",
+        cilindrada: "1.6",
+        potencia: "110 Cv",
+        extras: [],
+        fotos: [
+            "img/Meriva/1.jpg",
+            "img/Meriva/2.jpg",
+            "img/Meriva/3.jpg",
+            "img/Meriva/4.jpg",
+            "img/Meriva/5.jpg",
+            "img/Meriva/6.jpg",
+            "img/Meriva/7.jpg",
+            "img/Meriva/8.jpg",
+            "img/Meriva/9.jpg"
+        ]
+    }
 ];
