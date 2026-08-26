@@ -412,7 +412,7 @@ const stockGuimacar = [
         vendido: true,
         ordemDestaque: 3,
         modelo: "DCI 130 CV Energy Intens 2016",
-        preco: "13.500 €",
+        preco: "Sob Consulta",
         mes: "05/2016",
         kms: "153.500",
         combustivel: "Gasóleo",
