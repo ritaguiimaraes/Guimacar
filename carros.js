@@ -409,6 +409,7 @@ const stockGuimacar = [
         id: 16,
         marca: "Renault Kadjar",
         destaque: true,
+        vendido: true,
         ordemDestaque: 3,
         modelo: "DCI 130 CV Energy Intens 2016",
         preco: "13.500 €",
