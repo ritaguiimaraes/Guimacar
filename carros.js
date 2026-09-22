@@ -327,7 +327,7 @@ const stockGuimacar = [
             "img/CitroenC4Van/9.JPG",
             "img/CitroenC4Van/10.JPG"
         ]
-    },
+    },/**
    {
         id: 12,
         marca: "Citroën C4",
@@ -355,8 +355,7 @@ const stockGuimacar = [
             "img/CitroenC4/11.jpg",
             "img/CitroenC4/12.jpg"
         ]
-    },
-
+    },**/
     {
         id: 14,
         marca: "Renault Clio",
@@ -404,7 +403,7 @@ const stockGuimacar = [
             "img/Peugeot208/7.jpg",
             "img/Peugeot208/8.jpg"
         ]
-    },
+    },/** 
     {
         id: 16,
         marca: "Renault Kadjar",
@@ -431,7 +430,7 @@ const stockGuimacar = [
             "img/Kadjar/9.jpg",
             "img/Kadjar/10.jpg"
         ]
-    },
+    },**/
     {
         id: 17,
         marca: "Fiat Tipo",
@@ -510,6 +509,7 @@ const stockGuimacar = [
             "img/AudiEtron/10.webp"
         ]
     },
+    /** 
     {
         id: 20,
         marca: "Peugeot 2008",
@@ -534,7 +534,7 @@ const stockGuimacar = [
             "img/Peugeot2008/8.jpg",
             "img/Peugeot2008/9.jpg"
         ]
-    },
+    },**/
     {
         id: 21,
         marca: "Volkswagen Polo",
