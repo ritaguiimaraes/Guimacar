@@ -58,6 +58,7 @@ const stockGuimacar = [
         id: 2,
         marca: "Volkswagen Polo Go",
         destaque: false,
+        vendido: true,
         modelo: "1.4 TDI ",
         preco: "5.750 €",
         mes: "09/2006",
