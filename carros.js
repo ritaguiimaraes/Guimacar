@@ -60,7 +60,7 @@ const stockGuimacar = [
         destaque: false,
         vendido: true,
         modelo: "1.4 TDI ",
-        preco: "5.750 €",
+        preco: "Sob Consulta",
         mes: "09/2006",
         kms: "203.000",
         combustivel: "Gasóleo",
