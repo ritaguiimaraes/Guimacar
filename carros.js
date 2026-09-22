@@ -114,8 +114,7 @@ const stockGuimacar = [
     {
         id: 4,
         marca: "Peugeot Partner 1.6 Hdi",
-        destaque: true,
-        ordemDestaque: 4,
+        destaque: false,
         ivaDedutivel: true,
         modelo: "AC 3L 2019 ",
         preco: "12.500 €",
@@ -145,7 +144,8 @@ const stockGuimacar = [
     {
         id: 5,
         marca: "Citroën Berlingo",
-        destaque: false,
+        destaque: true,
+        ordemDestaque: 4,
         ivaDedutivel: true,
         modelo: "1.6 HDI 75 CV 2018",
         preco: "9.500 €",
