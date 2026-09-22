@@ -327,35 +327,7 @@ const stockGuimacar = [
             "img/CitroenC4Van/9.JPG",
             "img/CitroenC4Van/10.JPG"
         ]
-    },/**
-   {
-        id: 12,
-        marca: "Citroën C4",
-        destaque: false,
-        vendido: true,
-        modelo: "1.6 Hdi 2011",
-        preco: "Sob Consulta",
-        mes: "03/2011",
-        kms: "190.000",
-        combustivel: "Gasóleo",
-        cilindrada: "1600",
-        potencia: "90",
-        extras: [], 
-        fotos: [
-            "img/CitroenC4/1.jpg",
-            "img/CitroenC4/2.jpg",
-            "img/CitroenC4/3.jpg",
-            "img/CitroenC4/4.jpg",
-            "img/CitroenC4/5.jpg",
-            "img/CitroenC4/6.jpg",
-            "img/CitroenC4/7.jpg",
-            "img/CitroenC4/8.jpg",
-            "img/CitroenC4/9.jpg",
-            "img/CitroenC4/10.jpg",
-            "img/CitroenC4/11.jpg",
-            "img/CitroenC4/12.jpg"
-        ]
-    },**/
+    },
     {
         id: 14,
         marca: "Renault Clio",
@@ -403,34 +375,7 @@ const stockGuimacar = [
             "img/Peugeot208/7.jpg",
             "img/Peugeot208/8.jpg"
         ]
-    },/** 
-    {
-        id: 16,
-        marca: "Renault Kadjar",
-        destaque: true,
-        vendido: true,
-        ordemDestaque: 3,
-        modelo: "DCI 130 CV Energy Intens 2016",
-        preco: "Sob Consulta",
-        mes: "05/2016",
-        kms: "153.500",
-        combustivel: "Gasóleo",
-        cilindrada: "1600",
-        potencia: "130",
-        extras: [],
-        fotos: [
-            "img/Kadjar/1.jpg",
-            "img/Kadjar/2.jpg",
-            "img/Kadjar/3.jpg",
-            "img/Kadjar/4.jpg",
-            "img/Kadjar/5.jpg",
-            "img/Kadjar/6.jpg",
-            "img/Kadjar/7.jpg",
-            "img/Kadjar/8.jpg",
-            "img/Kadjar/9.jpg",
-            "img/Kadjar/10.jpg"
-        ]
-    },**/
+    },
     {
         id: 17,
         marca: "Fiat Tipo",
@@ -509,32 +454,6 @@ const stockGuimacar = [
             "img/AudiEtron/10.webp"
         ]
     },
-    /** 
-    {
-        id: 20,
-        marca: "Peugeot 2008",
-        destaque: false,
-        vendido: true,
-        modelo: "1.6 HDI 120 CV BVM6 Allure",
-        preco: "Sob Consulta",
-        mes: "09/2017",
-        kms: "143.500",
-        combustivel: "Gasóleo",
-        cilindrada: "1600",
-        potencia: "120 Cv",
-        extras: [],
-        fotos: [
-            "img/Peugeot2008/1.jpg",
-            "img/Peugeot2008/2.jpg",
-            "img/Peugeot2008/3.jpg",
-            "img/Peugeot2008/4.jpg",
-            "img/Peugeot2008/5.jpg",
-            "img/Peugeot2008/6.jpg",
-            "img/Peugeot2008/7.jpg",
-            "img/Peugeot2008/8.jpg",
-            "img/Peugeot2008/9.jpg"
-        ]
-    },**/
     {
         id: 21,
         marca: "Volkswagen Polo",
