@@ -309,7 +309,7 @@ const stockGuimacar = [
         marca: "Citroën C4 Van",
         destaque: false,
         modelo: "1.6 Hdi 2010",
-        preco: "4.500 €",
+        preco: "Sob Consulta",
         mes: "02/2010",
         kms: "189.000",
         combustivel: "Gasóleo",
